@@ -15,5 +15,5 @@ RUN ./bin/pip install -r requirements.txt
 
 RUN mkdir /app/var_instance
 
-# Use ZEO
+# Copy ZEO Config
 COPY skel/etc/zeo.conf /app/etc/zope.conf
