@@ -110,11 +110,11 @@
     "not dead"
   ],
   "engines": {
-    "node": "^10 || ^12 || ^14"
+    "node": "^12 || ^14"
   },
   "dependencies": {
     "@kitconcept/volto-blocks-grid": "*",
-    "@plone/volto": "13.8.2",
+    "@plone/volto": "13.8.3",
     "react-ga4": "1.0.4",
     "react-stickynode": "4.0.0",
     "volto-authomatic": "collective/volto-authomatic#main",
