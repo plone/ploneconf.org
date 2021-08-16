@@ -12,6 +12,7 @@ LEVELS = [
     ("silver", "Silver"),
     ("bronze", "Bronze"),
     ("supporting", "Supporting"),
+    ("organizer", "Organized by"),
 ]
 
 

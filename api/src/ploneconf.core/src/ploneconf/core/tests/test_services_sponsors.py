@@ -66,7 +66,7 @@ class TestSponsorsService(unittest.TestCase):
     def test_get_sponsors_values(self):
         response = self.api_session.get(self.endpoint)
         response = response.json()
-        self.assertEqual(len(response["levels"]), 6)
+        self.assertEqual(len(response["levels"]), 7)
         levels = response["levels"]
         diamond = levels[0]
         self.assertEqual(len(diamond["items"]), 1)
@@ -80,3 +80,5 @@ class TestSponsorsService(unittest.TestCase):
         self.assertEqual(len(bronze["items"]), 3)
         supporting = levels[5]
         self.assertEqual(len(supporting["items"]), 5)
+        organizer = levels[6]
+        self.assertEqual(len(organizer["items"]), 1)

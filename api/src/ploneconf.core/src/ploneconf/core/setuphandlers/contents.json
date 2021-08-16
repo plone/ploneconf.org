@@ -527,5 +527,19 @@
       ]
     },
     "exclude_from_nav": true
+  },
+  {
+    "_parent": "sponsors/organizations",
+    "type": "Sponsor",
+    "id": "plone-foundation",
+    "title": "Plone Foundation",
+    "description": "",
+    "level": "organizer",
+    "remoteUrl": "https://plone.org/foundation",
+    "_image": "images/plone-foundation.png",
+    "_transitions": [
+      "publish"
+    ],
+    "exclude_from_nav": false
   }
 ]
