@@ -132,7 +132,7 @@
           "description": "Submit your talk proposal about Plone, Volto, Zope, Guillotina or Pyramid, and be part of the Plone Conference!",
           "href": [
             {
-              "@id": "resolveuid/a5f78e805a6d416f95fcb134c403705a",
+              "@id": "/cfp",
               "Description": "Submit your talk proposal.",
               "Title": "Call for Papers",
               "hasPreviewImage": false,
@@ -148,7 +148,7 @@
           "description": "Do you use Plone and love it? Is your company based on Plone technologies?\nDon't miss this chance to support it: become a sponsor!",
           "href": [
             {
-              "@id": "resolveuid/39ab35e743bf404bbc59549db9105caf",
+              "@id": "/sponsors",
               "Description": "Sponsorship options for our event.",
               "Title": "Sponsor",
               "hasPreviewImage": false,
