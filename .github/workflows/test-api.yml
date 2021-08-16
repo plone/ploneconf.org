@@ -1,4 +1,4 @@
-name: Test the backend code
+name: Test the API code
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./api
     strategy:
       fail-fast: false
       matrix:
@@ -21,6 +21,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: "Set environmental variables"
+        run: |
+          echo "REQUIREMENTS=https://raw.githubusercontent.com/ericof/plone-pip/main/plone-${{ matrix.plone-version }}.txt" >> $GITHUB_ENV
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -46,8 +50,8 @@ jobs:
 
       - name: Install Plone
         run: |
-          ./bin/pip wheel -r requirements/plone.txt -w ~/.cache/plone
-          ./bin/pip install --no-deps --no-build-isolation --no-index -r requirements/plone.txt -f ~/.cache/plone
+          ./bin/pip wheel -r ${{ env.REQUIREMENTS }} -w ~/.cache/plone
+          ./bin/pip install --no-deps --no-build-isolation --no-index -r ${{ env.REQUIREMENTS }} -f ~/.cache/plone
 
       - name: Install ploneconf.core and dependencies
         run: |
