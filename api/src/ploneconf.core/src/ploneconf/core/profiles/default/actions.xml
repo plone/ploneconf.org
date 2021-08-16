@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <action-provider name="portal_actions"/>
+  <object name="portal_tabs" meta_type="CMF Action Category">
+    <object name="index_html" meta_type="CMF Action" i18n:domain="plone">
+      <property name="visible">False</property>
+    </object>
+  </object>
+  <object name="user" meta_type="CMF Action Category">
+    <object name="preferences" meta_type="CMF Action" i18n:domain="plone">
+      <property name="visible">True</property>
+    </object>
+    <object name="dashboard" meta_type="CMF Action" i18n:domain="plone">
+      <property name="visible">False</property>
+    </object>
+    <object name="login" meta_type="CMF Action" i18n:domain="plone">
+      <property name="visible">False</property>
+    </object>
+    <object name="join" meta_type="CMF Action" i18n:domain="plone">
+      <property name="visible">False</property>
+    </object>
+  </object>
+</object>

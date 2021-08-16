@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ploneconf.core">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Plone Conference: Site Setup"
+      directory="profiles/default"
+      description="Policy package to install Plone Conference site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="initial"
+      title="Plone Conference: Initial content"
+      directory="profiles/initial"
+      description="Initial content for ploneconf.org website."
+      pre_handler=".setuphandlers.populate_portal"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Plone Conference: Uninstall"
+      directory="profiles/uninstall"
+      description="Uninstall Plone Conference setup."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

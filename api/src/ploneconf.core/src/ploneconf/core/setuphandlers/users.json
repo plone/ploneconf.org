@@ -1,0 +1,19 @@
+{
+  "portal": [
+    {
+      "email": "conf@plone.org",
+      "properties": {
+        "fullname": "Plone Conference",
+        "location": "Earth"
+      },
+      "groups": [
+      ],
+      "roles": [
+        "Member"
+      ],
+      "username": "ploneconf"
+    }
+  ],
+    "team": [
+  ]
+}

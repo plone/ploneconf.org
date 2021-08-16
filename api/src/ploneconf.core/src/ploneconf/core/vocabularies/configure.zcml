@@ -1,0 +1,7 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <utility
+    component=".sponsorship.sponsorship_levels"
+    name="ploneconf.core.vocabularies.sponsorship_levels"
+  />
+</configure>

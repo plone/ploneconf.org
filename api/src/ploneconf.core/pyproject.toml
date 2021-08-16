@@ -1,0 +1,53 @@
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.github
+    | \.eggs
+    | \.git
+    | \.github
+    | \.venv
+  )/
+)
+'''
+
+[tool.isort]
+force_alphabetical_sort = true
+force_single_line = true
+lines_after_imports = 2
+line_length = 88
+
+[tool.towncrier]
+package = "ploneconf.core"
+package_dir = "src"
+filename = "CHANGES.md"
+directory = "news/"
+title_format = "##{version} ({project_date})"
+start_string = "<!-- TOWNCRIER -->\n"
+# Custom Jinja2 template for preparing a new section of the Change Log.
+template = "news/template.md.j2"
+underlines = ["", "##", "###"]
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "New features:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bug fixes:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "docs"
+name = "Documentation:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "trivial"
+name = "Other:"
+showcontent = true

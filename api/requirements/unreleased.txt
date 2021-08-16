@@ -1,0 +1,2 @@
+git+git://github.com/collective/pas.plugins.authomatic@master#egg=pas.plugins.authomatic
+git+git://github.com/kitconcept/kitconcept.volto@pip-support#egg=kitconcept.volto

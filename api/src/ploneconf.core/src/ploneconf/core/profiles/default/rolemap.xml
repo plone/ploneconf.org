@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <!-- -*- extra stuff goes here -*- -->
+    <permission name="ploneconf.core: Add Sponsor" acquire="False" />
+  </permissions>
+</rolemap>

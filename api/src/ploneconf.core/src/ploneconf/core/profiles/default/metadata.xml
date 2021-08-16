@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <version>20210813001</version>
+  <dependencies>
+    <dependency>profile-kitconcept.volto:default</dependency>
+    <dependency>profile-collective.volto.formsupport:default</dependency>
+    <dependency>profile-pas.plugins.authomatic:default</dependency>
+  </dependencies>
+</metadata>

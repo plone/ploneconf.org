@@ -1,0 +1,9 @@
+/* This one overrides the custom plone-react overrides way of doing things */
+@import 'styles';
+@import 'Breadcrumbs';
+@import 'Header';
+@import 'Logo';
+@import 'Footer';
+@import 'SocialNetworks';
+@import 'Sponsors';
+@import 'CTA';

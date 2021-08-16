@@ -1,0 +1,16 @@
+<model xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="level" type="zope.schema.Choice">
+      <description>Sponsorship level</description>
+      <required>True</required>
+      <title>Level</title>
+      <vocabulary>ploneconf.core.vocabularies.sponsorship_levels</vocabulary>
+    </field>
+    <field name="remoteUrl" type="zope.schema.TextLine" form:widget="plone.app.z3cform.widget.LinkFieldWidget">
+      <description i18n:translate="">Link to sponsor site.</description>
+      <title i18n:translate="">Site</title>
+    </field>
+  </schema>
+</model>

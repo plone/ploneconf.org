@@ -1,0 +1,4 @@
+-c https://dist.plone.org/release/5.2.4/constraints.txt
+wheel
+Plone
+Paste

@@ -1,0 +1,28 @@
+version: "3"
+services:
+
+  frontend:
+    image: plone/ploneconf-frontend:latest
+    ports:
+    - "3000:3000"
+    depends_on:
+      - api
+    environment:
+      - RAZZLE_PUBLIC_URL=https://2021.ploneconf.org
+      - RAZZLE_INTERNAL_API_PATH=http://api:8080/Plone
+
+  api:
+    image: plone/ploneconf-api:latest
+    volumes:
+    - ./data:/data
+    ports:
+    - "8080:8080"
+    depends_on:
+      - zeo
+
+  zeo:
+    image: simplesconsultoria/zeo:5.2.2
+    volumes:
+    - ./data:/data
+    ports:
+    - "8100:8100"
