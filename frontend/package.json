@@ -1,6 +1,6 @@
 {
   "name": "ploneconf",
-  "description": "A Volto-powered Plone frontend",
+  "description": "Plone Conference 2021 website",
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
@@ -114,10 +114,10 @@
   },
   "dependencies": {
     "@kitconcept/volto-blocks-grid": "*",
-    "@plone/volto": "13.8.3",
+    "@plone/volto": "13.11.0",
     "react-ga4": "1.0.4",
     "react-stickynode": "4.0.0",
-    "volto-authomatic": "collective/volto-authomatic#main",
+    "volto-authomatic": "1.0.2",
     "volto-form-block": "*",
     "volto-slate": "*"
   },
