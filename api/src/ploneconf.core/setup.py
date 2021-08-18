@@ -51,6 +51,7 @@ setup(
         "prettyconf",
         "collective.folderishtypes",
         "collective.volto.formsupport",
+        "pas.plugins.authomatic>=1.0b2",
         "kitconcept.volto",
         "plone.api",
         "plone.restapi",
