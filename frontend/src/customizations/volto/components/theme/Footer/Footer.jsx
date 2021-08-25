@@ -87,16 +87,16 @@ const Footer = ({ intl }) => {
             </Link>
           </div>
           <div role="listitem" className="item">
-            <Link className="item" to="/sitemap">
-              <FormattedMessage id="Site Map" defaultMessage="Site Map" />
+            <Link className="item" to="/code-of-conduct">
+              <FormattedMessage
+                id="Code of Conduct"
+                defaultMessage="Code of Conduct"
+              />
             </Link>
           </div>
           <div role="listitem" className="item">
-            <Link className="item" to="/accesibility-info">
-              <FormattedMessage
-                id="Accessibility"
-                defaultMessage="Accessibility"
-              />
+            <Link className="item" to="/sitemap">
+              <FormattedMessage id="Site Map" defaultMessage="Site Map" />
             </Link>
           </div>
           <div role="listitem" className="item">
