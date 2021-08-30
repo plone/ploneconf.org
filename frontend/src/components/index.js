@@ -10,6 +10,7 @@
  */
 
 import CTA from './CTA/CTA';
+import PayPal from './PayPal/PayPal';
 import Sponsors from './Sponsors/Sponsors';
 
-export { CTA, Sponsors };
+export { CTA, PayPal, Sponsors };
