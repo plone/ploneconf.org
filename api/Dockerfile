@@ -1,4 +1,4 @@
-FROM simplesconsultoria/plone:5.2.4
+FROM simplesconsultoria/plone:5.2.5
 
 LABEL maintainer="Plone Foundation <conf@plone.org>" \
       org.label-schema.name="plone" \
