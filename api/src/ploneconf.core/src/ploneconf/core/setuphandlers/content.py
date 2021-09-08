@@ -1,10 +1,8 @@
 from DateTime import DateTime
 from dateutil.parser import parse
-from pathlib import Path
 from plone import api
 from plone.app.dexterity.behaviors import constrains
 from plone.namedfile.file import NamedBlobImage
-from ploneconf.core import logger
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 
 import json

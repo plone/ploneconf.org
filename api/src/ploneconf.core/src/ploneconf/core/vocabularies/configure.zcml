@@ -1,7 +1,11 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
-  <utility
-    component=".sponsorship.sponsorship_levels"
-    name="ploneconf.core.vocabularies.sponsorship_levels"
-  />
+  <utility component=".sponsorship.sponsorship_levels" name="ploneconf.core.vocabularies.sponsorship_levels" />
+  <utility component=".slot.slot_tracks" name="ploneconf.core.vocabularies.slot_tracks" />
+  <utility component=".slot.slot_levels" name="ploneconf.core.vocabularies.slot_levels" />
+  <utility component=".slot.slot_audiences" name="ploneconf.core.vocabularies.slot_audiences" />
+  <utility component=".talk.talk_duration" name="ploneconf.core.vocabularies.talk_duration" />
+  <utility component=".training.training_duration" name="ploneconf.core.vocabularies.training_duration" />
+  <utility component=".person.PersonsVocabularyFactory" name="ploneconf.core.vocabularies.persons" />
+
 </configure>

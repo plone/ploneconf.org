@@ -157,6 +157,28 @@
     "_transitions": [
       "publish"
     ],
+    "_permissions": {
+      "ploneconf.core: Add Slot": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ],
+      "ploneconf.core: Add Training": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ],
+      "ploneconf.core: Add Talk": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ],
+      "ploneconf.core: Add Keynote": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ]
+    },
     "exclude_from_nav": false
   },
   {
@@ -281,6 +303,13 @@
     },
     "_transitions": [
     ],
+    "_permissions": {
+      "ploneconf.core: Add Person": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ]
+    },
     "exclude_from_nav": false
   },
   {

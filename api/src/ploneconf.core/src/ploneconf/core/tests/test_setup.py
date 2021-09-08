@@ -16,6 +16,7 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer["portal"]
+        self.setup = self.portal.portal_setup
         if get_installer:
             self.installer = get_installer(self.portal, self.layer["request"])
         else:
@@ -31,6 +32,13 @@ class TestSetup(unittest.TestCase):
         from ploneconf.core.interfaces import IPloneConfCoreLayer
 
         self.assertIn(IPloneConfCoreLayer, utils.registered_layers())
+
+    def test_latest_version(self):
+        """Test latest version of default profile."""
+        self.assertEqual(
+            self.setup.getLastVersionForProfile("ploneconf.core:default")[0],
+            "20210908001",
+        )
 
 
 class TestUninstall(unittest.TestCase):

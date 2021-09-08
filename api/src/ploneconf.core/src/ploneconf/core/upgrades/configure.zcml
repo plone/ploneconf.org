@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+>
+
+  <genericsetup:upgradeSteps
+    source="20210813001"
+    destination="20210908001"
+    profile="ploneconf.core:default"
+    >
+      <genericsetup:upgradeDepends
+        title="Add Person, Slot, Talk, Training, Keynote content types"
+        import_steps="typeinfo"
+      />
+      <genericsetup:upgradeDepends
+        title="Update rolemap"
+        import_steps="rolemap"
+      />
+      <genericsetup:upgradeDepends
+        title="Add new index and metadata"
+        import_steps="catalog"
+      />
+      <genericsetup:upgradeStep
+        title="Update Permissions"
+        handler=".v20210908001.update_permissions"
+      />
+  </genericsetup:upgradeSteps>
+
+</configure>

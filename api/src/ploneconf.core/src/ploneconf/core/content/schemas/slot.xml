@@ -1,0 +1,6 @@
+<model xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+  </schema>
+</model>

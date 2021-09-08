@@ -4,8 +4,16 @@
   <index name="level" meta_type="FieldIndex">
     <indexed_attr value="level"/>
   </index>
+  <index name="session_level" meta_type="KeywordIndex">
+    <indexed_attr value="session_level"/>
+  </index>
+  <index name="track" meta_type="KeywordIndex">
+    <indexed_attr value="track"/>
+  </index>
 
   <column value="level" />
+  <column value="session_level" />
+  <column value="track" />
   <column value="image_field"/>
 
 </object>
