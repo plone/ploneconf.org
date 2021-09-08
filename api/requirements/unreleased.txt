@@ -1,1 +1,1 @@
-git+git://github.com/kitconcept/kitconcept.volto@pip-support#egg=kitconcept.volto
+git+git://github.com/kitconcept/kitconcept.volto@main#egg=kitconcept.volto
