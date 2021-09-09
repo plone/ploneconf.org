@@ -7,6 +7,9 @@ import SponsorsView from './Sponsors/View';
 import PayPalEdit from './PayPal/Edit';
 import PayPalView from './PayPal/View';
 
+import TiToEdit from './TiTo/Edit';
+import TiToView from './TiTo/View';
+
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import listBulletSVG from '@plone/volto/icons/list-bullet.svg';
 
@@ -51,6 +54,21 @@ export const customBlocks = {
     restricted: false,
     mostUsed: false,
     sidebarTab: 0,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  tito: {
+    id: 'tito',
+    title: 'TiTo',
+    icon: sliderSVG,
+    group: 'common',
+    view: TiToView,
+    edit: TiToEdit,
+    restricted: false,
+    mostUsed: true,
+    sidebarTab: 1,
     security: {
       addPermission: [],
       view: [],
