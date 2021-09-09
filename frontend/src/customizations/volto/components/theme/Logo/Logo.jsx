@@ -10,6 +10,8 @@ import { Image } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
 
+import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
+
 const messages = defineMessages({
   home: {
     id: 'Home',
@@ -38,7 +40,7 @@ const Logo = () => {
       title={intl.formatMessage(messages.home)}
     >
       <Image
-        src="/logos/logo-header.png"
+        src={LogoImage}
         alt={intl.formatMessage(messages.siteTitle)}
         title={intl.formatMessage(messages.siteTitle)}
         height={50}
