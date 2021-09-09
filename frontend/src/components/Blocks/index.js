@@ -65,7 +65,7 @@ export const customBlocks = {
     icon: sliderSVG,
     group: 'common',
     view: TiToView,
-    edit: TiToView,
+    edit: TiToEdit,
     restricted: false,
     mostUsed: true,
     sidebarTab: 1,
