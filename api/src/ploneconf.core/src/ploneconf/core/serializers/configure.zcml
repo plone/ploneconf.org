@@ -1,8 +1,10 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:zcml="http://namespaces.zope.org/zcml"
-    i18n_domain="plone.restapi">
+<configure xmlns="http://namespaces.zope.org/zope">
 
+    <adapter factory=".person.PersonJSONSerializer" />
+    <adapter factory=".person.PersonJSONSummarySerializer" />
+    <adapter factory=".session.KeynoteJSONSummarySerializer" />
+    <adapter factory=".session.TalkJSONSummarySerializer" />
+    <adapter factory=".session.TrainingJSONSummarySerializer" />
     <adapter factory=".sponsor.SponsorJSONSummarySerializer" />
 
 </configure>
