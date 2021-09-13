@@ -1,1 +1,0 @@
-git+git://github.com/kitconcept/kitconcept.volto@main#egg=kitconcept.volto
