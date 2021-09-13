@@ -10,6 +10,7 @@
   <include package="plone.restapi" />
   <include package="pas.plugins.authomatic" />
   <include package="collective.volto.formsupport" />
+  <include package="collective.relationhelpers" />
 
   <include file="permissions.zcml" />
   <include file="profiles.zcml" />

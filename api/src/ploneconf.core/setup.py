@@ -56,6 +56,7 @@ setup(
         "plone.api",
         "plone.restapi",
         "plone.app.dexterity",
+        "collective.relationhelpers",
     ],
     extras_require={
         "test": [

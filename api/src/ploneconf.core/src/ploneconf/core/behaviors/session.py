@@ -4,6 +4,7 @@ from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from ploneconf.core import _
 from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import provider
 
@@ -21,7 +22,7 @@ class IConferenceSession(model.Schema):
     )
 
     # Presenters
-    presenters = schema.Set(
+    presenters = RelationList(
         title=_("Presenters"),
         description=_(""),
         value_type=RelationChoice(
