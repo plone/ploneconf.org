@@ -55,7 +55,6 @@ class PersonJSONSummarySerializer:
 @implementer(ISerializeToJson)
 @adapter(IPerson, Interface)
 class PersonJSONSerializer(SerializeToJson):
-
     def group_activities(self):
         activities = []
         raw_activities = defaultdict(list)
