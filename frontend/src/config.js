@@ -14,6 +14,8 @@
  */
 
 import { customBlocks } from '@package/components/Blocks';
+import { Person } from '@package/components';
+
 // All your imports required for the config here BEFORE this line
 import '@plone/volto/config';
 
@@ -38,6 +40,8 @@ export default function applyConfig(config) {
       },
     ],
   };
+
+  config.views.contentTypesViews.Person = Person;
 
   config.blocks = {
     ...config.blocks,
