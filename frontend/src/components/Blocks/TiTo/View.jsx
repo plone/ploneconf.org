@@ -4,7 +4,7 @@ const loadTiTo = (callback) => {
   const existingScript = document.getElementById('TiTo');
   if (!existingScript) {
     const script = document.createElement('script');
-    script.src = 'https://js.tito.io/v2';
+    script.src = 'https://js.tito.io/v1';
     script.id = 'TiTo';
     script.async = true;
     document.body.appendChild(script);
