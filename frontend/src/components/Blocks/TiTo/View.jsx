@@ -20,8 +20,18 @@ const TitoBlockView = () => {
   React.useEffect(() => {
     loadTiTo(() => {
       setLoaded(true);
+      if (typeof window !== 'undefined') {
+        window.TitoWidget.buildWidgets();
+      }
     });
-  });
+
+    return () => {
+      const iframes = document.querySelectorAll('iframe');
+      iframes.forEach((element) => {
+        element.remove();
+      });
+    };
+  }, [loaded]);
 
   return (
     <>
