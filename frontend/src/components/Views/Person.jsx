@@ -24,7 +24,10 @@ const Person = ({ content }) => {
     <Container className="person-view">
       <div className="person-header">
         <div className="person-image-wrapper">
-          <img src={flattenToAppURL(content.image.scales.teaser.download)} />
+          <img
+            src={flattenToAppURL(content.image.scales.teaser.download)}
+            alt={content.image_caption}
+          />
         </div>
         <div className="person-content">
           <h1>{content.title}</h1>
