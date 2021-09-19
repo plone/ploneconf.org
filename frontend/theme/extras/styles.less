@@ -70,4 +70,74 @@
   }
 }
 
+ul.person-social {
+  display: flex;
+  padding: 0;
+  margin-bottom: 20px;
+  list-style: none;
+
+  a {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    color: @textColor;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+}
+
+.persons-listing {
+  .listing-image-wrapper {
+    margin-right: 20px;
+
+    img {
+      width: 10rem;
+      height: 10rem;
+      margin-right: 0;
+      margin-right: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .listing-body {
+  }
+}
+
+.persons-simple-listing {
+  display: flex;
+  flex-wrap: wrap;
+
+  .listing-item {
+    width: 300px;
+    margin-right: 50px;
+
+    a {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .listing-image-wrapper {
+    text-align: center;
+
+    img {
+      width: 10rem;
+      height: 10rem;
+      margin-right: 0;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  ul.person-social {
+    justify-content: center;
+  }
+}
+
 @import 'tito';
