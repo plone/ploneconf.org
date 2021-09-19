@@ -3,6 +3,7 @@ from plone.dexterity.content import DexterityContent
 from plone.uuid.interfaces import IUUID
 from typing import Union
 from zope.interface import implementer
+from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
@@ -62,3 +63,15 @@ class PersonsVocabulary:
 
 
 PersonsVocabularyFactory = PersonsVocabulary()
+
+
+@provider(IVocabularyFactory)
+def person_labels(context):
+    """Available Labels for a person."""
+    return SimpleVocabulary(
+        [
+            SimpleTerm(value="keynote-speaker", title="Keynote"),
+            SimpleTerm(value="instructor", title="Instructor"),
+            SimpleTerm(value="speaker", title="Speaker"),
+        ]
+    )

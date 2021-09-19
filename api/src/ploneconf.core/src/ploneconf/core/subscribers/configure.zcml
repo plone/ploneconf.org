@@ -1,0 +1,11 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Conference Session Subscribers -->
+  <subscriber
+      for="ploneconf.core.behaviors.session.IConferenceSession
+           zope.lifecycleevent.IObjectModifiedEvent"
+      handler=".session.modification_handler"
+  />
+
+
+</configure>

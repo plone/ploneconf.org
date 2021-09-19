@@ -13,7 +13,7 @@
         <element>plone.app.querystring.operation.selection.all</element>
     </value>
    <value key="vocabulary">ploneconf.core.vocabularies.slot_levels</value>
-   <value key="group" i18n:translate="">Session Info</value>
+   <value key="group" i18n:translate="">Metadata</value>
   </records>
 
   <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.slot_audience">
@@ -26,7 +26,7 @@
         <element>plone.app.querystring.operation.selection.all</element>
     </value>
    <value key="vocabulary">ploneconf.core.vocabularies.slot_audiences</value>
-   <value key="group" i18n:translate="">Session Info</value>
+   <value key="group" i18n:translate="">Metadata</value>
   </records>
 
   <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.slot_track">
@@ -39,7 +39,20 @@
         <element>plone.app.querystring.operation.selection.all</element>
     </value>
    <value key="vocabulary">ploneconf.core.vocabularies.slot_tracks</value>
-   <value key="group" i18n:translate="">Session Info</value>
+   <value key="group" i18n:translate="">Metadata</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.labels">
+    <value key="title" i18n:translate="">Person Label</value>
+    <value key="description" i18n:translate="">.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+        <element>plone.app.querystring.operation.selection.any</element>
+        <element>plone.app.querystring.operation.selection.all</element>
+    </value>
+   <value key="vocabulary">ploneconf.core.vocabularies.person_labels</value>
+   <value key="group" i18n:translate="">Metadata</value>
   </records>
 
 </registry>

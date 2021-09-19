@@ -26,4 +26,23 @@
       />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+    source="20210908001"
+    destination="20210919001"
+    profile="ploneconf.core:default"
+    >
+      <genericsetup:upgradeDepends
+        title="Add new index and metadata"
+        import_steps="catalog"
+      />
+      <genericsetup:upgradeDepends
+        title="Update query strings"
+        import_steps="plone.app.registry"
+      />
+      <genericsetup:upgradeStep
+        title="Reindex Persons"
+        handler=".v20210919001.reindex_persons"
+      />
+  </genericsetup:upgradeSteps>
+
 </configure>
