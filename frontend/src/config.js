@@ -16,7 +16,11 @@
 import { customBlocks } from '@package/components/Blocks';
 import { Person } from '@package/components';
 import DefaultTeaserBody from '@kitconcept/volto-blocks-grid/components/Teaser/DefaultBody';
-import { TeaserPersonBody } from '@package/components';
+import {
+  PersonsListingBody,
+  PersonsSimpleListingBody,
+  TeaserPersonBody,
+} from '@package/components';
 
 // All your imports required for the config here BEFORE this line
 import '@plone/volto/config';
@@ -55,6 +59,20 @@ export default function applyConfig(config) {
       id: 'person',
       title: 'Person',
       template: TeaserPersonBody,
+    },
+  ];
+
+  config.blocks.blocksConfig.listing.variations = [
+    ...config.blocks.blocksConfig.listing.variations,
+    {
+      id: 'persons',
+      title: 'Persons',
+      template: PersonsListingBody,
+    },
+    {
+      id: 'personsSimple',
+      title: 'Persons Simple',
+      template: PersonsSimpleListingBody,
     },
   ];
 
