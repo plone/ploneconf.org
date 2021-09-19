@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ConditionalLink } from '@plone/volto/components';
-import { Label } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
