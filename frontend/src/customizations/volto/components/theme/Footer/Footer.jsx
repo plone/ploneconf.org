@@ -7,6 +7,7 @@ import React from 'react';
 import { Container, List, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { useSelector } from 'react-redux';
 import { useGoogleAnalytics } from '@package/useGoogleAnalytics';
 
 const messages = defineMessages({
@@ -23,6 +24,7 @@ const messages = defineMessages({
  * @returns {string} Markup of the component
  */
 const Footer = ({ intl }) => {
+  const logged_in = useSelector((state) => state.userSession.token);
   useGoogleAnalytics();
   return (
     <Segment
@@ -82,9 +84,16 @@ const Footer = ({ intl }) => {
         <List horizontal inverted>
           {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
           <div role="listitem" className="item">
-            <Link className="item" to="/login">
-              <FormattedMessage id="Login" defaultMessage="Login" />
-            </Link>
+            {logged_in && (
+              <Link className="item" to="/logout">
+                <FormattedMessage id="Logout" defaultMessage="Logout" />
+              </Link>
+            )}
+            {!logged_in && (
+              <Link className="item" to="/login">
+                <FormattedMessage id="Login" defaultMessage="Login" />
+              </Link>
+            )}
           </div>
           <div role="listitem" className="item">
             <Link className="item" to="/code-of-conduct">
