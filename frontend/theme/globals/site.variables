@@ -6,6 +6,7 @@
 
 /* The size of page text  */
 @fontSize : 16px;
+@fontName: Montserrat;
 
 /*-------------------
         Page

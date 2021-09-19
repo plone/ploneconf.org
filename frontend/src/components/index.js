@@ -12,5 +12,6 @@
 import CTA from './CTA/CTA';
 import PayPal from './PayPal/PayPal';
 import Sponsors from './Sponsors/Sponsors';
+import Person from './Views/Person';
 
-export { CTA, PayPal, Sponsors };
+export { CTA, PayPal, Person, Sponsors };

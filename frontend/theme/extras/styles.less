@@ -19,4 +19,49 @@
   margin-bottom: 1rem;
 }
 
+
+.person-header {
+  display: flex;
+
+  img {
+    width: 17rem;
+    height: 17rem;
+    margin-right: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      color: @textColor;
+
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .person-activity {
+    margin-bottom: 20px;
+
+    a {
+      color: @textColor;
+    }
+
+    .person-activity-info {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
 @import 'tito';
