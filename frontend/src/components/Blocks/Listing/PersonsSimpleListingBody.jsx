@@ -56,7 +56,10 @@ const PersonsSimpleListingBody = ({
                 <ul className="person-social">
                   {item.github && (
                     <li>
-                      <a href={`https://github.com/${item.github}`}>
+                      <a
+                        href={`https://github.com/${item.github}`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <Icon name={githubSVG} size="18px" />
                       </a>
                     </li>
@@ -69,6 +72,7 @@ const PersonsSimpleListingBody = ({
                           '@',
                           '',
                         )}`}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Icon name={twitterSVG} size="18px" />
                       </a>

@@ -39,21 +39,28 @@ const Person = ({ content }) => {
             ))}
           </ul>
           <ul>
-            <li>
-              <a href={`https://github.com/${content.github}`}>
-                <Icon name={githubSVG} size="18px" />
-                {content.github}
-              </a>
-            </li>
+            {content.github && (
+              <li>
+                <a href={`https://github.com/${content.github}`}>
+                  <Icon name={githubSVG} size="18px" />
+                  {content.github}
+                </a>
+              </li>
+            )}
 
-            <li>
-              <a
-                href={`https://twitter.com/${content.twitter.replace('@', '')}`}
-              >
-                <Icon name={twitterSVG} size="18px" />
-                {content.twitter.replace('@', '')}
-              </a>
-            </li>
+            {content.twitter && (
+              <li>
+                <a
+                  href={`https://twitter.com/${content.twitter.replace(
+                    '@',
+                    '',
+                  )}`}
+                >
+                  <Icon name={twitterSVG} size="18px" />
+                  {content.twitter.replace('@', '')}
+                </a>
+              </li>
+            )}
           </ul>
           <p className="person-description">{content.description}</p>
           {content.text && (
