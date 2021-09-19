@@ -7,5 +7,6 @@
   <utility component=".talk.talk_duration" name="ploneconf.core.vocabularies.talk_duration" />
   <utility component=".training.training_duration" name="ploneconf.core.vocabularies.training_duration" />
   <utility component=".person.PersonsVocabularyFactory" name="ploneconf.core.vocabularies.persons" />
+  <utility component=".person.person_labels" name="ploneconf.core.vocabularies.person_labels" />
 
 </configure>

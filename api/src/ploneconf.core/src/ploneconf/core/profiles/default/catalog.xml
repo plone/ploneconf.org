@@ -10,10 +10,14 @@
   <index name="track" meta_type="KeywordIndex">
     <indexed_attr value="track"/>
   </index>
+  <index name="labels" meta_type="KeywordIndex">
+    <indexed_attr value="labels"/>
+  </index>
 
   <column value="level" />
   <column value="session_level" />
   <column value="track" />
   <column value="image_field"/>
+  <column value="labels"/>
 
 </object>

@@ -37,8 +37,15 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
             self.assertEqual(len(steps), 1)
 
 
-class V20200320001UpgradeTest(UpgradeStepIntegrationTest):
+class V20210908001UpgradeTest(UpgradeStepIntegrationTest):
 
     src = "20210813001"
     dst = "20210908001"
+    steps = 1
+
+
+class V20210919001UpgradeTest(UpgradeStepIntegrationTest):
+
+    src = "20210908001"
+    dst = "20210919001"
     steps = 1
