@@ -5,6 +5,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import githubSVG from '@package/icons/github.svg';
 import twitterSVG from '@package/icons/twitter.svg';
 import { Link } from 'react-router-dom';
+import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 
 const Person = ({ content }) => {
   const getColor = (label) => {
@@ -24,10 +25,14 @@ const Person = ({ content }) => {
     <Container className="person-view">
       <div className="person-header">
         <div className="person-image-wrapper">
-          <img
-            src={flattenToAppURL(content.image.scales.teaser.download)}
-            alt={content.image_caption}
-          />
+          {content.image ? (
+            <img
+              src={flattenToAppURL(content.image.scales.teaser.download)}
+              alt={content.image_caption}
+            />
+          ) : (
+            <img src={DefaultImageSVG} alt="" />
+          )}
         </div>
         <div className="person-content">
           <h1>{content.title}</h1>
