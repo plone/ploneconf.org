@@ -40,16 +40,18 @@ const Person = ({ content }) => {
           </ul>
           <ul>
             <li>
-              <a href={`https://github.com/{content.github}`}>
+              <a href={`https://github.com/${content.github}`}>
                 <Icon name={githubSVG} size="18px" />
-                {content.twitter}
+                {content.github}
               </a>
             </li>
 
             <li>
-              <a href={`https://twitter.com/{content.twitter}`}>
+              <a
+                href={`https://twitter.com/${content.twitter.replace('@', '')}`}
+              >
                 <Icon name={twitterSVG} size="18px" />
-                {content.github}
+                {content.twitter.replace('@', '')}
               </a>
             </li>
           </ul>
@@ -61,47 +63,49 @@ const Person = ({ content }) => {
               }}
             />
           )}
-          <div className="person-activities">
-            <Tab
-              menu={{
-                secondary: true,
-                pointing: true,
-                attached: true,
-                tabular: true,
-                className: 'formtabs',
-              }}
-              className="tabs-wrapper"
-              renderActiveOnly={false}
-              panes={content?.activities?.map((activity) => ({
-                menuItem: activity['@type'],
-                pane: (
-                  <Tab.Pane key={activity['@type']}>
-                    {activity?.items?.map((item) => (
-                      <div key={item} className="person-activity">
-                        <Link to={flattenToAppURL(item['@id'])}>
-                          <h2>{item.title}</h2>
-                          <p>{item?.description}</p>
-                          <div className="person-activity-info">
-                            <div>
-                              {item?.audience?.length &&
-                                item?.audience.map((audience) => (
-                                  <Label key={audience}>{audience}</Label>
-                                ))}
-                            </div>
-                            {item?.level && (
+          {content?.activities?.length > 0 && (
+            <div className="person-activities">
+              <Tab
+                menu={{
+                  secondary: true,
+                  pointing: true,
+                  attached: true,
+                  tabular: true,
+                  className: 'formtabs',
+                }}
+                className="tabs-wrapper"
+                renderActiveOnly={false}
+                panes={content?.activities?.map((activity) => ({
+                  menuItem: activity['@type'],
+                  pane: (
+                    <Tab.Pane key={activity['@type']}>
+                      {activity?.items?.map((item) => (
+                        <div key={item} className="person-activity">
+                          <Link to={flattenToAppURL(item['@id'])}>
+                            <h2>{item.title}</h2>
+                            <p>{item?.description}</p>
+                            <div className="person-activity-info">
                               <div>
-                                <Label>Level: {item.level}</Label>
+                                {item?.audience?.length &&
+                                  item?.audience.map((audience) => (
+                                    <Label key={audience}>{audience}</Label>
+                                  ))}
                               </div>
-                            )}
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </Tab.Pane>
-                ),
-              }))}
-            />
-          </div>
+                              {item?.level && (
+                                <div>
+                                  <Label>Level: {item.level}</Label>
+                                </div>
+                              )}
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
+                    </Tab.Pane>
+                  ),
+                }))}
+              />
+            </div>
+          )}
         </div>
       </div>
     </Container>
