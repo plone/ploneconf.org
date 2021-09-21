@@ -117,7 +117,7 @@
     "@plone/volto": "13.11.0",
     "react-ga4": "1.0.4",
     "react-stickynode": "4.0.0",
-    "volto-authomatic": "1.0.2",
+    "volto-authomatic": "1.0.3",
     "volto-form-block": "*",
     "volto-slate": "*"
   },
