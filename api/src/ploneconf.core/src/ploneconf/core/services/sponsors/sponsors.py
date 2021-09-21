@@ -22,7 +22,7 @@ class Get(Service):
         results = api.content.find(
             portal_type="Sponsor",
             review_state="published",
-            sort_on="getObjectPositionInParent",
+            sort_on="getObjPositionInParent",
         )
         for brain in results:
             response[brain.level].append(self._serialize_brain(brain))
