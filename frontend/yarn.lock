@@ -16461,10 +16461,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-authomatic@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/volto-authomatic/-/volto-authomatic-1.0.2.tgz#c821edbdb630bff8f5950831ed6d436d21317fc9"
-  integrity sha512-jtSzgGizO9iQFnV5SnrZ6QdoUqDPWqIKc8J9pfmiEFa2dLraXK8bDC9ivyaaAhjqnsln2ttrtnD87owXJ2S2Xw==
+volto-authomatic@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/volto-authomatic/-/volto-authomatic-1.0.3.tgz#084eb9e59579eee91de5d97f035b3e0e746043b8"
+  integrity sha512-NP6lmddD3qmMsd6CSgMAPiS7zrLxQLq1UmIgny5FFvMtoMNl4Y+cJKEqlqaVi3V6qV7Hq28NbvAyGeXNVzRgzw==
 
 volto-form-block@*:
   version "1.8.1"
