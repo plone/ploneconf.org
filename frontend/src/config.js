@@ -14,7 +14,7 @@
  */
 
 import { customBlocks } from '@package/components/Blocks';
-import { Person } from '@package/components';
+import { Person, Talk } from '@package/components';
 import DefaultTeaserBody from '@kitconcept/volto-blocks-grid/components/Teaser/DefaultBody';
 import {
   PersonsListingBody,
@@ -48,6 +48,7 @@ export default function applyConfig(config) {
   };
 
   config.views.contentTypesViews.Person = Person;
+  config.views.contentTypesViews.Talk = Talk;
   config.blocks.blocksConfig.teaser.variations = [
     {
       id: 'default',
