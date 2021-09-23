@@ -140,6 +140,72 @@ ul.person-social {
   }
 }
 
+.talk-header {
+  display: flex;
+
+  img {
+    width: 17rem;
+    height: 17rem;
+    margin-right: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      color: @textColor;
+
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .talk-content {
+    margin-right: 60px;
+  }
+
+  .talk-targets {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .speaker-image-wrapper .listing-item a {
+    display: flex;
+    flex-direction: column;
+
+    .listing-image-wrapper {
+      margin-bottom: 20px;
+    }
+
+    .listing-body {
+      text-align: center;
+    }
+  }
+
+  .person-activity {
+    margin-bottom: 20px;
+
+    a {
+      color: @textColor;
+    }
+
+    .person-activity-info {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
 #page-edit {
   .persons-simple-listing {
     .listing-item {
