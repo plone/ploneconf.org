@@ -1,26 +1,25 @@
 import React from 'react';
-import { Container, Label, Tab } from 'semantic-ui-react';
+import { Container, Label } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import githubSVG from '@package/icons/github.svg';
 import twitterSVG from '@package/icons/twitter.svg';
 import { Link } from 'react-router-dom';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
-import { ConditionalLink } from '@plone/volto/components';
 
 const Talk = ({ content }) => {
-  const getColor = (label) => {
-    switch (label) {
-      case 'speaker':
-        return 'blue';
-      case 'keynote-speaker':
-        return 'red';
-      case 'instructor':
-        return 'orange';
-      default:
-        return 'grey';
-    }
-  };
+  // const getColor = (label) => {
+  //   switch (label) {
+  //     case 'speaker':
+  //       return 'blue';
+  //     case 'keynote-speaker':
+  //       return 'red';
+  //     case 'instructor':
+  //       return 'orange';
+  //     default:
+  //       return 'grey';
+  //   }
+  // };
 
   return (
     <Container className="talk-view">
