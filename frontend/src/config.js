@@ -20,6 +20,7 @@ import {
   PersonsListingBody,
   PersonsSimpleListingBody,
   TeaserPersonBody,
+  TalksListingBody,
 } from '@package/components';
 
 // All your imports required for the config here BEFORE this line
@@ -74,6 +75,11 @@ export default function applyConfig(config) {
       id: 'personsSimple',
       title: 'Persons Simple',
       template: PersonsSimpleListingBody,
+    },
+    {
+      id: 'talks',
+      title: 'Talks',
+      template: TalksListingBody,
     },
   ];
 
