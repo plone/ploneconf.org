@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ConditionalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
 
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
@@ -21,7 +20,6 @@ const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
     link = <a href={href}>{linkTitle || href}</a>;
   }
 
-  const { settings } = config;
   return (
     <>
       <div className="talks-listing items">
