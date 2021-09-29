@@ -142,6 +142,7 @@ ul.person-social {
 
 .talk-header {
   display: flex;
+  justify-content: space-between;
 
   img {
     width: 17rem;
@@ -211,9 +212,8 @@ ul.person-social {
     margin-bottom: 40px;
   }
 
-  .listing-item,
   .listing-item a {
-    width: inherit;
+    justify-content: space-between;
   }
 
   h2 {
@@ -222,7 +222,6 @@ ul.person-social {
 
   .listing-image-wrapper {
     display: flex;
-    width: inherit;
     align-items: center;
     margin-left: 20px;
 
@@ -242,6 +241,10 @@ ul.person-social {
   .listing-body .speakers-by {
     font-size: 90% !important;
     font-style: italic;
+  }
+
+  .listing-item.too-many-speakers a {
+    flex-direction: column;
   }
 }
 
