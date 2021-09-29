@@ -14,6 +14,8 @@ import PayPal from './PayPal/PayPal';
 import Sponsors from './Sponsors/Sponsors';
 import Person from './Views/Person';
 import Talk from './Views/Talk';
+import Training from './Views/Training';
+import Keynote from './Views/Keynote';
 import TeaserPersonBody from './Blocks/Teaser/TeaserPersonBody';
 import PersonsListingBody from './Blocks/Listing/PersonsListingBody';
 import PersonsSimpleListingBody from './Blocks/Listing/PersonsSimpleListingBody';
@@ -27,6 +29,8 @@ export {
   PersonsSimpleListingBody,
   Sponsors,
   Talk,
+  Keynote,
+  Training,
   TeaserPersonBody,
   TalksListingBody,
 };
