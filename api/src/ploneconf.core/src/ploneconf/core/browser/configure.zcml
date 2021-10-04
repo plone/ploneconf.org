@@ -21,16 +21,16 @@
   <!-- CSV download of speakers -->
   <browser:page
     name="speakers_csv"
-    for="*"
-    permission="zope2.View"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
     class=".download.SpeakersCSV"
     />
 
   <!-- CSV download of talks -->
   <browser:page
     name="talks_csv"
-    for="*"
-    permission="zope2.View"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
     class=".download.TalksCSV"
     />
 
