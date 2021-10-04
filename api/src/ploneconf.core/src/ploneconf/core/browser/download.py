@@ -23,6 +23,7 @@ class SpeakersCSV(BrowserView):
             "twitter_url",
             "youtube_url",
             "display_email",
+            "picture",
         ]
         writer.writerow(header)
 
@@ -42,23 +43,30 @@ class SpeakersCSV(BrowserView):
             row.append("")  # linkedin
 
             if speaker.github:
-                row.append("https://github.com/" + speaker.github + "\n")
+                row.append(f"https://github.com/{speaker.github}\n")
             else:
                 row.append("")
             if speaker.twitter:
-                row.append("https://twitter.com/" + speaker.twitter + "\n")
+                row.append(f"https://twitter.com/{speaker.twitter}\n")
             else:
                 row.append("")
 
             row.append("")  # youtube
-
+            row.append("")  # display_email
+            if speaker.image:
+                image_path = (
+                    f"https://2021.ploneconf.org/speakers/{speaker.id}/@@images/image"
+                )
+            else:
+                image_path = ""
+            row.append(image_path)
             writer.writerow(row)
         value = buffer.getvalue()
 
         encoding = "UTF-8"
         self.request.response.setHeader("Content-type", "text/csv;charset=" + encoding)
         self.request.response.setHeader(
-            "Content-Disposition", "attachment; filename=schedule.csv"
+            "Content-Disposition", "attachment; filename=speakers.csv"
         )
 
         return value
@@ -95,7 +103,9 @@ class TalksCSV(BrowserView):
                 row.append("")
 
             # get presenter emails as a list
-            row.append("")
+            presenters = [item.to_object for item in obj.presenters]
+            emails = ",".join([person.email for person in presenters])
+            row.append(emails)
 
             row.append("")  # start
             row.append("")  # end
@@ -107,7 +117,7 @@ class TalksCSV(BrowserView):
         encoding = "UTF-8"
         self.request.response.setHeader("Content-type", "text/csv;charset=" + encoding)
         self.request.response.setHeader(
-            "Content-Disposition", "attachment; filename=schedule.csv"
+            "Content-Disposition", "attachment; filename=talks.csv"
         )
 
         return value
