@@ -104,7 +104,7 @@ class TalksCSV(BrowserView):
 
             # get presenter emails as a list
             presenters = [item.to_object for item in obj.presenters]
-            emails = ",".join([person.email for person in presenters])
+            emails = ",".join([person.email for person in presenters if person.email])
             row.append(emails)
 
             row.append("")  # start
