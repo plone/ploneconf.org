@@ -1,5 +1,6 @@
-bin
-etc
-lib
-lib64
-var
+*
+!requirements.txt
+!requirements/
+!skel
+!src
+!scripts
