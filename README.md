@@ -11,8 +11,8 @@
 ### Install
 
 ```shell
-git clone git@github.com:plone/ploneconf.org
-cd ploneconf.org
+git clone git@github.com:plone/2021.ploneconf.org.git
+cd 2021.ploneconf.org
 make install
 make create-site
 ```
