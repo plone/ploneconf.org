@@ -52,7 +52,7 @@ class Header extends Component {
                   <Logo />
                 </div>
                 <div className="nav-search-wrapper">
-                  <div className="search">
+                  <div className="search computer large screen widescreen only">
                     <SearchWidget pathname={this.props.pathname} />
                   </div>
                   <Navigation pathname={this.props.pathname} />
