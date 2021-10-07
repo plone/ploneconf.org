@@ -54,7 +54,7 @@ setup(
         "pas.plugins.authomatic>=1.0b2",
         "kitconcept.volto>=2.5.2",
         "plone.api",
-        "plone.restapi>=8.9.1",
+        "plone.restapi>=8.11.0",
         "plone.app.dexterity",
         "collective.relationhelpers",
     ],
