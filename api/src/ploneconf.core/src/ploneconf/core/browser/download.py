@@ -96,7 +96,7 @@ class TalksCSV(BrowserView):
             row = []
 
             row.append(obj.Title())
-            row.append("")  # track name
+            row.append(obj.track)  # track name
             if obj.text:
                 row.append(obj.text.output)
             else:
@@ -107,8 +107,8 @@ class TalksCSV(BrowserView):
             emails = ",".join([person.email for person in presenters if person.email])
             row.append(emails)
 
-            row.append("")  # start
-            row.append("")  # end
+            row.append(obj.start.isoformat())
+            row.append(obj.end.isoformat())
             row.append("")  # banner name
 
             writer.writerow(row)
