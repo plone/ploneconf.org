@@ -53,7 +53,7 @@ clean-test: ## remove test and coverage artifacts
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
 	python3 -m venv .
-	bin/pip install "pip==19.2.3"
+	bin/pip install "pip==19.3.1"
 	bin/pip install "setuptools==57.4.0"
 
 bin/mkwsgiinstance:	bin/pip

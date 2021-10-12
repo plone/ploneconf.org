@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <metadata>
-  <version>20210919001</version>
+  <version>20211012001</version>
   <dependencies>
     <dependency>profile-kitconcept.volto:default</dependency>
     <dependency>profile-collective.volto.formsupport:default</dependency>

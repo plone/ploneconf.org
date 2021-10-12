@@ -45,4 +45,16 @@
       />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+    source="20210919001"
+    destination="20211012001"
+    profile="ploneconf.core:default"
+    >
+      <genericsetup:upgradeStep
+        title="Fix talk times"
+        description="Set using the proper time zone"
+        handler=".v20211012001.fix_tz"
+      />
+  </genericsetup:upgradeSteps>
+
 </configure>
