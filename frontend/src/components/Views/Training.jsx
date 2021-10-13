@@ -27,7 +27,7 @@ const Training = ({ content }) => {
         <div className="talk-content">
           <h1>{content.title}</h1>
           <div className="talk-targets">
-            {content.session_audience && (
+            {content.session_audience.length > 0 && (
               <Label.Group>
                 Audience:{' '}
                 {content.session_audience.map((audience) => (
@@ -35,7 +35,7 @@ const Training = ({ content }) => {
                 ))}
               </Label.Group>
             )}
-            {content.session_level && (
+            {content.session_level.length > 0 && (
               <Label.Group>
                 Level:{' '}
                 {content.session_level.map((level) => (
