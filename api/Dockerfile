@@ -8,7 +8,7 @@ LABEL maintainer="Plone Foundation <conf@plone.org>" \
 
 # Add local code
 COPY . ./
-RUN ./bin/pip install --use-deprecated=legacy-resolver -r requirements.txt \
+RUN ./bin/pip install -r requirements.txt \
     && mkdir /app/var_instance
 
 # Copy ZEO Config
