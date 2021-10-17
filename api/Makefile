@@ -58,18 +58,18 @@ bin/pip:
 
 bin/mkwsgiinstance:	bin/pip
 	@echo "$(GREEN)==> Install Plone and create instance$(RESET)"
-	bin/pip install -r requirements/plone.txt
+	bin/pip install --use-deprecated=legacy-resolver -r requirements/plone.txt
 	bin/mkwsgiinstance -s skel -d . -u admin:admin
 
 .PHONY: build
 build: bin/mkwsgiinstance ## Create virtualenv and run buildout
 	@echo "$(GREEN)==> Setup Build$(RESET)"
-	bin/pip install -r requirements.txt
+	bin/pip install --use-deprecated=legacy-resolver -r requirements.txt
 
 .PHONY: build
 build-dev: bin/mkwsgiinstance ## Create virtualenv and run buildout
 	@echo "$(GREEN)==> Setup Build$(RESET)"
-	bin/pip install -r requirements/dev.txt
+	bin/pip install --use-deprecated=legacy-resolver -r requirements/dev.txt
 
 .PHONY: black
 black: ## Format codebase
