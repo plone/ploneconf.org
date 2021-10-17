@@ -16,6 +16,9 @@ import Person from './Views/Person';
 import Talk from './Views/Talk';
 import Training from './Views/Training';
 import Keynote from './Views/Keynote';
+import PresentersInfo from './Session/PresentersInfo/PresentersInfo';
+import ScheduleInfo from './Session/ScheduleInfo/ScheduleInfo';
+import SessionInfo from './Session/SessionInfo/SessionInfo';
 import TeaserPersonBody from './Blocks/Teaser/TeaserPersonBody';
 import PersonsListingBody from './Blocks/Listing/PersonsListingBody';
 import PersonsSimpleListingBody from './Blocks/Listing/PersonsSimpleListingBody';
@@ -27,6 +30,9 @@ export {
   Person,
   PersonsListingBody,
   PersonsSimpleListingBody,
+  PresentersInfo,
+  ScheduleInfo,
+  SessionInfo,
   Sponsors,
   Talk,
   Keynote,

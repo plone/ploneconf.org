@@ -6,4 +6,5 @@
 @import 'Footer';
 @import 'SocialNetworks';
 @import 'Sponsors';
+@import 'Session';
 @import 'CTA';
