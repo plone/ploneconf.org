@@ -114,7 +114,7 @@
   },
   "dependencies": {
     "@kitconcept/volto-blocks-grid": "*",
-    "@plone/volto": "13.11.0",
+    "@plone/volto": "14.0.0-alpha.21",
     "react-ga4": "1.0.4",
     "react-stickynode": "4.0.0",
     "volto-authomatic": "1.0.3",
