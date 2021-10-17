@@ -6,6 +6,8 @@ import githubSVG from '@package/icons/github.svg';
 import twitterSVG from '@package/icons/twitter.svg';
 import { Link } from 'react-router-dom';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
+import { ScheduleInfo } from '@package/components';
+import { SessionInfo } from '@package/components';
 
 const Person = ({ content }) => {
   const getColor = (label) => {
@@ -91,24 +93,19 @@ const Person = ({ content }) => {
                   menuItem: activity['@type'],
                   pane: (
                     <Tab.Pane key={activity['@type']}>
-                      {activity?.items?.map((item) => (
-                        <div key={item} className="person-activity">
+                      {activity?.items?.map((item, idx) => (
+                        <div className="person-activity" key={idx}>
                           <Link to={flattenToAppURL(item['@id'])}>
                             <h2>{item.title}</h2>
-                            <p>{item?.description}</p>
-                            <div className="person-activity-info">
-                              <div>
-                                {item?.audience?.length &&
-                                  item?.audience.map((audience) => (
-                                    <Label key={audience}>{audience}</Label>
-                                  ))}
-                              </div>
-                              {item?.level && (
-                                <div>
-                                  <Label>Level: {item.level}</Label>
-                                </div>
-                              )}
-                            </div>
+                            <ScheduleInfo
+                              start={item.start}
+                              end={item.end}
+                              track={item.track}
+                            />
+                            <SessionInfo
+                              audience={item.audience}
+                              level={item.level}
+                            />
                           </Link>
                         </div>
                       ))}

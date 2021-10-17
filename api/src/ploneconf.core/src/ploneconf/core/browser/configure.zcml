@@ -34,4 +34,19 @@
     class=".download.TalksCSV"
     />
 
+  <!-- ICal view -->
+
+  <adapter
+    for="ploneconf.core.behaviors.session.IConferenceSession"
+    factory=".ical.ICalendarSlotComponent"
+  />
+
+  <browser:page
+    name="ical_view"
+    for="ploneconf.core.behaviors.session.IConferenceSession"
+    permission="zope2.View"
+    class=".ical.SessionICal"
+  />
+
+
 </configure>
