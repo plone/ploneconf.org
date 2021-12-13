@@ -3,6 +3,7 @@ import { Container } from 'semantic-ui-react';
 import { PresentersInfo } from '@package/components';
 import { ScheduleInfo } from '@package/components';
 import { SessionInfo } from '@package/components';
+import { Embed } from 'semantic-ui-react';
 
 const Keynote = ({ content }) => {
   return (
@@ -31,6 +32,31 @@ const Keynote = ({ content }) => {
         </div>
         <PresentersInfo content={content} />
       </div>
+      {(content.slides_url || content.slides_embed) && <h3>Slides</h3>}
+      {content.slides_url && <a href={content.slides_url}>Slides URL</a>}
+      {content.slides_embed && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: content.slides_embed,
+          }}
+        />
+      )}
+      <h3>Recorded talk</h3>
+      {content.video_url && (
+        <div className="video-inner">
+          <Embed
+            id={
+              content.video_url.match(/.be\//)
+                ? content.video_url.match(/^.*\.be\/(.*)/)[1]
+                : content.video_url.match(/^.*\?v=(.*)$/)[1]
+            }
+            source="youtube"
+            icon="play"
+            defaultActive
+            autoplay={false}
+          />
+        </div>
+      )}
     </Container>
   );
 };
