@@ -23,7 +23,7 @@ LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace kitconcept/code-qu
 FORMAT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace kitconcept/code-quality:latest format
 
 PACKAGE_NAME=ploneconf.core
-PACKAGE_PATH=src/ploneconf.core/src/ploneconf/core
+PACKAGE_PATH=src/ploneconf.core/src/
 IMAGE_NAME=plone/ploneconf-backend
 IMAGE_TAG=latest
 CHECK_PATH=src/ploneconf.core/setup.py scripts/ $(PACKAGE_PATH)
