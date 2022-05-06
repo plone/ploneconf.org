@@ -17,19 +17,16 @@ YELLOW=`tput setaf 3`
 
 PLONE_VERSION=6.0.0a4
 
-BACKEND_FOLDER=${PWD}
+BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace kitconcept/code-quality:latest check
-FORMAT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace kitconcept/code-quality:latest format
+LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:latest check
+FORMAT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:latest format
 
 PACKAGE_NAME=ploneconf.core
 PACKAGE_PATH=src/ploneconf.core/src/
 IMAGE_NAME=plone/ploneconf-backend
 IMAGE_TAG=latest
 CHECK_PATH=src/ploneconf.core/setup.py scripts/ $(PACKAGE_PATH)
-
-foo:
-	@echo $(BACKEND_FOLDER)
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
