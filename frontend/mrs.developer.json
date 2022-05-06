@@ -1,1 +1,5 @@
-{}
+{
+  "volto-conf2022-theme": {
+    "local": "addons/volto-conf2022-theme/src"
+  }
+}

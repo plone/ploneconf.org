@@ -1,6 +1,10 @@
 {
     "compilerOptions": {
-        "paths": {},
+        "paths": {
+            "volto-conf2022-theme": [
+                "addons/volto-conf2022-theme/src"
+            ]
+        },
         "baseUrl": "src"
     }
 }
