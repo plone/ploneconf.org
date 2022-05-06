@@ -55,8 +55,7 @@ setup(
     extras_require={
         "test": [
             "zest.releaser[recommended]",
-            "plone.app.testing",
-            "plone.app.robotframework[debug]",
+            "plone.app.testing[robot]>=7.0.0a3",
             "plone.restapi[test]",
             "collective.MockMailHost",
         ],

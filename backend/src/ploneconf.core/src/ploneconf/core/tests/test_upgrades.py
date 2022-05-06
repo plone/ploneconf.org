@@ -35,24 +35,3 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
         if self.src and self.dst:
             steps = self.available_steps()
             self.assertEqual(len(steps), 1)
-
-
-class V20210908001UpgradeTest(UpgradeStepIntegrationTest):
-
-    src = "20210813001"
-    dst = "20210908001"
-    steps = 1
-
-
-class V20210919001UpgradeTest(UpgradeStepIntegrationTest):
-
-    src = "20210908001"
-    dst = "20210919001"
-    steps = 1
-
-
-class V20211012001UpgradeTest(UpgradeStepIntegrationTest):
-
-    src = "20210919001"
-    dst = "20211012001"
-    steps = 1

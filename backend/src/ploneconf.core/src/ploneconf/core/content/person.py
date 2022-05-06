@@ -1,4 +1,4 @@
-from plone.api import relation as relapi
+from plone import api
 from plone.dexterity.content import Container
 from plone.supermodel import model
 from typing import List
@@ -26,7 +26,8 @@ class Person(Container):
 
         :returns: List of activities connected to this person.
         """
-        return relapi.unrestricted_backrelations(self)
+        relations = api.relation.get(target=self, unrestricted=True)
+        return [i.from_object for i in relations]
 
     @property
     def labels(self) -> List[str]:

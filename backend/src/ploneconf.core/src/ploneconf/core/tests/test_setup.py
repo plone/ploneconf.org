@@ -17,14 +17,11 @@ class TestSetup(unittest.TestCase):
         """Custom shared utility setup for tests."""
         self.portal = self.layer["portal"]
         self.setup = self.portal.portal_setup
-        if get_installer:
-            self.installer = get_installer(self.portal, self.layer["request"])
-        else:
-            self.installer = api.portal.get_tool("portal_quickinstaller")
+        self.installer = get_installer(self.portal, self.layer["request"])
 
     def test_product_installed(self):
         """Test if ploneconf.core is installed."""
-        self.assertTrue(self.installer.isProductInstalled("ploneconf.core"))
+        self.assertTrue(self.installer.is_product_installed("ploneconf.core"))
 
     def test_browserlayer(self):
         """Test that IPloneConfCoreLayer is registered."""
@@ -37,7 +34,7 @@ class TestSetup(unittest.TestCase):
         """Test latest version of default profile."""
         self.assertEqual(
             self.setup.getLastVersionForProfile("ploneconf.core:default")[0],
-            "20211012001",
+            "20220505001",
         )
 
 
@@ -47,18 +44,15 @@ class TestUninstall(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer["portal"]
-        if get_installer:
-            self.installer = get_installer(self.portal, self.layer["request"])
-        else:
-            self.installer = api.portal.get_tool("portal_quickinstaller")
+        self.installer = get_installer(self.portal, self.layer["request"])
         roles_before = api.user.get_roles(TEST_USER_ID)
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
-        self.installer.uninstallProducts(["ploneconf.core"])
+        self.installer.uninstall_product("ploneconf.core")
         setRoles(self.portal, TEST_USER_ID, roles_before)
 
     def test_product_uninstalled(self):
         """Test if ploneconf.core is cleanly uninstalled."""
-        self.assertFalse(self.installer.isProductInstalled("ploneconf.core"))
+        self.assertFalse(self.installer.is_product_installed("ploneconf.core"))
 
     def test_browserlayer_removed(self):
         """Test that IPloneConfCoreLayer is removed."""
