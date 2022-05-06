@@ -7,7 +7,7 @@ from plone.app.testing import PloneSandboxLayer
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 
 import collective.volto.formsupport
-import kitconcept.volto
+import plone.volto
 import ploneconf.core
 
 
@@ -22,7 +22,7 @@ class PLONECONFCORELayer(PloneSandboxLayer):
         import plone.restapi
 
         self.loadZCML(package=plone.restapi)
-        self.loadZCML(package=kitconcept.volto)
+        self.loadZCML(package=plone.volto)
         self.loadZCML(package=collective.volto.formsupport)
         self.loadZCML(package=ploneconf.core)
 
