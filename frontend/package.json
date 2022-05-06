@@ -31,6 +31,7 @@
     "ci:cypress:run": "start-test ci:start-backend http-get://localhost:55001/plone ci:start-frontend",
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n",
+    "i18n:ci": "yarn i18n && git diff -G'^[^\"POT]' --exit-code",
     "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=addons --fetch-https",
     "develop": "missdev --config=jsconfig.json --output=addons --fetch-https",
     "storybook": "start-storybook -p 6006",
