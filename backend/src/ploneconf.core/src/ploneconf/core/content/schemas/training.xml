@@ -1,0 +1,15 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+>
+  <schema>
+    <field name="duration"
+           type="zope.schema.Choice"
+    >
+      <description>Duration of the training</description>
+      <required>False</required>
+      <title>Duration</title>
+      <vocabulary>ploneconf.core.vocabularies.training_duration</vocabulary>
+    </field>
+  </schema>
+</model>

@@ -1,0 +1,574 @@
+[
+  {
+    "_parent": "",
+    "type": "Folder",
+    "id": "images",
+    "title": "Images",
+    "description": "Image Bank.",
+    "_transitions": [
+      "publish"
+    ],
+    "_allowed_types": [
+      "Image"
+    ],
+    "exclude_from_nav": true
+  },
+  {
+    "_parent": "images",
+    "type": "Image",
+    "id": "logo-400x400.png",
+    "title": "Logo",
+    "description": "",
+    "_image": "images/logo-400x400.png",
+    "_transitions": [],
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "images",
+    "type": "Image",
+    "id": "sponsors-plan.png",
+    "title": "Sponsor Plan",
+    "description": "",
+    "_image": "images/sponsors-plan.png",
+    "_transitions": [],
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "",
+    "type": "Document",
+    "id": "schedule",
+    "title": "Schedule",
+    "description": "Schedule of the Plone Conference 2021.",
+    "blocks": {
+      "17cec173-d436-46ca-8545-35300ffbcb91": {
+        "@type": "title"
+      },
+      "46c293b0-b58f-4da1-ab31-60bac9fbf96a": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "The 2021 edition of the Plone Conference will be held from 23rd to 31st October 2021 as an online event. No matter where you are, you can participate."
+              }
+            ]
+          }
+        ],
+        "plaintext": "The 2021 edition of the Plone Conference will be held from 23rd to 31st October 2021 as an online event. No matter where you are, you can participate."
+      },
+      "07ba4462-e6b6-4e77-937e-d32b3ad6abda": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "Training"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Training"
+      },
+      "e139a7d6-4c06-49fc-9b91-fdf723ce5fce": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "Talks and Open Spaces"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Talks and Open Spaces"
+      },
+      "28e8e059-7643-41b6-b735-ff35c326b68a": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "Sprint"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Sprint"
+      },
+      "6addcc9c-9aa5-4067-9a7e-e76d764e522a": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Training sessions will happen on 23rd and 24th of October, and their price is included in the event ticket."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Training sessions will happen on 23rd and 24th of October, and their price is included in the event ticket."
+      },
+      "f90d31d9-ef3c-4800-ab76-95d76cec60c1": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "From October 25th to 29th, 3 tracks, and more than 50 talks."
+              }
+            ]
+          }
+        ],
+        "plaintext": "From October 25th to 29th, 3 tracks, and more than 50 talks."
+      },
+      "32c096f1-c8a4-4368-b85a-26a9395139f3": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Two days of sprint, 30th and 31st of October. Open to the entire Plone Community."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Two days of sprint, 30th and 31st of October. Open to the entire Plone Community."
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "17cec173-d436-46ca-8545-35300ffbcb91",
+        "46c293b0-b58f-4da1-ab31-60bac9fbf96a",
+        "07ba4462-e6b6-4e77-937e-d32b3ad6abda",
+        "6addcc9c-9aa5-4067-9a7e-e76d764e522a",
+        "e139a7d6-4c06-49fc-9b91-fdf723ce5fce",
+        "f90d31d9-ef3c-4800-ab76-95d76cec60c1",
+        "28e8e059-7643-41b6-b735-ff35c326b68a",
+        "32c096f1-c8a4-4368-b85a-26a9395139f3"
+      ]
+    },
+    "_transitions": [
+      "publish"
+    ],
+    "_permissions": {
+      "ploneconf.core: Add Slot": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ],
+      "ploneconf.core: Add Training": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ],
+      "ploneconf.core: Add Talk": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ],
+      "ploneconf.core: Add Keynote": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ]
+    },
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "",
+    "type": "Document",
+    "id": "cfp",
+    "title": "Call for Papers",
+    "description": "Submit your talk proposal.",
+    "blocks": {
+      "17cec173-d436-46ca-8545-35300ffbcb91": {
+        "@type": "title"
+      },
+      "45a94a06-7f63-4e3a-8811-9069a860169a": {
+        "@type": "slate",
+        "plaintext": "There are many kinds of talk slots, from 5 min lightning talks to 30 and  45 minutes long, and you can target your talk to different audiences  too",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "There are many kinds of talk slots, from 5 min lightning talks to 30 and  45 minutes long, and you can target your talk to different audiences  too"
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "7a0900a2-88fc-4774-9700-18811961a33e": {
+        "@type": "slate",
+        "plaintext": "Submit your talk proposal",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "Submit your talk proposal "
+              }
+            ],
+            "type": "h2"
+          }
+        ]
+      },
+      "9a07f672-7bd3-43d2-9158-5bd3010ba17f": {
+        "@type": "slate",
+        "plaintext": "The topics can range from Plone, Zope, Volto, and Guillotina to Python and Pyramid or from fancy JavaScript to cool case studies and beyond.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "The topics can range from Plone, Zope, Volto, and Guillotina to Python and Pyramid or from fancy JavaScript to cool case studies and beyond. "
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "dc557c7a-b5c8-44f1-9c06-c2b15ce9afb4": {
+        "@type": "slate",
+        "plaintext": "",
+        "value": [
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "11d355ce-211c-418f-b1f9-161c20fc83fa": {
+        "@type": "cta",
+        "content": "Submit your talk",
+        "href": "https://docs.google.com/forms/d/1PAZwkO7GDNnSJLr_V6hvTCy6zK4j4PgxnTZDwuOQI1E",
+        "align": "center",
+        "size": "big"
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "17cec173-d436-46ca-8545-35300ffbcb91",
+        "7a0900a2-88fc-4774-9700-18811961a33e",
+        "9a07f672-7bd3-43d2-9158-5bd3010ba17f",
+        "45a94a06-7f63-4e3a-8811-9069a860169a",
+        "11d355ce-211c-418f-b1f9-161c20fc83fa",
+        "dc557c7a-b5c8-44f1-9c06-c2b15ce9afb4"
+      ]
+    },
+    "_transitions": [
+      "publish"
+    ],
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "",
+    "type": "Document",
+    "id": "speakers",
+    "title": "Speakers",
+    "description": "Meet the speakers.",
+    "blocks": {
+      "03b5d3f1-83b9-43c2-be0d-1e24fd70427e": {
+        "@type": "slate",
+        "plaintext": "The conference will happen",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "The conference will happen"
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "17cec173-d436-46ca-8545-35300ffbcb91": {
+        "@type": "title"
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "17cec173-d436-46ca-8545-35300ffbcb91",
+        "03b5d3f1-83b9-43c2-be0d-1e24fd70427e"
+      ]
+    },
+    "_transitions": [
+    ],
+    "_permissions": {
+      "ploneconf.core: Add Person": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ]
+    },
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "",
+    "type": "Document",
+    "id": "sponsors",
+    "title": "Sponsor",
+    "description": "Sponsorship options for our event.",
+    "blocks": {
+      "068b2205-c200-4659-943f-3abadcb2b03c": {
+        "@type": "slate",
+        "plaintext": "We have several levels of sponsorship that gives you different benefits listed below.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "We have several levels of sponsorship that gives you different benefits listed below."
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "08fb6e0d-3895-4473-a1f6-aa2b14c71047": {
+        "@type": "slate",
+        "plaintext": "This event attracts a wide variety of people every year, but everyone has the same thing in common: The community .",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "This event attracts a wide variety of people every year, but everyone has the same thing in common: "
+              },
+              {
+                "children": [
+                  {
+                    "text": "The community"
+                  }
+                ],
+                "type": "strong"
+              },
+              {
+                "text": "."
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "0be421a3-6746-43e2-b3b5-424a14af5a8a": {
+        "@type": "slate",
+        "plaintext": "The Plone Conference is an event organized by the community itself, and supported by the Plone Foundation. We need your help to maintain its top quality and to keep it open. Sponsoring the annual conference is the best way to help Plone and its community to keep growing and evolving.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "The Plone Conference is an event organized by the community itself, and supported by the Plone Foundation. We need your help to maintain its top quality and to keep it open. Sponsoring the annual conference is the best way to help Plone and its community to keep growing and evolving."
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "6243e2c0-94e6-4ea3-84d1-d576520d3819": {
+        "@type": "slate",
+        "plaintext": "It doesn\u2019t matter if you are involved in Plone as a user (content creator, editor, site administrator), an integrator or a core developer. With your sponsorship you can help us organize an event where we can:",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "It doesn\u2019t matter if you are involved in Plone as a user (content creator, editor, site administrator), an integrator or a core developer. With your sponsorship you can help us organize an event where we can:"
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "6bd4a6e7-5d5a-4ba3-9ecb-b12335e6adff": {
+        "@type": "slate",
+        "plaintext": "Train new people to use and develop Plone technologies Show other people amazing projects and solutions made with Plone Find new ways to improve our products Hang out with an amazing community of people from all over the world",
+        "value": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "text": "Train new people to use and develop Plone technologies"
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": "Show other people amazing projects and solutions made with Plone"
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": "Find new ways to improve our products"
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": "Hang out with an amazing community of people from all over the world"
+                  }
+                ],
+                "type": "li"
+              }
+            ],
+            "type": "ul"
+          }
+        ]
+      },
+      "7380efbf-05a7-40fb-a030-2b1922b4c644": {
+        "@type": "slate",
+        "plaintext": "Sponsorship opportunities ",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "Sponsorship "
+              },
+              {
+                "children": [
+                  {
+                    "text": "opportunities"
+                  }
+                ],
+                "type": "strong"
+              },
+              {
+                "text": ""
+              }
+            ],
+            "type": "h2"
+          }
+        ]
+      },
+      "a8b86bf5-7ad0-44e3-9b32-521ec788c451": {
+        "@type": "slate",
+        "plaintext": "With your sponsorship you will get unique visibility on a qualified audience.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "With your sponsorship you will get unique visibility on a qualified audience."
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "c77cc1ed-52d8-4ce8-b49a-d5657509496d": {
+        "@type": "slate",
+        "plaintext": "The Plone Conference is the annual gathering of the Plone,  Zope, Guillotina, Pyramid and Volto communities. This year we are organizing the 19th edition of this amazing event. We invite you to take advantage of one of our sponsorship packages to ensure maximum visibility for your company during the leading conference in the Plone industry.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "The Plone Conference is the annual gathering of the Plone,  Zope, Guillotina, Pyramid and Volto communities. This year we are organizing the 19th edition of this amazing event. We invite you to take advantage of one of our sponsorship packages to ensure "
+              },
+              {
+                "children": [
+                  {
+                    "text": "maximum visibility"
+                  }
+                ],
+                "type": "b"
+              },
+              {
+                "text": " for your company during the leading conference in the Plone industry."
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "fd59bbc7-c69f-4881-96a6-243430113114": {
+        "@type": "title"
+      },
+      "d0322eca-b7e5-4d31-87f2-e6bdf667da88": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "plaintext": ""
+      },
+      "9a9c3ff3-6a04-4738-92f3-5d64156fd253": {
+        "@type": "image",
+        "url": "/images/sponsors-plan.png",
+        "alt": "Sponsors Plan"
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "fd59bbc7-c69f-4881-96a6-243430113114",
+        "7380efbf-05a7-40fb-a030-2b1922b4c644",
+        "c77cc1ed-52d8-4ce8-b49a-d5657509496d",
+        "0be421a3-6746-43e2-b3b5-424a14af5a8a",
+        "08fb6e0d-3895-4473-a1f6-aa2b14c71047",
+        "6243e2c0-94e6-4ea3-84d1-d576520d3819",
+        "6bd4a6e7-5d5a-4ba3-9ecb-b12335e6adff",
+        "a8b86bf5-7ad0-44e3-9b32-521ec788c451",
+        "068b2205-c200-4659-943f-3abadcb2b03c",
+        "9a9c3ff3-6a04-4738-92f3-5d64156fd253",
+        "d0322eca-b7e5-4d31-87f2-e6bdf667da88"
+      ]
+    },
+    "_transitions": [
+      "publish"
+    ],
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "sponsors",
+    "type": "Folder",
+    "id": "organizations",
+    "title": "Organizations",
+    "description": "Sponsors.",
+    "_transitions": [
+      "publish"
+    ],
+    "_allowed_types": [
+      "Sponsor"
+    ],
+    "_permissions": {
+      "ploneconf.core: Add Sponsor": [
+        "Site Manager",
+        "Manager",
+        "Editor"
+      ]
+    },
+    "exclude_from_nav": true
+  },
+  {
+    "_parent": "sponsors/organizations",
+    "type": "Sponsor",
+    "id": "plone-foundation",
+    "title": "Plone Foundation",
+    "description": "",
+    "level": "organizer",
+    "remoteUrl": "https://plone.org/foundation",
+    "_image": "images/plone-foundation.png",
+    "_transitions": [
+      "publish"
+    ],
+    "exclude_from_nav": false
+  }
+]

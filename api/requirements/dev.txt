@@ -1,4 +1,0 @@
--r unreleased.txt
-black
-isort
--e "src/ploneconf.core[test]"

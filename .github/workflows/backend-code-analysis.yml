@@ -1,0 +1,69 @@
+name: Backend Code Analysis
+
+on:
+  push:
+    paths:
+      - "backend/**"
+
+jobs:
+
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: kitconcept/code-analysis-action@main
+        with:
+          base_dir: 'backend'
+          check: 'black'
+          path: |
+            src/ploneconf.core/src
+            src/ploneconf.core/setup.py
+            scripts
+
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: kitconcept/code-analysis-action@main
+        with:
+          base_dir: 'backend'
+          check: 'flake8'
+          path: |
+            src/ploneconf.core/src
+            src/ploneconf.core/setup.py
+            scripts
+
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: kitconcept/code-analysis-action@main
+        with:
+          base_dir: 'backend'
+          check: 'isort'
+          path: |
+            src/ploneconf.core/src
+            src/ploneconf.core/setup.py
+            scripts
+
+  zpretty:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: kitconcept/code-analysis-action@main
+        with:
+          base_dir: 'backend'
+          check: 'zpretty'
+          path: src/ploneconf.core/src

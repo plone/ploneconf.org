@@ -39,45 +39,57 @@ build-frontend:  ## Build React Frontend
 start-frontend:  ## Start React Frontend
 	$(MAKE) -C "./frontend/" start
 
-.PHONY: build-api
-build-api:  ## Create virtualenv and install Plone
-	$(MAKE) -C "./api/" build
+.PHONY: install-backend
+install-backend:  ## Create virtualenv and install Plone
+	$(MAKE) -C "./backend/" build-dev
+	$(MAKE) create-site
 
 .PHONY: create-site
-create-site:  build-api ## Create a Plone site with default content
-	$(MAKE) -C "./api/" create-site
+create-site: ## Create a Plone site with default content
+	$(MAKE) -C "./backend/" create-site
 
-.PHONY: start-api
-start-api: ## Start Plone Backend
-	$(MAKE) -C "./api/" start
+.PHONY: start-backend
+start-backend: ## Start Plone Backend
+	$(MAKE) -C "./backend/" start
 
 .PHONY: install
 install:  ## Install
-	@echo "Install API & Frontend"
-	$(MAKE) build-api
+	@echo "Install Backend & Frontend"
+	$(MAKE) install-backend
 	$(MAKE) install-frontend
 
 .PHONY: build
 build:  ## Build
 	@echo "Build"
-	$(MAKE) build-api
+	$(MAKE) build-backend
 	$(MAKE) build-frontend
 
 .PHONY: start
 start:  ## Start
 	@echo "Starting application"
-	$(MAKE) start-api
+	$(MAKE) start-backend
 	$(MAKE) start-frontend
 
 .PHONY: format
 format:  ## Format codebase
 	@echo "Build"
-	$(MAKE) -C "./api/" format
+	$(MAKE) -C "./backend/" format
 	$(MAKE) -C "./frontend/" format
 
 
 .PHONY: build-images
 build-images:  ## Build docker images
 	@echo "Build"
-	$(MAKE) -C "./api/" build-image
+	$(MAKE) -C "./backend/" build-image
 	$(MAKE) -C "./frontend/" build-image
+
+## Docker stack
+.PHONY: start-stack
+start-stack:  ## Start local stack
+	@echo "Start local Docker stack"
+	@docker-compose -f dockerfiles/docker-compose-local.yml up -d --build
+
+.PHONY: stop-stack
+stop-stack:  ## Stop local stack
+	@echo "Stop local Docker stack"
+	@docker-compose -f dockerfiles/docker-compose-local.yml down

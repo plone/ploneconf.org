@@ -1,0 +1,2 @@
+-r unreleased.txt
+-e "src/ploneconf.core[test]"

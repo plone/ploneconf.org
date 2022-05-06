@@ -7,7 +7,8 @@ SHELL:=bash
 .DELETE_ON_ERROR:
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
-IMAGE_NAME=plone/ploneconf-frontend:latest
+IMAGE_NAME=plone/ploneconf-frontend
+IMAGE_TAG=latest
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -46,4 +47,4 @@ format: format-prettier format-stylelint format-lint ## Format the codebase acco
 
 .PHONY: build-image
 build-image:  ## Build Docker Image
-	@docker build . -t $(IMAGE_NAME) -f Dockerfile
+	@docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile

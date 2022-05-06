@@ -12,7 +12,6 @@
  *    }
  * }
  */
-
 import { customBlocks } from '@package/components/Blocks';
 import { Person, Talk, Keynote, Training } from '@package/components';
 import DefaultTeaserBody from '@kitconcept/volto-blocks-grid/components/Teaser/DefaultBody';

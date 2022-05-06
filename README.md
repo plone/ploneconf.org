@@ -4,25 +4,25 @@
 
 ### Requirements
 
-- Python 3.8
-- Node 14 / yarn
+- Python 3.9
+- Node 16 / yarn
 - Docker
 
 ### Install
 
 ```shell
-git clone git@github.com:plone/2021.ploneconf.org.git
-cd 2021.ploneconf.org
+git clone git@github.com:plone/ploneconf.org.git
+cd ploneconf.org
 make install
 make create-site
 ```
 
 ### Start
 
-Start the API (http://localhost:8080/)
+Start the Backend (http://localhost:8080/)
 
 ```shell
-make start-api
+make start-backend
 ```
 
 Start the Frontend (http://localhost:3000/)
@@ -35,7 +35,7 @@ make start-frontend
 
 This monorepo is composed by two distinct codebases: api and frontend.
 
-- **api**: API (Backend) Plone installation using pip (not buildout). Includes a policy package named ploneconf.core
+- **backend**: API (Backend) Plone installation using pip (not buildout). Includes a policy package named ploneconf.core
 - **frontend**: React (Volto) package named ploneconf
 
 ### Reasoning
