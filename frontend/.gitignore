@@ -80,3 +80,4 @@ omelette
 
 public/critical.css
 src/addons/*
+!src/addons/volto-conf2022-theme
