@@ -1,0 +1,9 @@
+.docker
+.vagrant
+.vagrant_private_key
+.env_prod
+bin
+include
+lib
+lib64
+pyvenv.cfg

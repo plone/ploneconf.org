@@ -24,6 +24,7 @@ services:
     image: plone/ploneconf-backend:latest
     environment:
       SITE: Plone
+      ADDITIONAL_PROFILES: "ploneconf.core:default,ploneconf.core:initial"
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
     depends_on:
       - db

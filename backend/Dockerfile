@@ -7,5 +7,5 @@ LABEL maintainer="Plone Foundation <conf@plone.org>" \
       org.label-schema.vendor="Plone Foundation"
 
 # Add local code
-COPY src requirements requirements.txt ./
+COPY . .
 RUN ./bin/pip install -r requirements.txt

@@ -1,0 +1,5 @@
+---
+user_groups:
+  simples:
+    description: 'Simples Consultoria'
+    state: present
