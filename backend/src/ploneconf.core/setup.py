@@ -46,7 +46,6 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "setuptools",
-        # -*- Extra requirements: -*-
         "Plone",
         "prettyconf",
         "collective.volto.formsupport",
