@@ -44,7 +44,7 @@ help: ## This help message
 
 .PHONY: clean
 clean: ## remove all build, test, coverage and Python artifacts
-	rm -Rf bin lib lib64 include pyvenv.cfg
+	rm -Rf bin lib lib64 include pyvenv.cfg .docker
 
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
