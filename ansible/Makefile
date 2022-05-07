@@ -54,23 +54,22 @@ bin/pip:
 bin/ansible: bin/pip
 	@echo "$(GREEN)==> Setup Ansible $(RESET)"
 	bin/pip install -r requirements/python.txt --upgrade
+	bin/ansible-galaxy install -r requirements/ansible.yml --force
 
 .PHONY: setup
 setup: bin/ansible ## Create VirtualEnv and install Ansible via Pip
-	@echo "$(GREEN)==> Ansible available at ./bin/ansible $(RESET)"
-	bin/ansible-galaxy install -r requirements/ansible.yml --force
 
 .PHONY: docker-login
 docker-login: .docker/config.json  ## Login with Docker
 	@echo "$(GREEN)==> Docker login $(RESET)"
 	${DOCKER} login
 
-.PHONY: docker-setup  ## Setup docker context
-docker-setup:
+.PHONY: docker-setup
+docker-setup:  ## Setup docker context
 	${DOCKER} context create ${CONTEXT} --description "Plone Conference deployment" --docker "host=${CONTEXT_HOST}"
 
 .PHONY: provision
-destroy: bin/ansible ## Provision Vagrant box
+destroy: ## Provision Vagrant box
 	if [ "$(DEPLOY_ENV)" = "local" ]; then
 		@echo "$(GREEN)==> Destroy Vagrant box $(RESET)"
 		sudo vagrant destroy
