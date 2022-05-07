@@ -45,6 +45,10 @@ format-lint: ## Format Code with Lint
 .PHONY: format
 format: format-prettier format-stylelint format-lint ## Format the codebase according to our standards
 
+.PHONY: test
+test: ## Run tests
+	yarn run test:ci
+
 .PHONY: build-image
 build-image:  ## Build Docker Image
 	@docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile

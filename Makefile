@@ -72,9 +72,15 @@ start:  ## Start
 
 .PHONY: format
 format:  ## Format codebase
-	@echo "Build"
+	@echo "Format codebase"
 	$(MAKE) -C "./backend/" format
 	$(MAKE) -C "./frontend/" format
+
+.PHONY: test
+test:  ## Test codebase
+	@echo "Test codebase"
+	$(MAKE) -C "./backend/" test
+	$(MAKE) -C "./frontend/" test
 
 
 .PHONY: build-images
