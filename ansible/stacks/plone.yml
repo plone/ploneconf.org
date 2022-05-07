@@ -57,7 +57,7 @@ services:
       - traefik-public
 
   frontend:
-    image: plone/ploneconf-frontend:latest
+    image: plone/ploneconf-frontend:2022
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -91,7 +91,7 @@ services:
         - traefik.http.routers.frontend_alternative.middlewares=gzip
 
   backend:
-    image: plone/ploneconf-backend:latest
+    image: plone/ploneconf-backend:2022
     environment:
       SITE: Plone
       ADDITIONAL_PROFILES: "ploneconf.core:default,ploneconf.core:initial"
