@@ -1,6 +1,6 @@
 # Translators:
 # Emanuel de Jesus <emanuel.angelo@gmail.com>, 2019
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
@@ -18,3 +18,38 @@ msgstr ""
 "Language-Code: pt\n"
 "Language-Name: Portuguese\n"
 "Preferred-Encodings: utf-8\n"
+
+#: components/Blocks/CTA/Schema
+# defaultMessage: Alignment
+msgid "Alignment"
+msgstr ""
+
+#: components/Blocks/CTA/Schema
+# defaultMessage: Item
+msgid "Item"
+msgstr ""
+
+#: components/Blocks/CTA/Schema
+# defaultMessage: Label
+msgid "Label"
+msgstr ""
+
+#: components/Blocks/Teaser/TeaserPersonBody
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
+msgstr ""
+
+#: components/Blocks/CTA/Schema
+# defaultMessage: Size
+msgid "Size"
+msgstr ""
+
+#: components/Sponsors/Sponsors
+# defaultMessage: Sponsors
+msgid "Sponsors"
+msgstr ""
+
+#: components/Blocks/CTA/Schema
+# defaultMessage: URL
+msgid "URL"
+msgstr ""
