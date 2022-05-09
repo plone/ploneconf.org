@@ -68,7 +68,7 @@ services:
     - traefik-public
     - backend
     deploy:
-      replicas: 1
+      # replicas: 1
       labels:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
@@ -102,7 +102,7 @@ services:
     - traefik-public
     - backend
     deploy:
-      replicas: 1
+      # replicas: 1
       labels:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
