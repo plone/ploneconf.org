@@ -31,8 +31,8 @@
       ansible.builtin.file:
         dest: /srv/ploneconf/data
         state: directory
-        owner: 500
-        group: 500
+        owner: 999
+        group: 999
         mode: 0750
 
   - name: Create Swarm structure
