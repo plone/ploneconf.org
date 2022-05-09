@@ -1,5 +1,5 @@
 ---
 user_groups:
-  simples:
-    description: 'Simples Consultoria'
+  plone:
+    description: 'Plone'
     state: present
