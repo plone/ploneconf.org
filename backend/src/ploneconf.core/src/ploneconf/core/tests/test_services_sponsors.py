@@ -77,4 +77,4 @@ class TestSponsorsService(unittest.TestCase):
         supporting = levels[5]
         self.assertEqual(len(supporting["items"]), 5)
         organizer = levels[6]
-        self.assertEqual(len(organizer["items"]), 1)
+        self.assertEqual(len(organizer["items"]), 2)
