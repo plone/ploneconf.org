@@ -154,7 +154,8 @@
     "volto-authomatic": "*",
     "volto-form-block": "*",
     "@kitconcept/volto-blocks-grid": "*",
-    "@kitconcept/volto-separator-block": "*"
+    "@kitconcept/volto-separator-block": "*",
+    "react-ga4": "1.4.1"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "3.1.3",
