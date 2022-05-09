@@ -101,10 +101,20 @@ status: ## Check status of stack
 	@echo "$(GREEN)==> Stack status in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} stack ps plone
 
-.PHONY: status
-logs: ## Check status of stack
+.PHONY: logs-webserver
+logs-webserver: ## Display webserver logs
 	@echo "$(GREEN)==> Logs for webserver in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} service logs plone_traefik
+
+.PHONY: logs-frontend
+logs-frontend: ## Display frontend logs
+	@echo "$(GREEN)==> Logs for frontend in $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CONTEXT} service logs plone_frontend
+
+.PHONY: logs-backend
+logs-backend: ## Display backend logs
+	@echo "$(GREEN)==> Logs for backend in $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CONTEXT} service logs plone_backend
 
 .PHONY: all
 all: ## Create new box, run ansible, deploy stack
