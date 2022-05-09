@@ -16,6 +16,10 @@ ifndef DEPLOY_USER
 $(error DEPLOY_USER is not set)
 endif
 
+ifndef DEPLOY_SCALES
+	DEPLOY_SCALES=1
+endif
+
 ifeq ($(DEPLOY_ENV), local)
 	CONTEXT=local
 	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PORT)
@@ -115,6 +119,11 @@ logs-frontend: ## Display frontend logs
 logs-backend: ## Display backend logs
 	@echo "$(GREEN)==> Logs for backend in $(DEPLOY_ENV) $(RESET)"
 	${DOCKER_CONTEXT} service logs plone_backend
+
+.PHONY: scale-services
+scale-services: ## Scale services
+	@echo "$(GREEN)==> Scaling Frontend and Backend to $(DEPLOY_SCALES) in $(DEPLOY_ENV) $(RESET)"
+	${DOCKER_CONTEXT} service scale plone_frontend=$(DEPLOY_SCALES) plone_backend=$(DEPLOY_SCALES)
 
 .PHONY: all
 all: ## Create new box, run ansible, deploy stack

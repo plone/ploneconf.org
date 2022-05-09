@@ -74,8 +74,16 @@ make deploy
 
 Use this also when there is a new version of any of the images.
 
-## Check Status
+## Check Stack Status
 
 ```shell
 make status
 ```
+
+## Check Logs
+
+|Tool|Command|
+|-|-|
+|webserver|`make logs-webserver`|
+|frontend|`make logs-frontend`|
+|backend|`make logs-backend`|
