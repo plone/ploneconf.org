@@ -158,6 +158,9 @@
           ]
         }
       ]
+    },
+    "2da011bc-6291-44ec-84a9-9cf750045aa7": {
+      "@type": "sponsorsList"
     }
   },
   "blocks_layout": {
@@ -171,7 +174,8 @@
       "cde18850-eea2-400e-900c-4e0c767768c1",
       "f6f1e89e-1e77-4425-97bd-9e1f1d14d563",
       "9481ae6a-9dc4-41b0-87c3-b908d27a6f04",
-      "c6219b4f-69dc-4a50-8847-5553925c389e"
+      "c6219b4f-69dc-4a50-8847-5553925c389e",
+      "2da011bc-6291-44ec-84a9-9cf750045aa7"
     ]
   },
   "title": "2022 Plone Conference"
