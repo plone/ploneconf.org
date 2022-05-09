@@ -36,9 +36,343 @@
   {
     "_parent": "",
     "type": "Document",
+    "id": "tickets",
+    "title": "Tickets",
+    "description": "Submit your talk proposal.",
+    "blocks": {
+      "3c0419a3-c156-4b97-9e0c-5bbdabfae791": {
+        "@type": "slate",
+        "plaintext": " Online conference - access anywhere   Access to two days of training sessions   Access to three days conference   40+ presentations   Exclusive access to videos for 30 days   Interact with speakers, sponsors and attendees   Join the community sprints ",
+        "value": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Online conference - access anywhere"
+                      }
+                    ],
+                    "type": "strong"
+                  },
+                  {
+                    "text": ""
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Access to two days of training sessions"
+                      }
+                    ],
+                    "type": "strong"
+                  },
+                  {
+                    "text": ""
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Access to three days conference"
+                      }
+                    ],
+                    "type": "strong"
+                  },
+                  {
+                    "text": ""
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "40+ presentations"
+                      }
+                    ],
+                    "type": "strong"
+                  },
+                  {
+                    "text": ""
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Exclusive access to videos for 30 days"
+                      }
+                    ],
+                    "type": "strong"
+                  },
+                  {
+                    "text": ""
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Interact with speakers, sponsors and attendees"
+                      }
+                    ],
+                    "type": "strong"
+                  },
+                  {
+                    "text": ""
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "children": [
+                  {
+                    "text": ""
+                  },
+                  {
+                    "children": [
+                      {
+                        "text": "Join the community sprints"
+                      }
+                    ],
+                    "type": "strong"
+                  },
+                  {
+                    "text": ""
+                  }
+                ],
+                "type": "li"
+              }
+            ],
+            "type": "ul"
+          }
+        ]
+      },
+      "49a36db8-fe21-43ba-80dd-4eb1545f7dfb": {
+        "@type": "slate",
+        "plaintext": "Join the 2022 edition of the Plone Conference, the annual event about the Plone CMS, Zope, Guillotina, Pyramid and Volto.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "Join the 2022 edition of the Plone Conference, the annual event about the Plone CMS, Zope, Guillotina, Pyramid and Volto."
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "573bc852-7703-4310-ba23-7250052f7c26": {
+        "@type": "slate",
+        "plaintext": "The conference will be held in Namur, Belgium from October 10th to 16th.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "The conference will be held  Namur, Belgium from "
+              },
+              {
+                "children": [
+                  {
+                    "text": "October 10th to 16th."
+                  }
+                ],
+                "type": "strong"
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "9c1bcdf5-9a95-48ef-bce5-af88ad476f69": {
+        "@type": "image",
+        "align": "right",
+        "alt": "ploneconf-2020-group.jpeg",
+        "size": "m",
+        "url": "https://2021.ploneconf.org/cfp/ploneconf-2020-group.jpeg"
+      },
+      "a019457a-a7bf-4051-9d60-4766210bde0e": {
+        "@type": "title"
+      },
+      "cfe2ea91-d9cb-4742-a765-8186244beafd": {
+        "@type": "slate",
+        "plaintext": "Benefits",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "Benefits"
+              }
+            ],
+            "type": "h2"
+          }
+        ]
+      },
+      "d7113f8e-b3f5-4a57-908f-7e83d6a828aa": {
+        "@type": "slate",
+        "plaintext": "Grab your ticket today!",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "Grab your ticket today!"
+              }
+            ],
+            "type": "h2"
+          }
+        ]
+      },
+      "d85e5173-b0ee-42b0-b3ac-d21236c44c7a": {
+        "@type": "tito"
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "a019457a-a7bf-4051-9d60-4766210bde0e",
+        "49a36db8-fe21-43ba-80dd-4eb1545f7dfb",
+        "573bc852-7703-4310-ba23-7250052f7c26",
+        "cfe2ea91-d9cb-4742-a765-8186244beafd",
+        "9c1bcdf5-9a95-48ef-bce5-af88ad476f69",
+        "3c0419a3-c156-4b97-9e0c-5bbdabfae791",
+        "d7113f8e-b3f5-4a57-908f-7e83d6a828aa",
+        "d85e5173-b0ee-42b0-b3ac-d21236c44c7a"
+      ]
+    },
+
+    "_transitions": [
+    ],
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "",
+    "type": "Document",
+    "id": "cfp",
+    "title": "Call for Papers",
+    "description": "Submit your talk proposal.",
+    "blocks": {
+      "17cec173-d436-46ca-8545-35300ffbcb91": {
+        "@type": "title"
+      },
+      "45a94a06-7f63-4e3a-8811-9069a860169a": {
+        "@type": "slate",
+        "plaintext": "There are many kinds of talk slots, from 5 min lightning talks to 30 and  45 minutes long, and you can target your talk to different audiences  too",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "There are many kinds of talk slots, from 5 min lightning talks to 30 and  45 minutes long, and you can target your talk to different audiences  too"
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "7a0900a2-88fc-4774-9700-18811961a33e": {
+        "@type": "slate",
+        "plaintext": "Submit your talk proposal",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "Submit your talk proposal "
+              }
+            ],
+            "type": "h2"
+          }
+        ]
+      },
+      "9a07f672-7bd3-43d2-9158-5bd3010ba17f": {
+        "@type": "slate",
+        "plaintext": "The topics can range from Plone, Zope, Volto, and Guillotina to Python and Pyramid or from fancy JavaScript to cool case studies and beyond.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "The topics can range from Plone, Zope, Volto, and Guillotina to Python and Pyramid or from fancy JavaScript to cool case studies and beyond. "
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "dc557c7a-b5c8-44f1-9c06-c2b15ce9afb4": {
+        "@type": "slate",
+        "plaintext": "",
+        "value": [
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "11d355ce-211c-418f-b1f9-161c20fc83fa": {
+        "@type": "cta",
+        "content": "Submit your talk",
+        "href": "https://docs.google.com/forms/d/1PAZwkO7GDNnSJLr_V6hvTCy6zK4j4PgxnTZDwuOQI1E",
+        "align": "center",
+        "size": "big"
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "17cec173-d436-46ca-8545-35300ffbcb91",
+        "7a0900a2-88fc-4774-9700-18811961a33e",
+        "9a07f672-7bd3-43d2-9158-5bd3010ba17f",
+        "45a94a06-7f63-4e3a-8811-9069a860169a",
+        "11d355ce-211c-418f-b1f9-161c20fc83fa",
+        "dc557c7a-b5c8-44f1-9c06-c2b15ce9afb4"
+      ]
+    },
+    "_transitions": [
+    ],
+    "exclude_from_nav": false
+  },
+  {
+    "_parent": "",
+    "type": "Document",
     "id": "schedule",
     "title": "Schedule",
-    "description": "Schedule of the Plone Conference 2021.",
+    "description": "Schedule of the Plone Conference 2022.",
     "blocks": {
       "17cec173-d436-46ca-8545-35300ffbcb91": {
         "@type": "title"
@@ -50,12 +384,12 @@
             "type": "p",
             "children": [
               {
-                "text": "The 2021 edition of the Plone Conference will be held from 23rd to 31st October 2021 as an online event. No matter where you are, you can participate."
+                "text": "The 2022 edition of the Plone Conference will be held from the 10th to 16th of October 2022 in Namur, Belgium."
               }
             ]
           }
         ],
-        "plaintext": "The 2021 edition of the Plone Conference will be held from 23rd to 31st October 2021 as an online event. No matter where you are, you can participate."
+        "plaintext": "The 2022 edition of the Plone Conference will be held from the 10th to 16th of October 2022 in Namur, Belgium."
       },
       "07ba4462-e6b6-4e77-937e-d32b3ad6abda": {
         "@type": "slate",
@@ -155,7 +489,6 @@
       ]
     },
     "_transitions": [
-      "publish"
     ],
     "_permissions": {
       "ploneconf.core: Add Slot": [
@@ -184,107 +517,18 @@
   {
     "_parent": "",
     "type": "Document",
-    "id": "cfp",
-    "title": "Call for Papers",
-    "description": "Submit your talk proposal.",
-    "blocks": {
-      "17cec173-d436-46ca-8545-35300ffbcb91": {
-        "@type": "title"
-      },
-      "45a94a06-7f63-4e3a-8811-9069a860169a": {
-        "@type": "slate",
-        "plaintext": "There are many kinds of talk slots, from 5 min lightning talks to 30 and  45 minutes long, and you can target your talk to different audiences  too",
-        "value": [
-          {
-            "children": [
-              {
-                "text": "There are many kinds of talk slots, from 5 min lightning talks to 30 and  45 minutes long, and you can target your talk to different audiences  too"
-              }
-            ],
-            "type": "p"
-          }
-        ]
-      },
-      "7a0900a2-88fc-4774-9700-18811961a33e": {
-        "@type": "slate",
-        "plaintext": "Submit your talk proposal",
-        "value": [
-          {
-            "children": [
-              {
-                "text": "Submit your talk proposal "
-              }
-            ],
-            "type": "h2"
-          }
-        ]
-      },
-      "9a07f672-7bd3-43d2-9158-5bd3010ba17f": {
-        "@type": "slate",
-        "plaintext": "The topics can range from Plone, Zope, Volto, and Guillotina to Python and Pyramid or from fancy JavaScript to cool case studies and beyond.",
-        "value": [
-          {
-            "children": [
-              {
-                "text": "The topics can range from Plone, Zope, Volto, and Guillotina to Python and Pyramid or from fancy JavaScript to cool case studies and beyond. "
-              }
-            ],
-            "type": "p"
-          }
-        ]
-      },
-      "dc557c7a-b5c8-44f1-9c06-c2b15ce9afb4": {
-        "@type": "slate",
-        "plaintext": "",
-        "value": [
-          {
-            "children": [
-              {
-                "text": ""
-              }
-            ],
-            "type": "p"
-          }
-        ]
-      },
-      "11d355ce-211c-418f-b1f9-161c20fc83fa": {
-        "@type": "cta",
-        "content": "Submit your talk",
-        "href": "https://docs.google.com/forms/d/1PAZwkO7GDNnSJLr_V6hvTCy6zK4j4PgxnTZDwuOQI1E",
-        "align": "center",
-        "size": "big"
-      }
-    },
-    "blocks_layout": {
-      "items": [
-        "17cec173-d436-46ca-8545-35300ffbcb91",
-        "7a0900a2-88fc-4774-9700-18811961a33e",
-        "9a07f672-7bd3-43d2-9158-5bd3010ba17f",
-        "45a94a06-7f63-4e3a-8811-9069a860169a",
-        "11d355ce-211c-418f-b1f9-161c20fc83fa",
-        "dc557c7a-b5c8-44f1-9c06-c2b15ce9afb4"
-      ]
-    },
-    "_transitions": [
-      "publish"
-    ],
-    "exclude_from_nav": false
-  },
-  {
-    "_parent": "",
-    "type": "Document",
     "id": "speakers",
     "title": "Speakers",
     "description": "Meet the speakers.",
     "blocks": {
       "03b5d3f1-83b9-43c2-be0d-1e24fd70427e": {
         "@type": "slate",
-        "plaintext": "The conference will happen",
+        "plaintext": "Meet the Speakers of our Conference",
         "value": [
           {
             "children": [
               {
-                "text": "The conference will happen"
+                "text": "Meet the Speakers of our Conference"
               }
             ],
             "type": "p"
@@ -534,7 +778,7 @@
     "_transitions": [
       "publish"
     ],
-    "exclude_from_nav": false
+    "exclude_from_nav": true
   },
   {
     "_parent": "sponsors",
