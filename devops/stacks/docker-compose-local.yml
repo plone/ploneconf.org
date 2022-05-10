@@ -13,7 +13,7 @@ services:
 
   frontend:
     build:
-      context: ../frontend
+      context: ../../frontend
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -23,7 +23,7 @@ services:
 
   backend:
     build:
-      context: ../backend
+      context: ../../backend
     environment:
       SITE: Plone
       ADDITIONAL_PROFILES: "ploneconf.core:default,ploneconf.core:initial"
