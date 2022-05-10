@@ -1,11 +1,11 @@
-# Plone Conf site deployment with Ansible and Docker Stack
+# Plone Conference Devops
 
 ## Setup
 
 Install Python 3 virtual environment and Ansible
 
 ```shell
-cd ansible
+cd devops
 make clean
 make setup
 ```
