@@ -19,8 +19,8 @@ PLONE_VERSION=6.0.0a4
 
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:latest check
-FORMAT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:latest format
+CODE_QUALITY_VERSION=1.0.1
+LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} check
 
 PACKAGE_NAME=ploneconf.core
 PACKAGE_PATH=src/ploneconf.core/src/
@@ -76,6 +76,10 @@ instance/etc/zope.ini:	bin/pip
 	bin/cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
 	mkdir -p var/{filestorage,blobstorage,cache,log}
 
+bin/black:	bin/pip
+	@echo "$(GREEN)==> Install Code Quality tools$(RESET)"
+	bin/pip install -r https://raw.githubusercontent.com/plone/code-quality/v$(CODE_QUALITY_VERSION)/requirements.txt
+
 .PHONY: build
 build: instance/etc/zope.ini ## Create virtualenv and run buildout
 	@echo "$(GREEN)==> Setup Build$(RESET)"
@@ -87,9 +91,12 @@ build-dev: instance/etc/zope.ini ## Create virtualenv and run buildout
 	bin/pip install -r requirements/dev.txt
 
 .PHONY: format
-format:  ## Format the codebase according to our standards
-	$(FORMAT) "${CHECK_PATH}"
-	sudo chown -R ${CURRENT_USER}: *
+format:  bin/black ## Format the codebase according to our standards
+	@echo "$(GREEN)==> Format codebase$(RESET)"
+	bin/isort ${CHECK_PATH}
+	bin/black ${CHECK_PATH}
+	find "${PACKAGE_PATH}" -name '*.xml' |xargs bin/zpretty -x -i
+	find "${PACKAGE_PATH}" -name '*.zcml' |xargs bin/zpretty -z -i
 
 .PHONY: lint
 lint: lint-isort lint-black lint-flake8 lint-zpretty ## check code style
