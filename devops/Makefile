@@ -17,7 +17,7 @@ $(error DEPLOY_USER is not set)
 endif
 
 ifndef DEPLOY_SCALES
-	DEPLOY_SCALES=1
+	DEPLOY_SCALES=2
 endif
 
 ifeq ($(DEPLOY_ENV), local)
