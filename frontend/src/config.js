@@ -32,7 +32,7 @@ export default function applyConfig(config) {
     supportedLanguages: ['en'],
     defaultLanguage: 'en',
     matomoSiteId: '4',
-    matomoUrlBase: 'https://stats.plone.org/',
+    matomoUrlBase: 'https://stats.ploneconf.org/',
     socialNetworks: [
       {
         id: 'twitter',
