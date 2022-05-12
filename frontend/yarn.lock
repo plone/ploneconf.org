@@ -2293,6 +2293,18 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
+"@datapunt/matomo-tracker-js@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@datapunt/matomo-tracker-js/-/matomo-tracker-js-0.3.1.tgz#a707429471d89da78f095d75a055bad98b299eec"
+  integrity sha512-JIeK7SUHlunspS+6z4wzw9YdsWv1mN2UyL10JWPHhOC45y7rTpcvmvIzkV67xdOd7qS8fE1M2e1qLBFz/dfJug==
+
+"@datapunt/matomo-tracker-react@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@datapunt/matomo-tracker-react/-/matomo-tracker-react-0.3.1.tgz#c172810b4570046fe8eab4cfe9d4c9d90e9cc8c2"
+  integrity sha512-bO2UW1lEAdoQytucM+2ufOvVbdIlBwDaQWzsHpDNc1ZRQuMENgA+6Q8gRXNrny1YasqveS5t2YyZocxyPWrmLg==
+  dependencies:
+    "@datapunt/matomo-tracker-js" "^0.3.1"
+
 "@discoveryjs/json-ext@^0.5.3":
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.6.tgz#d5e0706cf8c6acd8c6032f8d54070af261bbbb2f"
@@ -2302,6 +2314,13 @@
   version "3.4.15"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.15.tgz#2a6e406f85866162f4c18954f8a2cdff148fad14"
   integrity sha512-trhan2MaDJIff/li4TvXZHhp7Qwu1Eeg3yJK08K1gYVEHeAuT9Z+gFiRWTFn4Ai+zqVAqxz8osDie+FpsQ0yfw==
+
+"@eeacms/volto-matomo@2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-matomo/-/volto-matomo-2.0.7.tgz#80a8ffdffb9fbc279943d183554cbafbafe50a79"
+  integrity sha512-gpjTHmw2sWQeBEnFYtqUfgQZ32X2vkLt72A9FmBZuOLMnw2MDGbGpnJIr1vzBqvaFZSxMb/sNXiL6rRmw3jOfw==
+  dependencies:
+    "@datapunt/matomo-tracker-react" "0.3.1"
 
 "@eeacms/volto-object-widget@*":
   version "3.0.3"
