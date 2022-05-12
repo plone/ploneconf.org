@@ -2315,10 +2315,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.15.tgz#2a6e406f85866162f4c18954f8a2cdff148fad14"
   integrity sha512-trhan2MaDJIff/li4TvXZHhp7Qwu1Eeg3yJK08K1gYVEHeAuT9Z+gFiRWTFn4Ai+zqVAqxz8osDie+FpsQ0yfw==
 
-"@eeacms/volto-matomo@2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-matomo/-/volto-matomo-2.0.7.tgz#80a8ffdffb9fbc279943d183554cbafbafe50a79"
-  integrity sha512-gpjTHmw2sWQeBEnFYtqUfgQZ32X2vkLt72A9FmBZuOLMnw2MDGbGpnJIr1vzBqvaFZSxMb/sNXiL6rRmw3jOfw==
+"@eeacms/volto-matomo@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-matomo/-/volto-matomo-2.0.8.tgz#4f33567db28f2ba4df63e48556829e07d45faad1"
+  integrity sha512-wxYe4GkFYI5M1GVeco6kAUwKTFO38RvMbsnv2vq3uJVgJwhOlqVpCLbpBlEEGHfg0qvjtVrT1UtBuCk4v70EfQ==
   dependencies:
     "@datapunt/matomo-tracker-react" "0.3.1"
 
