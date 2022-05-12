@@ -9,7 +9,6 @@ import { Container, List, Segment } from 'semantic-ui-react';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
-import { useGoogleAnalytics } from '@package/useGoogleAnalytics';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -29,7 +28,6 @@ const Footer = ({ intl }) => {
   const { settings } = config;
   const lang = useSelector((state) => state.intl.locale);
   const logged_in = useSelector((state) => state.userSession.token);
-  useGoogleAnalytics();
   return (
     <Segment
       role="contentinfo"
