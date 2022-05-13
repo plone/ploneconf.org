@@ -39,3 +39,4 @@ venv/
 live.cfg
 inituser
 pip-wheel-metadata
+pyvenv.cfg
