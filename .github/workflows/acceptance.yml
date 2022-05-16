@@ -104,11 +104,11 @@ jobs:
           BABEL_ENV: production
           CYPRESS_RETRIES: 2
         with:
-          parallel: false # Since they run on different node versions, we can't parallel
+          parallel: false
           browser: chrome
           group: Integration tests
           spec: frontend/cypress/integration/*.js
           start: |
             docker run --rm -p 55001:55001 --name ploneconf-backend-acceptance -i plone/ploneconf-backend:acceptance
-	          docker run --rm -p 3000:3000 --name ploneconf-frontend-acceptance --link ploneconf-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -i plone/ploneconf-frontend:acceptance
+            docker run --rm -p 3000:3000 --name ploneconf-frontend-acceptance --link ploneconf-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -i plone/ploneconf-frontend:acceptance
           wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000'
