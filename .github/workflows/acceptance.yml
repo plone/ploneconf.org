@@ -112,7 +112,6 @@ jobs:
         with:
           parallel: false
           browser: chrome
-          group: Integration tests
           spec: cypress/integration/*.js
           working-directory: frontend
           install: false
