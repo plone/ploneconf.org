@@ -18,8 +18,10 @@ class PLONECONFCORELayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
+        import plone.app.robotframework
         import plone.restapi
 
+        self.loadZCML(package=plone.app.robotframework)
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.volto.formsupport)
         self.loadZCML(package=ploneconf.core)
