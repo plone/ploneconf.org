@@ -96,7 +96,9 @@ jobs:
         run: |
           docker load --input /tmp/backend/backend-image.tar
           docker load --input /tmp/frontend/frontend-image.tar
-          docker image ls -a
+
+      - name: Install Cypress
+        run: npm i cypress
 
       - name: Cypress acceptance tests
         uses: cypress-io/github-action@v2
@@ -107,7 +109,9 @@ jobs:
           parallel: false
           browser: chrome
           group: Integration tests
-          spec: frontend/cypress/integration/*.js
+          spec: cypress/integration/*.js
+          working-directory: frontend
+          install: false
           start: |
             docker run --rm -p 55001:55001 --name ploneconf-backend-acceptance -i plone/ploneconf-backend:acceptance
             docker run --rm -p 3000:3000 --name ploneconf-frontend-acceptance --link ploneconf-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -i plone/ploneconf-frontend:acceptance
