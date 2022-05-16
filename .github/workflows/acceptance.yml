@@ -102,7 +102,7 @@ jobs:
           docker load --input /tmp/frontend/frontend-image.tar
 
       - name: Install Cypress
-        run: npm i cypress
+        run: npm i cypress @testing-library/cypress
 
       - name: Cypress acceptance tests
         uses: cypress-io/github-action@v2
