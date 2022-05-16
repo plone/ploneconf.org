@@ -102,7 +102,7 @@ jobs:
           docker load --input /tmp/frontend/frontend-image.tar
 
       - name: Install Cypress
-        run: npm i cypress@7.3.0 @testing-library/cypress@7.0.3 cypress-file-upload@5.0.7 cypress-axe@0.12.2
+        run: npm --legacy-peer-deps i cypress@7.3.0 @testing-library/cypress@7.0.3 cypress-file-upload@5.0.7 cypress-axe@0.12.2
 
       - name: Cypress acceptance tests
         uses: cypress-io/github-action@v2
