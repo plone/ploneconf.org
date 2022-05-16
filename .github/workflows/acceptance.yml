@@ -84,6 +84,10 @@ jobs:
       - build-backend
       - build-frontend
     steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -99,6 +103,11 @@ jobs:
 
       - name: Install Cypress
         run: npm i cypress
+
+      - name: debug info
+        run: |
+          pwd
+          ls -lah *
 
       - name: Cypress acceptance tests
         uses: cypress-io/github-action@v2
