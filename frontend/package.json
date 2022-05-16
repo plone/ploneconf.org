@@ -25,8 +25,6 @@
     "cypress:open": "NODE_ENV=test cypress open",
     "cypress:start-frontend": "RAZZLE_API_PATH=http://localhost:55001/plone yarn start",
     "cypress:test-acceptance-server": "make test-acceptance-server",
-    "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
-    "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
     "ci:start-backend": "make start-test-backend",
     "ci:start-frontend": "RAZZLE_API_PATH=http://localhost:55001/plone yarn build && start-test start:prod http-get://localhost:3000 cypress:run",
     "ci:cypress:run": "start-test ci:start-backend http-get://localhost:55001/plone ci:start-frontend",
@@ -146,10 +144,10 @@
     "not dead"
   ],
   "engines": {
-    "node": "^12 || ^14 || ^16"
+    "node": "^14 || ^16"
   },
   "dependencies": {
-    "@plone/volto": "15.8.1",
+    "@plone/volto": "16.0.0-alpha.1",
     "volto-slate": "*",
     "@eeacms/volto-accordion-block": "*",
     "volto-authomatic": "*",
