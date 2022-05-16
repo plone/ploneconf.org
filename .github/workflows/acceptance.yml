@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: backend-image
+          name: backend
           path: /tmp/backend-image.tar
 
   build-frontend:
@@ -75,7 +75,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: frontend-image
+          name: frontend
           path: /tmp/frontend-image.tar
 
   acceptance-test:
@@ -87,20 +87,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Download Backend Image
+      - name: Download Images
         uses: actions/download-artifact@v2
         with:
-          name: backend-image
-          path: /tmp
-
-      - name: Download Frontend Image
-        uses: actions/download-artifact@v2
-        with:
-          name: frontend-image
           path: /tmp
 
       - name: Load Docker Images
         run: |
-          docker load --input /tmp/backend-image.tar
-          docker load --input /tmp/frontend-image.tar
+          docker load --input /tmp/backend/backend-image.tar
+          docker load --input /tmp/frontend/frontend-image.tar
           docker image ls -a
