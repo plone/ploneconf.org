@@ -10,6 +10,8 @@ MAKEFLAGS+=--no-builtin-rules
 IMAGE_NAME=plone/ploneconf-frontend
 IMAGE_TAG=latest
 
+NODEBIN = ./node_modules/.bin
+
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
 .PHONY: help
@@ -52,3 +54,14 @@ test: ## Run tests
 .PHONY: build-image
 build-image:  ## Build Docker Image
 	@docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile
+
+
+# Acceptance tests
+
+.PHONY: test-acceptance
+test-acceptance: ## Start Core Cypress Acceptance Tests
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress open
+
+.PHONY: test-acceptance-headless
+test-acceptance-headless: ## Start Core Cypress Acceptance Tests in headless mode
+	NODE_ENV=production CYPRESS_API=plone $(NODEBIN)/cypress run
