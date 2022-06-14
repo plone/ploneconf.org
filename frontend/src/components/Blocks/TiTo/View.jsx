@@ -35,7 +35,7 @@ const TitoBlockView = () => {
 
   return (
     <>
-      {loaded ? <tito-widget event="plone/conference-2021"></tito-widget> : ''}
+      {loaded ? <tito-widget event="plone/conference-2022"></tito-widget> : ''}
     </>
   );
 };
