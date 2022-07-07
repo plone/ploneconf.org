@@ -11,7 +11,6 @@ import { defineMessages, injectIntl, FormattedMessage } from 'react-intl';
 
 
 const Body = (props) => {
-  console.log("🚀 ~ file: Body.jsx ~ line 11 ~ Body ~ props", props)
   const { data } = props;
 
   const remainTime = moment(data.date).format('x') - moment().utc().format('x');
@@ -26,9 +25,10 @@ const Body = (props) => {
               <span className="subtitle"><FormattedMessage id='Join us for' defaultMessage='Join us for'/> </span>
               <h2><FormattedMessage id='this new plone conference' defaultMessage='this new plone conference'/></h2>
               <div className="timer">
-                  <Timer
-                      initialTime={remainTime}
-                      direction="backward">
+                  {remainTime > 0 && 
+                    <Timer
+                    initialTime={remainTime}
+                    direction="backward">
                       {() => (
                           <>
                             <div className="days-n">
@@ -61,6 +61,7 @@ const Body = (props) => {
                           </>
                       )}
                   </Timer>
+            }
               </div>
           </article>
       </section>
