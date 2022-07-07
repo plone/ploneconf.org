@@ -20,7 +20,9 @@
     padding-left: 50%;
     padding-right: 50%;
     transform: translateX(-50%);
-
+    left: 50%;
+    transform: translateX(-50%);
+    
     .has-toolbar &{
         left: calc(50% + @toolbarWidth);
         transform: translateX(calc(-50% - calc(@toolbarWidth / 2)));
