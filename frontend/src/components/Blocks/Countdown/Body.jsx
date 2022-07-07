@@ -7,7 +7,7 @@ import Timer from 'react-compound-timer';
 import moment from 'moment';
 import { CTA } from '@package/components';
 import { Icon } from 'semantic-ui-react';
-import { defineMessages, injectIntl, FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedMessage } from 'react-intl';
 
 const Body = (props) => {
   const { data } = props;

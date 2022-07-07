@@ -30,10 +30,6 @@ function SponsorLevel({ levelId, title, sponsors }) {
     organizer: null,
   };
 
-  console.log(
-    '🚀 ~ file: SponsorLevel.jsx ~ line 16 ~ SponsorLevel ~ levelId',
-    levelId,
-  );
   return (
     <Container id={levelId} className="sponsorLevel">
       <h3>

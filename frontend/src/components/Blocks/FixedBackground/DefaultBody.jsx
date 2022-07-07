@@ -4,9 +4,6 @@ import { FixedBackground } from '@package/components';
 
 const DefaultBody = (props) => {
   const { data, isEditMode } = props;
-  const image = data.image;
-  const size = data.size;
-  const align = data.align;
 
   return (
     <>

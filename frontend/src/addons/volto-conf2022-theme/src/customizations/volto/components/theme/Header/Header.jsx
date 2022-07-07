@@ -9,13 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { CTA } from '@package/components';
 
-import {
-  Anontools,
-  LanguageSelector,
-  Logo,
-  Navigation,
-  SearchWidget,
-} from '@plone/volto/components';
+import { Logo, Navigation } from '@plone/volto/components';
 
 /**
  * Header component class.
