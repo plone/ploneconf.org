@@ -13,6 +13,9 @@ import TiToView from './TiTo/View';
 import FixedBackgroundEdit from './FixedBackground/Edit';
 import FixedBackgroundView from './FixedBackground/View';
 
+import CountdownEdit from './Countdown/Edit';
+import CountdownView from './Countdown/View';
+
 import HeroImageEdit from './HeroImage/Edit';
 import HeroImageView from './HeroImage/View';
 
@@ -112,4 +115,20 @@ export const customBlocks = {
       view: [],
     },
   },
+  countdown: {
+      id: 'countdown',
+      title: 'Countdown',
+      icon: heroSVG,
+      group: 'common',
+      view: CountdownView,
+      edit: CountdownEdit,
+      restricted: false,
+      mostUsed: false,
+      blockHasOwnFocusManagement: true,
+      sidebarTab: 1,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+    },
 };

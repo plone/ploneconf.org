@@ -1,0 +1,134 @@
+.countdown {
+    text-align: center;
+    display: flex;
+
+
+    aside {
+        display        : grid;
+        place-content: center;
+        padding: 3rem;
+
+        h3 {
+            font-family  : @secondaryFont;
+            color        : @lightColor;
+            font-size    : 3.5rem;
+            margin-bottom: 3rem;
+        }
+
+        
+    }
+
+    article {
+        color  : @primaryColor;
+        padding: 7rem;
+        background-color: @lightColor;
+
+        .subtitle {
+            font-weight  : lighter;
+            font-size    : 4rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 5rem;
+            color    : @primaryColor;
+        }
+
+        .timer {
+            display              : grid;
+            grid-template-columns: repeat(4, 11rem);
+            grid-template-rows   : auto auto;
+            grid-gap             : 1rem;
+            margin               : 5rem auto 0 auto;
+
+            div {
+                background-color: @secondaryColor;
+                color           : @darkColor;
+                font-family     : @secondaryFont;
+                text-transform  : uppercase;
+                margin          : 0 0.5rem;
+            }
+
+            [class$="-n"] {
+                font-size: 3.5rem;
+                padding  : 2rem 0;
+            }
+
+            [class$="-b"] {
+                font-size: 1.6rem;
+                padding: 1rem 0.5rem; 
+            }
+
+            .days-n {
+                grid-column: 1;
+                grid-row   : 1;
+            }
+
+            .days-b {
+                grid-column: 1;
+                grid-row   : 2;
+            }
+
+            .hours-n {
+                grid-column: 2;
+                grid-row   : 1;
+            }
+
+            .hours-b {
+                grid-column: 2;
+                grid-row   : 2;
+            }
+
+            .minutes-n {
+                grid-column: 3;
+                grid-row   : 1;
+            }
+
+            .minutes-b {
+                grid-column: 3;
+                grid-row   : 2;
+            }
+
+            .seconds-n {
+                grid-column: 4;
+                grid-row   : 1;
+            }
+
+            .seconds-b {
+                grid-column: 4;
+                grid-row   : 2;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .countdown {
+        aside h3 {
+            font-size: 3rem;
+        }
+
+        article {
+            padding: 4rem 2rem;
+
+            .subtitle {
+                font-size    : 4rem;
+                margin-bottom: 0;
+            }
+
+            h2 {
+                font-size: 5rem;
+            }
+
+            .timer {
+                [class$="-n"] {
+                    font-size: 3rem;
+                }
+
+                [class$="-b"] {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
