@@ -33,3 +33,7 @@
 .siteroot #main .content-area{
     margin-top: 5rem;
 }
+
+.siteroot .breadcrumbs{
+    display: none;
+}
