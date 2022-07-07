@@ -1,0 +1,36 @@
+.block.hero{
+  .block-inner-wrapper{
+    display: grid;
+    --image-width : 660px;
+    &.right{
+      grid-template-columns: minmax(var(--image-width), 1fr) 1fr;
+    }
+    &.left{
+      grid-template-columns: 1fr minmax(var(--image-width), 1fr);
+    }
+    
+    gap: 2rem;
+
+    .hero-body{
+      background-color: @lightColor;
+      box-shadow: 0px 3px 6px hsla(0,0,0,0.1);
+      padding-top: 4rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      .title{
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+      .sub-title{
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+      }
+    }
+    .hero-image{
+      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+      height: auto;
+    }
+  }
+} 

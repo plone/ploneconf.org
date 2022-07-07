@@ -3,3 +3,4 @@
 @import 'CTA';
 @import 'Sponsors';
 @import 'FixedBackground';
+@import 'HeroImage';

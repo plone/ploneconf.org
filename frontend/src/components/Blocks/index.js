@@ -13,9 +13,13 @@ import TiToView from './TiTo/View';
 import FixedBackgroundEdit from './FixedBackground/Edit';
 import FixedBackgroundView from './FixedBackground/View';
 
+import HeroImageEdit from './HeroImage/Edit';
+import HeroImageView from './HeroImage/View';
+
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import listBulletSVG from '@plone/volto/icons/list-bullet.svg';
 import images from '@plone/volto/icons/images.svg';
+import heroSVG from '@plone/volto/icons/hero.svg';
 
 export const customBlocks = {
   cta: {
@@ -85,6 +89,21 @@ export const customBlocks = {
     group: 'common',
     view: FixedBackgroundView,
     edit: FixedBackgroundEdit,
+    restricted: false,
+    mostUsed: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  heroImage: {
+    id: 'heroImage',
+    title: 'Hero Image Advanced',
+    icon: heroSVG,
+    group: 'common',
+    view: HeroImageView,
+    edit: HeroImageEdit,
     restricted: false,
     mostUsed: true,
     sidebarTab: 1,
