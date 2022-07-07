@@ -41,6 +41,7 @@ const Logo = () => {
         src={LogoImage}
         alt={intl.formatMessage(messages.plonesite)}
         title={intl.formatMessage(messages.plonesite)}
+        size="small"
       />
     </UniversalLink>
   );
