@@ -1,0 +1,30 @@
+#footer{
+  background-color: @primaryColor;
+  border-top: 10px solid @secondaryColor;
+  position: relative !important;
+
+  div.ui.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 3rem;
+    
+    .text{
+      background-color: @primaryColor;
+      width: 300px;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .logo{
+      position: absolute;
+      top: -54px;
+      left : 50%;
+      transform: translateX(-50%);
+    }
+
+    .actions{
+      text-align: right;
+    }
+  }
+}

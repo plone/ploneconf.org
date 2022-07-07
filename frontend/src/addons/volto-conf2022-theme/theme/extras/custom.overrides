@@ -6,4 +6,5 @@
 @import 'countdown';
 @import 'HeroImage';
 @import 'innerPage';
+@import 'footer';
 @import 'mixins';
