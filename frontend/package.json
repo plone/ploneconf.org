@@ -157,7 +157,8 @@
     "@kitconcept/volto-separator-block": "*",
     "@kitconcept/volto-slider-block": "*",
     "react-ga4": "1.4.1",
-    "@eeacms/volto-matomo": "2.0.8"
+    "@eeacms/volto-matomo": "2.0.8",
+    "react-compound-timer": "1.2.0"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "3.1.3",
