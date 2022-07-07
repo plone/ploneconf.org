@@ -15,16 +15,27 @@ const CTA = (props) => {
   const openLinkInNewTab = props.openLinkInNewTab;
   const containerClassName = `ctaContainer ${props.align}`;
   const className = props.className ? `cta ${props.className}` : 'cta';
-  return (
-    <Container className={containerClassName}>
-      {href ? (
+  
+  const InnerCTA = () => (href ? (
         <UniversalLink href={href} openLinkInNewTab={openLinkInNewTab}>
-          <Button primary content={content} size={size} className={className} />
+          <Button primary content={content} size={size} className={className} icon={props.icon ? true : false}/>
         </UniversalLink>
       ) : (
-        <Button primary content={content} size={size} className={className} />
-      )}
-    </Container>
+        <Button primary content={content} size={size} className={className} icon={props.icon ? true : false}/>
+      ));
+
+  return (
+    props.notContainer ?
+    (
+      <div className={containerClassName}>
+        <InnerCTA />
+      </div>
+    )
+    :(
+      <Container className={containerClassName}>
+        <InnerCTA />
+      </Container>
+    )
   );
 };
 
