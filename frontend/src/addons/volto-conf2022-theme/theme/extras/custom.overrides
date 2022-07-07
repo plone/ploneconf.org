@@ -5,4 +5,5 @@
 @import 'FixedBackground';
 @import 'countdown';
 @import 'HeroImage';
+@import 'innerPage';
 @import 'mixins';
