@@ -3,16 +3,35 @@ Sponsors
 --------------------*/
 .ui.container.sponsors {
   margin-top: 30px;
-  text-align: center;
-
+  display: grid;
+  gap: 2rem;
+  
   .sponsorLevel {
-    text-align: center;
-
+    
+    
+    .card();
+    overflow: hidden;
+    
     > .sponsorList {
       display: flex;
       flex-wrap: wrap;
       align-content: center;
-      justify-content: center;
+      justify-content: start;
+      position: relative;
+      
+      .sponsor_icon{
+        position: absolute;
+        top: -190px;
+        right: -120px;
+      }
+    }
+
+    h3{
+      text-transform: uppercase;
+      font-size: 2rem;
+      .sponsor_title{
+        color : @primaryColor;
+      }
     }
   }
 
@@ -64,6 +83,13 @@ Sponsors
     }
 
     &.oss {
+      img {
+        max-width: 90px;
+        max-height: 90px;
+      }
+    }
+
+    &.patron {
       img {
         max-width: 90px;
         max-height: 90px;

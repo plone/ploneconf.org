@@ -25,9 +25,6 @@ function Sponsors({ content }) {
 
   return (
     <Container className="sponsors">
-      <h2>
-        <FormattedMessage id="Sponsors" defaultMessage="Sponsors" />
-      </h2>
       {!loading &&
         levels &&
         levels.map(function (sponsorLevel, i) {
