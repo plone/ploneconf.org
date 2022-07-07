@@ -275,15 +275,13 @@ class EditComponent extends Component {
     return this.props.selected || !isEqual(this.props.data, nextProps.data);
   }
 
-
-    /**
+  /**
    * Change Title handler
    * @method onChangeTitle
    * @param {object} titleEditorState Editor state.
    * @returns {undefined}
    */
   onChangeTitle(titleEditorState) {
-    
     this.setState({ titleEditorState }, () => {
       this.props.onChangeBlock(this.props.block, {
         ...this.props.data,
@@ -389,7 +387,6 @@ class EditComponent extends Component {
           </div>
         )}
         <div className="block-inner-wrapper">
-          
           <div className="hero-body">
             <div className="hero-text">
               <Editor
@@ -443,9 +440,7 @@ class EditComponent extends Component {
                 editorState={this.state.subTitleEditorState}
                 blockRenderMap={this.extendedSubTitleBlockRenderMap}
                 handleReturn={() => true}
-                placeholder={this.props.intl.formatMessage(
-                  messages.subTitle,
-                )}
+                placeholder={this.props.intl.formatMessage(messages.subTitle)}
                 blockStyleFn={() => 'subTitle-editor'}
                 onUpArrow={() => {
                   const selectionState = this.state.subTitleEditorState.getSelection();

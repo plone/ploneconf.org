@@ -39,7 +39,7 @@ export const Schema = (props) => {
     properties: {
       image: {
         title: intl.formatMessage(messages.image),
-        widget: 'object_browser'
+        widget: 'object_browser',
       },
       align: {
         title: intl.formatMessage(messages.align),

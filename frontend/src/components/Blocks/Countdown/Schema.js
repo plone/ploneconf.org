@@ -27,8 +27,8 @@ export const Schema = (props) => {
     properties: {
       date: {
         title: intl.formatMessage(messages.date),
-        widget: "datetime"
-      }
+        widget: 'datetime',
+      },
     },
     required: ['date'],
   };

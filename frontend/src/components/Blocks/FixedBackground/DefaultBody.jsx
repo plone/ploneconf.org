@@ -11,7 +11,7 @@ const DefaultBody = (props) => {
   return (
     <>
       {isEditMode && 'FixedImageBackground'}
-      <FixedBackground {...data }/>
+      <FixedBackground {...data} />
     </>
   );
 };

@@ -15,32 +15,41 @@ const CTA = (props) => {
   const openLinkInNewTab = props.openLinkInNewTab;
   const containerClassName = `ctaContainer ${props.align}`;
   const className = props.className ? `cta ${props.className}` : 'cta';
-  
-  const InnerCTA = () => (href ? (
-        <UniversalLink href={href} openLinkInNewTab={openLinkInNewTab}>
-          <Button primary content={content} size={size} className={className} icon={props.icon ? true : false}/>
-        </UniversalLink>
-      ) : (
-        <Button primary content={content} size={size} className={className} icon={props.icon ? true : false}/>
-      ));
 
-  return (
-    props.notContainer ?
-    (
-      <div className={containerClassName}>
-        <InnerCTA />
-      </div>
-    )
-    :(
-      <Container className={containerClassName}>
-        <InnerCTA />
-      </Container>
-    )
+  const InnerCTA = () =>
+    href ? (
+      <UniversalLink href={href} openLinkInNewTab={openLinkInNewTab}>
+        <Button
+          primary
+          content={content}
+          size={size}
+          className={className}
+          icon={props.icon ? true : false}
+        />
+      </UniversalLink>
+    ) : (
+      <Button
+        primary
+        content={content}
+        size={size}
+        className={className}
+        icon={props.icon ? true : false}
+      />
+    );
+
+  return props.notContainer ? (
+    <div className={containerClassName}>
+      <InnerCTA />
+    </div>
+  ) : (
+    <Container className={containerClassName}>
+      <InnerCTA />
+    </Container>
   );
 };
 
 CTA.propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.node.isRequired,
   href: PropTypes.string,
   size: PropTypes.string,
   align: PropTypes.string,

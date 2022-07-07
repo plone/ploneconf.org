@@ -40,5 +40,5 @@ export {
   Training,
   TeaserPersonBody,
   TalksListingBody,
-  FixedBackground
+  FixedBackground,
 };

@@ -15,9 +15,7 @@ import cx from 'classnames';
  * @extends Component
  */
 const View = ({ data }) => {
-  
-  const BodyPart = (() => 
-  (
+  const BodyPart = () => (
     <div className="hero-body">
       <div className="hero-text">
         {data.title && <h1 className="title">{data.title}</h1>}
@@ -26,40 +24,47 @@ const View = ({ data }) => {
       </div>
       <LinkMore data={data} />
     </div>
-    )
   );
 
-  const ImagePart = (() =>( 
+  const ImagePart = () => (
     <div className="wrapper-aside">
-    {data.url ? (
-          <img
-            src={`${flattenToAppURL(data.url)}/@@images/image/large`}
-            alt=""
-            className="hero-image"
-            loading="lazy"
-          />
-        ):(<div className={cx('hero-image',{'empty-image': !data.asideTitle , 'title-aside':data.asideTitle})}>{data.asideTitle && data.asideTitle}</div>)}
+      {data.url ? (
+        <img
+          src={`${flattenToAppURL(data.url)}/@@images/image/large`}
+          alt=""
+          className="hero-image"
+          loading="lazy"
+        />
+      ) : (
+        <div
+          className={cx('hero-image', {
+            'empty-image': !data.asideTitle,
+            'title-aside': data.asideTitle,
+          })}
+        >
+          {data.asideTitle && data.asideTitle}
         </div>
-        ));
+      )}
+    </div>
+  );
 
-  return(
+  return (
     <div className="block hero">
-      <div className={"block-inner-wrapper " + data.imageSide}>
-        {data.imageSide === "left" ? (
+      <div className={'block-inner-wrapper ' + data.imageSide}>
+        {data.imageSide === 'left' ? (
           <>
             <ImagePart />
             <BodyPart />
           </>
-        ):(
+        ) : (
           <>
             <BodyPart />
             <ImagePart />
           </>
         )}
-       
       </div>
     </div>
-  )
+  );
 };
 
 /**

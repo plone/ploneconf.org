@@ -20,7 +20,7 @@ const messages = defineMessages({
   asideTitle: {
     id: 'Aside title',
     defaultMessage: 'Aside title',
-  }
+  },
 });
 
 const schemaHero = ({ intl }) => {
@@ -31,7 +31,7 @@ const schemaHero = ({ intl }) => {
       {
         id: 'default',
         title: intl.formatMessage(messages.more),
-        fields: ['linkTitle', 'linkHref', 'imageSide','asideTitle'],
+        fields: ['linkTitle', 'linkHref', 'imageSide', 'asideTitle'],
       },
     ],
     properties: {
@@ -53,9 +53,9 @@ const schemaHero = ({ intl }) => {
         ],
         default: 'left',
       },
-      asideTitle:{
+      asideTitle: {
         title: intl.formatMessage(messages.asideTitle),
-      }
+      },
     },
   };
 };
