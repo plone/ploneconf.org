@@ -10,8 +10,12 @@ import PayPalView from './PayPal/View';
 import TiToEdit from './TiTo/Edit';
 import TiToView from './TiTo/View';
 
+import FixedBackgroundEdit from './FixedBackground/Edit';
+import FixedBackgroundView from './FixedBackground/View';
+
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import listBulletSVG from '@plone/volto/icons/list-bullet.svg';
+import images from '@plone/volto/icons/images.svg';
 
 export const customBlocks = {
   cta: {
@@ -66,6 +70,21 @@ export const customBlocks = {
     group: 'common',
     view: TiToView,
     edit: TiToEdit,
+    restricted: false,
+    mostUsed: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  fixedBackground: {
+    id: 'fixedBackground',
+    title: 'Fixed Background',
+    icon: images,
+    group: 'common',
+    view: FixedBackgroundView,
+    edit: FixedBackgroundEdit,
     restricted: false,
     mostUsed: true,
     sidebarTab: 1,

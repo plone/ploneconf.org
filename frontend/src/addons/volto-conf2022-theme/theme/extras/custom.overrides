@@ -2,3 +2,4 @@
 @import 'tito';
 @import 'CTA';
 @import 'Sponsors';
+@import 'FixedBackground';

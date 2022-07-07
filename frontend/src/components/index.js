@@ -23,6 +23,7 @@ import TeaserPersonBody from './Blocks/Teaser/TeaserPersonBody';
 import PersonsListingBody from './Blocks/Listing/PersonsListingBody';
 import PersonsSimpleListingBody from './Blocks/Listing/PersonsSimpleListingBody';
 import TalksListingBody from './Blocks/Listing/TalksListingBody';
+import FixedBackground from './FixedBackground/FixedBackground';
 
 export {
   CTA,
@@ -39,4 +40,5 @@ export {
   Training,
   TeaserPersonBody,
   TalksListingBody,
+  FixedBackground
 };
