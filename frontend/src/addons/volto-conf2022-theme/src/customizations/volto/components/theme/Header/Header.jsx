@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {CTA} from '@package/components';
 
 import {
   Anontools,
@@ -56,17 +57,7 @@ class Header extends Component {
                 <Logo />
               </div>
               <Navigation pathname={this.props.pathname} />
-            </div>
-            <div className="tools-search-wrapper">
-              <LanguageSelector />
-              {!this.props.token && (
-                <div className="tools">
-                  <Anontools />
-                </div>
-              )}
-              <div className="search">
-                <SearchWidget />
-              </div>
+              <CTA content='Register now!' href='https://tickets.ploneconf.org/' className='cta-register' notContainer/>
             </div>
           </div>
         </Container>
