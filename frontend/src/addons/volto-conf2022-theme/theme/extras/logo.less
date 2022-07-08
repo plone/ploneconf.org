@@ -1,0 +1,17 @@
+.header .logo-nav-wrapper .logo{
+    position: relative;
+    .mask-logo{
+        background: @pageBackground;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        transition: all .4s ease;
+        &-initial{
+            height: 100%;
+        }
+        &-sticky{
+            height: 0;
+        }
+    }
+}
