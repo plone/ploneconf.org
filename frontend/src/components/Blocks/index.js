@@ -19,6 +19,9 @@ import CountdownView from './Countdown/View';
 import HeroImageEdit from './HeroImage/Edit';
 import HeroImageView from './HeroImage/View';
 
+import VenueEdit from './Venue/Edit';
+import VenueView from './Venue/View';
+
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import listBulletSVG from '@plone/volto/icons/list-bullet.svg';
 import images from '@plone/volto/icons/images.svg';
@@ -122,6 +125,22 @@ export const customBlocks = {
     group: 'common',
     view: CountdownView,
     edit: CountdownEdit,
+    restricted: false,
+    mostUsed: false,
+    blockHasOwnFocusManagement: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  venue: {
+    id: 'venue',
+    title: 'Venue',
+    icon: heroSVG,
+    group: 'common',
+    view: VenueView,
+    edit: VenueEdit,
     restricted: false,
     mostUsed: false,
     blockHasOwnFocusManagement: true,

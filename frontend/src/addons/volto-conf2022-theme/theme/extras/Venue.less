@@ -1,0 +1,31 @@
+.block.hero.venue{
+  .aside-title {
+    justify-content: center;
+    align-content: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+  }
+  .aside-title.white {
+    color: @white;
+  }
+
+  .icon {
+    margin: 0.25em;
+  }
+
+
+  @media screen and (max-width: @computerBreakpoint) {
+    .block-inner-wrapper{
+      grid-template-columns: 1fr;
+      grid-gap: 0.25em;
+      .aside-title {
+        justify-content: left;
+        align-content: start;
+        text-transform: uppercase;
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+
