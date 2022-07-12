@@ -90,30 +90,3 @@ jobs:
           start: |
             docker compose -f cypress/compose.yml up
           wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000'
-
-  deploy:
-    if: ${{ github.ref == 'refs/heads/2022' }}
-    runs-on: ubuntu-latest
-    environment: ploneconf.org
-    needs:
-      - acceptance-test
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Deploy to 2022.ploneconf.org
-        run: |
-          mkdir -p "$HOME/.ssh"
-          printf '%s' "${{ secrets.DEPLOY_SSH }}" > "$HOME/.ssh/docker"
-          chmod 600 "$HOME/.ssh/docker"
-          eval $(ssh-agent)
-          ssh-add "$HOME/.ssh/docker"
-          printf '%s %s\n' "${{ secrets.DEPLOY_HOST }}" "${{ secrets.DEPLOY_HOST_KEY }}" >> "$HOME/.ssh/known_hosts"
-          docker --host "ssh://${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PORT }}" stack deploy --with-registry-auth -c devops/stacks/2022.ploneconf.org.yml plone
