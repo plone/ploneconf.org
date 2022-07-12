@@ -30,3 +30,4 @@ jobs:
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
           stack_file: "devops/stacks/2022.ploneconf.org.yml"
           stack_name: "plone"
+          deploy_timeout: 480
