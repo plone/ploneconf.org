@@ -3,5 +3,15 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     >
 
+  <genericsetup:upgradeSteps
+      profile="ploneconf.core:default"
+      source="20220505001"
+      destination="20220712001"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade Plone"
+        handler=".upgrade_plone"
+        />
+  </genericsetup:upgradeSteps>
 
 </configure>

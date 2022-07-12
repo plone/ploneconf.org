@@ -1,7 +1,7 @@
 [
   {
     "_parent": "",
-    "type": "Folder",
+    "type": "Document",
     "id": "images",
     "title": "Images",
     "description": "Image Bank.",
@@ -782,7 +782,7 @@
   },
   {
     "_parent": "sponsors",
-    "type": "Folder",
+    "type": "Document",
     "id": "organizations",
     "title": "Organizations",
     "description": "Sponsors.",
