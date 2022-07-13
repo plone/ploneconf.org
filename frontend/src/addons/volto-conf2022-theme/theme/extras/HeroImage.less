@@ -1,12 +1,15 @@
 .block.hero{
   .block-inner-wrapper{
     display: grid;
-    --image-width : 660px;
-    &.right{
-      grid-template-columns: minmax(var(--image-width), 1fr) 1fr;
-    }
-    &.left{
-      grid-template-columns: 1fr minmax(var(--image-width), 1fr);
+    @media (min-width: @computerBreakpoint){
+
+      --image-width : 660px;
+      &.right{
+        grid-template-columns: minmax(var(--image-width), 1fr) 1fr;
+      }
+      &.left{
+        grid-template-columns: 1fr minmax(var(--image-width), 1fr);
+      }
     }
     
     gap: 2rem;
@@ -14,6 +17,10 @@
     .hero-body{
 
       .card();
+
+      @media (max-width: @tabletBreakpoint){
+        max-height: 650px;
+      }
 
       .title{
         text-transform: uppercase;

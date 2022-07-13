@@ -17,16 +17,22 @@
     position: fixed !important;
     background-color: @pageBackground;
     z-index : 10;
-    padding-left: 50%;
-    padding-right: 50%;
-    transform: translateX(-50%);
-    left: 50%;
-    transform: translateX(-50%);
-    
-    .has-toolbar &{
-        left: calc(50% + @toolbarWidth);
-        transform: translateX(calc(-50% - calc(@toolbarWidth / 2)));
+    right: 0;
+    left: 0;
 
+    @media (min-width:@tabletBreakpoint){
+        padding-left: 50%;
+        padding-right: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+        transform: translateX(-50%);
+        right: unset;
+        
+        .has-toolbar &{
+            left: calc(50% + @toolbarWidth);
+        transform: translateX(calc(-50% - calc(@toolbarWidth / 2)));
+        
+    }
     }
     + *{
         margin-top: 5rem;

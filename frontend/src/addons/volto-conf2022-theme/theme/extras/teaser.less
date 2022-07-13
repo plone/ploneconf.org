@@ -1,0 +1,28 @@
+#main .teaserGrid{
+  .ui.grid{
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+
+    .grid-block-teaser{
+      width: 100%;
+      .card();
+    }
+  }
+}
+
+@media (min-width: @computerBreakpoint){
+
+  .ui[class*="one column"].grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .ui[class*="two column"].grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .ui[class*="three column"].grid{
+    grid-template-columns: repeat(3,1fr);
+  }
+  .ui[class*="four column"].grid{
+    grid-template-columns: repeat(4,1fr);
+  }
+}

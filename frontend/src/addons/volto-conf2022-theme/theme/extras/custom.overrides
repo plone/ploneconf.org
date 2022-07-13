@@ -8,6 +8,7 @@
 @import 'innerPage';
 @import 'footer';
 @import 'listingNews';
+@import 'teaser';
 @import 'mixins';
 @import 'logo';
 @import 'Venue';

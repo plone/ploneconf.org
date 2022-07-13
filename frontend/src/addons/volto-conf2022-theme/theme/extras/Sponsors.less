@@ -1,12 +1,20 @@
 /*-------------------
 Sponsors
 --------------------*/
-.ui.container.sponsors {
+#main .ui.container.sponsors {
   margin-top: 30px;
   display: grid;
   gap: 2rem;
-  
+  @media (max-width:@tabletBreakpoint){
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
   .sponsorLevel {
+    position: relative;
+    @media (max-width:@tabletBreakpoint){
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
     
     
     .card();
@@ -17,13 +25,16 @@ Sponsors
       flex-wrap: wrap;
       align-content: center;
       justify-content: start;
-      position: relative;
-      
-      .sponsor_icon{
-        position: absolute;
-        top: -190px;
-        right: -120px;
+      @media (max-width:@tabletBreakpoint){
+        justify-content: center;
       }
+      
+    }
+
+    .sponsor_icon{
+      position: absolute;
+      top: -48px;
+      right: -60px;
     }
 
     h3{

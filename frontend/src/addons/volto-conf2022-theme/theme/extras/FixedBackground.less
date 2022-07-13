@@ -5,9 +5,21 @@
   height: 100vh;
   background-color: #0083BE;
 
+  @media (max-width: @computerBreakpoint){
+    width :inherit
+  }
+  @media (max-width: @tabletBreakpoint){
+    width : unset;
+    left: 0;
+    right: 0;
+  }
   .ui.image{
     transform: translateY(-10px);
 
     height : 1080px;
+    @media (max-width: @computerBreakpoint){
+      width :100%;
+      height : unset;
+    }
   }
 }

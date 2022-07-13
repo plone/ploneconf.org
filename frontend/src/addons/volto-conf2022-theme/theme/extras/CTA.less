@@ -2,21 +2,32 @@
 CTA
 --------------------*/
 .ctaContainer {
-  &.left {
-    text-align: left;
+  text-align: center;
+  
+  @media (min-width: @tabletBreakpoint) { 
+    &.left,
+    &.mid-left{
+      text-align: left;
+    }
+    &.right,
+    &.mid-right {
+      text-align: right;
+    }
   }
-
-  &.center {
-    text-align: center;
-  }
-
-  &.right {
-    text-align: right;
+  @media (min-width: @computerBreakpoint)
+  {
+    &.mid-left{
+      transform: translateX(130px);
+    }
+    &.mid-right{
+      transform: translateX(-160px);
+    }
   }
 
   .ui.button.cta {
     background-color: @secondaryColor;
     color: @black;
     border-radius: 0;
+    margin: 0
   }
 }

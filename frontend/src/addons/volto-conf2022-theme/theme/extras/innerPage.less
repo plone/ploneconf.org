@@ -9,6 +9,7 @@ body:not(.siteroot) #main{
       background-color: @primaryColor;
       padding-top: 1rem;
       padding-bottom: 1rem;
+
       .breadcrumb{
         .section{
           color: @lightColor;
@@ -26,12 +27,16 @@ body:not(.siteroot) #main{
       padding-bottom: 0;
       main{
         height: 100%;
-        #view{
+        > div{
           height: 100%;
-          #page-document{
+          > div{
             height: 100%;
             .card();
             padding-top: 1rem;
+            @media (max-width:@tabletBreakpoint){
+              padding-left: 1rem;
+              padding-right: 1rem;
+            }
             .documentFirstHeading{
   
               font-size: 4rem;

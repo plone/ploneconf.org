@@ -1,26 +1,49 @@
 .block.hero.venue{
-  .aside-title {
-    justify-content: center;
-    align-content: center;
-    text-transform: uppercase;
-    font-size: 2.5em;
+  .block-inner-wrapper{
+    --image-width: 600px;
+    
+    .aside-title {
+      justify-content: center;
+      align-content: center;
+      text-transform: uppercase;
+      font-size: 2.5em;
+    }
+    .aside-title.white {
+      color: @white;
+    }
+    
+    .icon {
+      min-width: auto;
+      @media (max-width: @largeMonitorBreakpoint){
+        box-shadow: 0px 0px 30px 20px hsla(0, 0%, 100%, 0.12);
+      }
+    }
+    .ui.grid{
+      .row{
+        .icons-wrapper{
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          @media (max-width:@computerBreakpoint){
+            display: none;
+          }
+        }
+        .text-wrapper{
+          @media (max-width:@computerBreakpoint){
+            width: 100% !important;
+          }
+        }
+      }
+    }
   }
-  .aside-title.white {
-    color: @white;
-  }
-
-  .icon {
-    margin: 0.25em;
-  }
-
 
   @media screen and (max-width: @computerBreakpoint) {
     .block-inner-wrapper{
       grid-template-columns: 1fr;
       grid-gap: 0.25em;
       .aside-title {
-        justify-content: left;
-        align-content: start;
+        justify-content: center;
+        align-content: center;
         text-transform: uppercase;
         font-size: 2em;
       }
