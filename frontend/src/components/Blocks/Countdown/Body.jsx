@@ -52,7 +52,6 @@ const Body = (props) => {
             <Timer initialTime={remainTime} direction="backward">
               {() => (
                 <>
-
                   <div className="days">
                     <div className="days-n">
                       <Timer.Days />

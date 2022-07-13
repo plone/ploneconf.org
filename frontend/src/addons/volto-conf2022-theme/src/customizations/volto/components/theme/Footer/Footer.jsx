@@ -30,12 +30,7 @@ const Footer = ({ intl }) => {
   const lang = useSelector((state) => state.intl.locale);
   const logged_in = useSelector((state) => state.userSession.token);
   return (
-    <Segment
-      role="contentinfo"
-      padded
-      inverted
-      id="footer"
-    >
+    <Segment role="contentinfo" padded inverted id="footer">
       <Container>
         <Segment basic inverted className="discreet text">
           <FormattedMessage
@@ -81,7 +76,7 @@ const Footer = ({ intl }) => {
             }}
           />
         </Segment>
-        <Image src={ploneConfLogo} className="logo"/>
+        <Image src={ploneConfLogo} className="logo" />
         <List inverted className="actions text">
           {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
           <div role="listitem" className="item">

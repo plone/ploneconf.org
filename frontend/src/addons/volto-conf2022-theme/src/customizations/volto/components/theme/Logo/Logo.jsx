@@ -4,7 +4,7 @@
  */
 
 import { defineMessages, useIntl } from 'react-intl';
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { Image } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
@@ -38,10 +38,10 @@ const Logo = () => {
     setScrollPosition(position);
   };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   return (
@@ -49,7 +49,13 @@ const Logo = () => {
       href={settings.isMultilingual ? `/${lang}` : '/'}
       title={intl.formatMessage(messages.site)}
     >
-      <div className={scrollPosition > 1 ? "mask-logo-sticky mask-logo":"mask-logo-initial mask-logo"}></div>
+      <div
+        className={
+          scrollPosition > 1
+            ? 'mask-logo-sticky mask-logo'
+            : 'mask-logo-initial mask-logo'
+        }
+      ></div>
       <Image
         src={LogoImage}
         alt={intl.formatMessage(messages.plonesite)}
