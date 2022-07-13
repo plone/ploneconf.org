@@ -7,6 +7,7 @@
 @import 'HeroImage';
 @import 'innerPage';
 @import 'footer';
+@import 'listingNews';
 @import 'mixins';
 @import 'logo';
 @import 'Venue';
