@@ -7,10 +7,11 @@ import PropTypes from 'prop-types';
 import { Container } from 'semantic-ui-react';
 import Sponsor from './Sponsor';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import bronzeSponsor from './bronzeSponsor.svg';
-import silverSponsor from './silverSponsor.svg';
-import goldSponsor from './goldSponsor.svg';
-import patron from './patron.svg';
+import bronzeSponsorSVG from '@package/icons/bronzeSponsor.svg';
+import silverSponsorSVG from '@package/icons/silverSponsor.svg';
+import goldSponsorSVG from '@package/icons/goldSponsor.svg';
+import patronSVG from '@package/icons/patron.svg';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 /**
  * SponsorLevel function.
@@ -21,12 +22,12 @@ function SponsorLevel({ levelId, title, sponsors }) {
   const iconSponsor = {
     diamond: null,
     platinum: null,
-    gold: goldSponsor,
-    silver: silverSponsor,
-    bronze: bronzeSponsor,
+    gold: goldSponsorSVG,
+    silver: silverSponsorSVG,
+    bronze: bronzeSponsorSVG,
     supporting: null,
     oss: null,
-    patron: patron,
+    patron: patronSVG,
     organizer: null,
   };
 
@@ -44,12 +45,12 @@ function SponsorLevel({ levelId, title, sponsors }) {
           <FormattedMessage id="of" defaultMessage="of" />
         )}
       </h3>
-      <Container className="sponsorList">
         <div className="sponsor_icon">
           {iconSponsor[levelId] && (
-            <img src={iconSponsor[levelId]} alt={title} />
+            <Icon name={iconSponsor[levelId]} title={title} size="200px" />
           )}
         </div>
+      <Container className="sponsorList">
         {sponsors &&
           sponsors.map(function (sponsor, i) {
             return <Sponsor content={sponsor} key={i} />;
