@@ -39,22 +39,23 @@ const View = ({ data }) => {
               width={2}
               verticalAlign={'middle'}
               textAlign={'center'}
+              className='icons-wrapper'
             >
-              <Icon name={beerSVG} size="94px" />
-              <Icon name={citadelleSVG} size="94px" />
-              <Icon name={snailSVG} size="94px" />
+              <Icon name={beerSVG} size="75px" />
+              <Icon name={citadelleSVG} size="75px" />
+              <Icon name={snailSVG} size="75px" />
             </Grid.Column>
-            <Grid.Column stretched width={10}>
+            <Grid.Column stretched width={10} className='text-wrapper'>
               <div className="hero-body">
                 <div className="hero-text">
                   <h3 className="title">{data.title}</h3>
                   <div className="sub-title">{data.subtitle}</div>
-                  <p
+                  {data.content?.data && <p
                     className={cx('richtext', 'widget', 'description')}
                     dangerouslySetInnerHTML={{
                       __html: data.content.data,
                     }}
-                  />
+                  />}
                   <LinkMore data={data} />
                 </div>
               </div>
