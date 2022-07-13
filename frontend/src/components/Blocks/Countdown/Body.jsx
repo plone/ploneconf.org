@@ -14,7 +14,7 @@ const Body = (props) => {
 
   const remainTime = moment(data.date).format('x') - moment().utc().format('x');
   return (
-    <section className="title-block countdown">
+    <section className="title-block countdown block">
       <aside>
         <h3>
           <FormattedMessage
@@ -52,32 +52,41 @@ const Body = (props) => {
             <Timer initialTime={remainTime} direction="backward">
               {() => (
                 <>
-                  <div className="days-n">
-                    <Timer.Days />
-                  </div>
-                  <div className="days-b">
-                    <FormattedMessage id="days" defaultMessage="days" />
+
+                  <div className="days">
+                    <div className="days-n">
+                      <Timer.Days />
+                    </div>
+                    <div className="days-b">
+                      <FormattedMessage id="days" defaultMessage="days" />
+                    </div>
                   </div>
 
-                  <div className="hours-n">
-                    <Timer.Hours />
-                  </div>
-                  <div className="hours-b">
-                    <FormattedMessage id="hours" defaultMessage="hours" />
-                  </div>
-
-                  <div className="minutes-n">
-                    <Timer.Minutes />
-                  </div>
-                  <div className="minutes-b">
-                    <FormattedMessage id="minutes" defaultMessage="minutes" />
+                  <div className="hours">
+                    <div className="hours-n">
+                      <Timer.Hours />
+                    </div>
+                    <div className="hours-b">
+                      <FormattedMessage id="hours" defaultMessage="hours" />
+                    </div>
                   </div>
 
-                  <div className="seconds-n">
-                    <Timer.Seconds />
+                  <div className="minutes">
+                    <div className="minutes-n">
+                      <Timer.Minutes />
+                    </div>
+                    <div className="minutes-b">
+                      <FormattedMessage id="minutes" defaultMessage="minutes" />
+                    </div>
                   </div>
-                  <div className="seconds-b">
-                    <FormattedMessage id="seconds" defaultMessage="seconds" />
+
+                  <div className="seconds">
+                    <div className="seconds-n">
+                      <Timer.Seconds />
+                    </div>
+                    <div className="seconds-b">
+                      <FormattedMessage id="seconds" defaultMessage="seconds" />
+                    </div>
                   </div>
                 </>
               )}
