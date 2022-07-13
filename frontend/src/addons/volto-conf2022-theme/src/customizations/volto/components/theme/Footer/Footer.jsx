@@ -82,7 +82,7 @@ const Footer = ({ intl }) => {
           />
         </Segment>
         <Image src={ploneConfLogo} className="logo"/>
-        <List inverted className="actions">
+        <List inverted className="actions text">
           {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
           <div role="listitem" className="item">
             {logged_in && (
