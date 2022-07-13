@@ -45,9 +45,11 @@ export const Schema = (props) => {
         title: intl.formatMessage(messages.align),
         default: 'left',
         choices: [
-          ['left', 'left'],
-          ['center', 'center'],
-          ['right', 'right'],
+          ['left', 'Left'],
+          ['mid-left', 'Mid Left'],
+          ['center', 'Center'],
+          ['mid-right', 'Mid Right'],
+          ['right', 'Right'],
         ],
       },
       size: {

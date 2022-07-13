@@ -9,7 +9,7 @@ import { UniversalLink } from '@plone/volto/components';
 import PropTypes from 'prop-types';
 
 const CTA = (props) => {
-  const content = props.content;
+  const content = props.content ? props.content : 'CTA button';
   const href = props.href;
   const size = props.size;
   const openLinkInNewTab = props.openLinkInNewTab;
