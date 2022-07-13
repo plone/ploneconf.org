@@ -1,4 +1,4 @@
-.header .logo-nav-wrapper .logo{
+.siteroot .header .logo-nav-wrapper .logo{
     position: relative;
     .mask-logo{
         background: @pageBackground;
@@ -14,4 +14,19 @@
             height: 0;
         }
     }
-}
+ }
+  
+ .siteroot{
+    #page-document{
+        & > .block.image{
+            position: relative;
+            z-index: 10;
+            margin-top: -60px;
+            @media screen and (min-width:1071px){
+                text-align: left;
+                left: 170px;
+            }
+        }
+    }
+ }
+ 
