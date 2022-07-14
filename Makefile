@@ -76,11 +76,30 @@ format:  ## Format codebase
 	$(MAKE) -C "./backend/" format
 	$(MAKE) -C "./frontend/" format
 
-.PHONY: test
-test:  ## Test codebase
-	@echo "Test codebase"
+
+.PHONY: lint
+lint:  ## Lint codebase
+	@echo "Lint codebase"
+	$(MAKE) -C "./backend/" lint
+
+.PHONY: i18n
+i18n:  ## Update locales
+	@echo "Update locales"
+	$(MAKE) -C "./backend/" i18n
+	$(MAKE) -C "./frontend/" i18n
+
+.PHONY: test-backend
+test-backend:  ## Test backend codebase
+	@echo "Test backend"
 	$(MAKE) -C "./backend/" test
+
+.PHONY: test-frontend
+test-frontend:  ## Test frontend codebase
+	@echo "Test frontend"
 	$(MAKE) -C "./frontend/" test
+
+.PHONY: test
+test:  test-backend test-frontend ## Test codebase
 
 
 .PHONY: build-images

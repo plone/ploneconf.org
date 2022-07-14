@@ -21,14 +21,69 @@ msgstr ""
 "Domain: volto\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
+#: components/Blocks/Venue/schema
+# defaultMessage: Align
+msgid "Align"
+msgstr ""
+
 #: components/Blocks/CTA/Schema
+#: components/Blocks/FixedBackground/Schema
 # defaultMessage: Alignment
 msgid "Alignment"
 msgstr ""
 
+#: components/Blocks/Venue/schema
+# defaultMessage: Aside color
+msgid "Aside color"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+#: components/Blocks/Venue/schema
+# defaultMessage: Aside title
+msgid "Aside title"
+msgstr ""
+
+#: components/Blocks/HeroImage/Edit
+# defaultMessage: Browse
+msgid "Browse"
+msgstr ""
+
+#: components/Blocks/Venue/schema
+# defaultMessage: Content
+msgid "Content"
+msgstr ""
+
+#: components/Blocks/Countdown/Schema
+# defaultMessage: Date
+msgid "Date"
+msgstr ""
+
+#: components/Blocks/HeroImage/Edit
+# defaultMessage: Description
+msgid "Description"
+msgstr ""
+
+#: components/Blocks/FixedBackground/Schema
+#: components/Blocks/HeroImage/Edit
+# defaultMessage: Image
+msgid "Image"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Image side
+msgid "Image side"
+msgstr ""
+
+#: components/Blocks/Countdown/Schema
 #: components/Blocks/CTA/Schema
+#: components/Blocks/FixedBackground/Schema
 # defaultMessage: Item
 msgid "Item"
+msgstr ""
+
+#: components/Blocks/Countdown/Body
+# defaultMessage: Join us for
+msgid "Join us for"
 msgstr ""
 
 #: components/Blocks/CTA/Schema
@@ -36,22 +91,122 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
+#: components/Blocks/Venue/schema
+# defaultMessage: Link
+msgid "Link"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Link more
+msgid "Link more"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+#: components/Blocks/Venue/schema
+# defaultMessage: Link Title
+msgid "Link title"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+#: components/Blocks/Venue/schema
+# defaultMessage: Link to
+msgid "Link to"
+msgstr ""
+
+#: components/Blocks/Listing/NewsListingBody
+# defaultMessage: News
+msgid "News"
+msgstr ""
+
 #: components/Blocks/Teaser/TeaserPersonBody
 # defaultMessage: Please choose an existing content as source for this element
 msgid "Please choose an existing content as source for this element"
 msgstr ""
 
+#: components/Blocks/Countdown/Body
+# defaultMessage: Register now!
+msgid "Register now!"
+msgstr ""
+
 #: components/Blocks/CTA/Schema
+#: components/Blocks/FixedBackground/Schema
 # defaultMessage: Size
 msgid "Size"
 msgstr ""
 
-#: components/Sponsors/Sponsors
-# defaultMessage: Sponsors
-msgid "Sponsors"
+#: components/Sponsors/SponsorLevel
+# defaultMessage: Sponsor
+msgid "Sponsor"
+msgstr ""
+
+#: components/Blocks/HeroImage/Edit
+# defaultMessage: Sub Title
+msgid "Sub Title"
+msgstr ""
+
+#: components/Blocks/Venue/schema
+# defaultMessage: Subtitle
+msgid "Subtitle"
+msgstr ""
+
+#: components/Blocks/Countdown/Body
+# defaultMessage: The community is waiting for you
+msgid "The community is waiting for you"
+msgstr ""
+
+#: components/Blocks/HeroImage/Edit
+#: components/Blocks/Venue/schema
+# defaultMessage: Title
+msgid "Title"
 msgstr ""
 
 #: components/Blocks/CTA/Schema
+#: components/Blocks/FixedBackground/Schema
 # defaultMessage: URL
 msgid "URL"
+msgstr ""
+
+#: components/Sponsors/SponsorLevel
+# defaultMessage: Under the
+msgid "Under the"
+msgstr ""
+
+#: components/Blocks/HeroImage/Edit
+# defaultMessage: Upload a new image
+msgid "Upload a new image"
+msgstr ""
+
+#: components/Blocks/HeroImage/Edit
+# defaultMessage: Uploading image
+msgid "Uploading image"
+msgstr ""
+
+#: components/Blocks/Countdown/Body
+# defaultMessage: days
+msgid "days"
+msgstr ""
+
+#: components/Blocks/Countdown/Body
+# defaultMessage: hours
+msgid "hours"
+msgstr ""
+
+#: components/Blocks/Countdown/Body
+# defaultMessage: minutes
+msgid "minutes"
+msgstr ""
+
+#: components/Sponsors/SponsorLevel
+# defaultMessage: of
+msgid "of"
+msgstr ""
+
+#: components/Blocks/Countdown/Body
+# defaultMessage: seconds
+msgid "seconds"
+msgstr ""
+
+#: components/Blocks/Countdown/Body
+# defaultMessage: this new plone conference
+msgid "this new plone conference"
 msgstr ""
