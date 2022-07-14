@@ -32,7 +32,7 @@ const Body = (props) => {
               <Icon name="ticket" />
             </>
           }
-          href="https://tickets.ploneconf.org/"
+          href="https://2022.ploneconf.org/tickets"
           className="cta-register"
           notContainer
         />
