@@ -6,7 +6,7 @@ import { ConditionalLink } from '@plone/volto/components';
 const NewsListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
   return (
     <div className="news-list">
-      <div className="news-head-title">
+      <div className="wrapper-aside text">
         <h2 className="aside-title">
           <FormattedMessage id="News" defaultMessage="News" />
         </h2>

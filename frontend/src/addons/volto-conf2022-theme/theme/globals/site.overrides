@@ -49,3 +49,14 @@
 #main .ui.secondary.pointing.menu .active.item{
     border-color: @primaryColor;
 }
+
+.aside-title{
+    color: @lightColor;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.wrapper-aside.text{
+    display: grid;
+    place-content: center;
+}

@@ -27,7 +27,7 @@ const View = ({ data }) => {
   );
 
   const ImagePart = () => (
-    <div className="wrapper-aside">
+    <div className={cx("wrapper-aside",{'text': data.asideTitle})}>
       {data.url ? (
         <img
           src={`${flattenToAppURL(data.url)}/@@images/image/large`}
@@ -39,7 +39,7 @@ const View = ({ data }) => {
         <div
           className={cx('hero-image', {
             'empty-image': !data.asideTitle,
-            'title-aside': data.asideTitle,
+            'aside-title': data.asideTitle,
           })}
         >
           {data.asideTitle && data.asideTitle}
