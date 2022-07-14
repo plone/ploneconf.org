@@ -13,8 +13,8 @@ import { isEqual } from 'lodash';
 import { defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
 
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable';
 import { createContent } from '@plone/volto/actions';
 import { Icon, SidebarPortal, LinkMore } from '@plone/volto/components';
 
