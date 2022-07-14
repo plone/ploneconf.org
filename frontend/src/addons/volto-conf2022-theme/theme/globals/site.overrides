@@ -45,3 +45,7 @@
 .siteroot .breadcrumbs{
     display: none;
 }
+
+#main .ui.secondary.pointing.menu .active.item{
+    border-color: @primaryColor;
+}
