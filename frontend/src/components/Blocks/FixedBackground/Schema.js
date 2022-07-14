@@ -9,9 +9,9 @@ const messages = defineMessages({
     id: 'Item',
     defaultMessage: 'Item',
   },
-  label: {
-    id: 'Label',
-    defaultMessage: 'Label',
+  image: {
+    id: 'Image',
+    defaultMessage: 'Image',
   },
   align: {
     id: 'Alignment',
@@ -32,24 +32,22 @@ export const Schema = (props) => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['content', 'href', 'align', 'size'],
+        fields: ['image', 'align', 'size'],
       },
     ],
 
     properties: {
-      content: {
-        title: intl.formatMessage(messages.label),
-        default: 'Label',
+      image: {
+        title: intl.formatMessage(messages.image),
+        widget: 'object_browser',
       },
       align: {
         title: intl.formatMessage(messages.align),
         default: 'left',
         choices: [
-          ['left', 'Left'],
-          ['mid-left', 'Mid Left'],
-          ['center', 'Center'],
-          ['mid-right', 'Mid Right'],
-          ['right', 'Right'],
+          ['left', 'left'],
+          ['center', 'center'],
+          ['right', 'right'],
         ],
       },
       size: {
@@ -66,11 +64,7 @@ export const Schema = (props) => {
           ['massive', 'massive'],
         ],
       },
-      href: {
-        title: intl.formatMessage(messages.href),
-        widget: 'url',
-      },
     },
-    required: ['content', 'href'],
+    required: ['image'],
   };
 };

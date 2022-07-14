@@ -1,0 +1,47 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+.navigation .ui.secondary.pointing.menu, .tools .ui.secondary.pointing.menu{
+    width: max-content;
+}
+
+#navigation{
+    margin-left: auto;
+}
+
+
+.ui.basic.segment.header-wrapper{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position: fixed !important;
+    background-color: @pageBackground;
+    z-index : 10;
+    right: 0;
+    left: 0;
+
+    @media (min-width:@tabletBreakpoint){
+        padding-left: 50%;
+        padding-right: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+        transform: translateX(-50%);
+        right: unset;
+        
+        .has-toolbar &{
+            left: calc(50% + @toolbarWidth);
+        transform: translateX(calc(-50% - calc(@toolbarWidth / 2)));
+        
+    }
+    }
+    + *{
+        margin-top: 5rem;
+    }
+}
+.siteroot #main .content-area{
+    margin-top: 5rem;
+}
+
+.siteroot .breadcrumbs{
+    display: none;
+}

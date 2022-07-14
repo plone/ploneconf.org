@@ -1,0 +1,85 @@
+#main .countdown {
+    text-align: center;
+    display: flex;
+    
+    @media (max-width: @computerBreakpoint) {
+        flex-direction: column;
+    }
+
+    aside {
+        display        : grid;
+        place-content: center;
+        padding: 3rem;
+
+        h3 {
+            font-family  : @secondaryFont;
+            color        : @lightColor;
+
+            font-size    : 2.5rem;
+            
+            margin-bottom: 3rem;
+        }
+
+        button i{
+            margin-left: 0.3rem;
+            transform: rotate(17deg);
+        }
+        
+    }
+
+    article {
+        color  : @primaryColor;
+        display: grid;
+        justify-content: center;
+        .card();
+
+        .subtitle {
+            font-weight  : lighter;
+            font-size: clamp(2rem,10vw, 5rem );
+            @media (min-width:@tabletBreakpoint){
+                font-size: 5rem;
+            }
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem,10vw, 5rem );
+            @media (min-width:@tabletBreakpoint){
+                font-size: 5rem;
+            }
+            width: 100%;
+            color    : @primaryColor;
+        }
+
+        .timer {
+            display              : grid;
+            grid-template-columns: repeat(4, 7rem);
+            @media (max-width:600px){
+                grid-template-columns: repeat(2, 7rem);
+                row-gap: 2rem;
+            }
+            grid-template-rows   : auto auto;
+            grid-gap             : 1rem;
+            margin               : 3rem auto 0 auto;
+
+            div div{
+                background-color: @secondaryColor;
+                color           : @darkColor;
+                font-family     : @secondaryFont;
+                text-transform  : uppercase;
+            }
+
+            [class$="-n"] {
+                font-size: 2rem;
+                padding  : 1rem 0;
+                margin-bottom: 1rem;
+            }
+
+            [class$="-b"] {
+                font-size: 1rem;
+                padding: .5rem 0; 
+            }
+        }
+
+    }
+}

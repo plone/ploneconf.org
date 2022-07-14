@@ -2,3 +2,13 @@
 @import 'tito';
 @import 'CTA';
 @import 'Sponsors';
+@import 'FixedBackground';
+@import 'countdown';
+@import 'HeroImage';
+@import 'innerPage';
+@import 'footer';
+@import 'listingNews';
+@import 'teaser';
+@import 'mixins';
+@import 'logo';
+@import 'Venue';

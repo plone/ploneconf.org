@@ -4,12 +4,13 @@
  */
 
 import React from 'react';
-import { Container, List, Segment } from 'semantic-ui-react';
+import { Container, List, Segment, Image } from 'semantic-ui-react';
 
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
+import ploneConfLogo from './Logo_ploneconf_2022_white_bg_200px.png';
 
 const messages = defineMessages({
   copyright: {
@@ -29,17 +30,9 @@ const Footer = ({ intl }) => {
   const lang = useSelector((state) => state.intl.locale);
   const logged_in = useSelector((state) => state.userSession.token);
   return (
-    <Segment
-      role="contentinfo"
-      vertical
-      padded
-      inverted
-      color="grey"
-      textAlign="center"
-      id="footer"
-    >
+    <Segment role="contentinfo" padded inverted id="footer">
       <Container>
-        <Segment basic inverted color="grey" className="discreet">
+        <Segment basic inverted className="discreet text">
           <FormattedMessage
             id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
             defaultMessage="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -83,7 +76,8 @@ const Footer = ({ intl }) => {
             }}
           />
         </Segment>
-        <List horizontal inverted>
+        <Image src={ploneConfLogo} className="logo" />
+        <List inverted className="actions text">
           {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
           <div role="listitem" className="item">
             {logged_in && (

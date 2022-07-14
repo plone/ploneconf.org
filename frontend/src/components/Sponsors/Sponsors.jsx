@@ -5,7 +5,6 @@
 import React, { useEffect } from 'react';
 import { Container } from 'semantic-ui-react';
 import { listSponsors } from '../../actions';
-import { FormattedMessage, injectIntl } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
 import SponsorLevel from './SponsorLevel';
 
@@ -25,9 +24,6 @@ function Sponsors({ content }) {
 
   return (
     <Container className="sponsors">
-      <h2>
-        <FormattedMessage id="Sponsors" defaultMessage="Sponsors" />
-      </h2>
       {!loading &&
         levels &&
         levels.map(function (sponsorLevel, i) {
@@ -44,4 +40,4 @@ function Sponsors({ content }) {
   );
 }
 
-export default injectIntl(Sponsors);
+export default Sponsors;

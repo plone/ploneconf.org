@@ -1,0 +1,32 @@
+.siteroot .header .logo-nav-wrapper .logo{
+    position: relative;
+    .mask-logo{
+        background: @pageBackground;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        transition: all .4s ease;
+        &-initial{
+            height: 100%;
+        }
+        &-sticky{
+            height: 0;
+        }
+    }
+ }
+  
+ .siteroot{
+    #page-document{
+        .block.image:first-child{
+            position: relative;
+            z-index: 10;
+            margin-top: -60px;
+            @media screen and (min-width:1071px){
+                text-align: left;
+                left: 170px;
+            }
+        }
+    }
+ }
+ 

@@ -1,6 +1,9 @@
 2022-05-21
 ----------
 
+- implement design and related blocks
+  [jchandelle, tlambert, duchenean]
+
 - add notes and userful docker commands
   [tkimnguyen]
 

@@ -1,0 +1,54 @@
+body:not(.siteroot) #main{
+  .breadcrumbs{
+
+    background-color: transparent;
+    border : 0;
+    padding : 0;
+    > div{
+      .card();
+      background-color: @primaryColor;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      .breadcrumb{
+        .section{
+          color: @lightColor;
+        }
+        .divider{
+          color: @lightColor;
+        }
+      }
+    }
+  }
+
+  .content-area{
+      margin-top: -1rem;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      main{
+        height: 100%;
+        > div{
+          height: 100%;
+          > div{
+            height: 100%;
+            .card();
+            padding-top: 1rem;
+            @media (max-width:@tabletBreakpoint){
+              padding-left: 1rem;
+              padding-right: 1rem;
+            }
+            .documentFirstHeading{
+  
+              font-size: 4rem;
+  
+              border : 0;
+              &::before{
+                content: none;
+              }
+            }
+          }
+        }
+      }
+      
+  }
+}

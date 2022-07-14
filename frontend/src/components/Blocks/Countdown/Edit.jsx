@@ -1,3 +1,8 @@
+/**
+ * Edit Countdown block
+ * @module components/Blocks/Countdown/Edit
+ */
+
 import React from 'react';
 import Body from './Body';
 import { SidebarPortal } from '@plone/volto/components';
@@ -8,7 +13,6 @@ const Edit = (props) => {
 
   return (
     <>
-      CTA Edit
       <Body {...props} isEditMode />
       <SidebarPortal selected={selected}>
         <Data

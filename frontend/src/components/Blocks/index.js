@@ -10,8 +10,22 @@ import PayPalView from './PayPal/View';
 import TiToEdit from './TiTo/Edit';
 import TiToView from './TiTo/View';
 
+import FixedBackgroundEdit from './FixedBackground/Edit';
+import FixedBackgroundView from './FixedBackground/View';
+
+import CountdownEdit from './Countdown/Edit';
+import CountdownView from './Countdown/View';
+
+import HeroImageEdit from './HeroImage/Edit';
+import HeroImageView from './HeroImage/View';
+
+import VenueEdit from './Venue/Edit';
+import VenueView from './Venue/View';
+
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import listBulletSVG from '@plone/volto/icons/list-bullet.svg';
+import images from '@plone/volto/icons/images.svg';
+import heroSVG from '@plone/volto/icons/hero.svg';
 
 export const customBlocks = {
   cta: {
@@ -68,6 +82,68 @@ export const customBlocks = {
     edit: TiToEdit,
     restricted: false,
     mostUsed: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  fixedBackground: {
+    id: 'fixedBackground',
+    title: 'Fixed Background',
+    icon: images,
+    group: 'common',
+    view: FixedBackgroundView,
+    edit: FixedBackgroundEdit,
+    restricted: false,
+    mostUsed: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  heroImage: {
+    id: 'heroImage',
+    title: 'Hero Image Advanced',
+    icon: heroSVG,
+    group: 'common',
+    view: HeroImageView,
+    edit: HeroImageEdit,
+    restricted: false,
+    mostUsed: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  countdown: {
+    id: 'countdown',
+    title: 'Countdown',
+    icon: heroSVG,
+    group: 'common',
+    view: CountdownView,
+    edit: CountdownEdit,
+    restricted: false,
+    mostUsed: false,
+    blockHasOwnFocusManagement: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  venue: {
+    id: 'venue',
+    title: 'Venue',
+    icon: heroSVG,
+    group: 'common',
+    view: VenueView,
+    edit: VenueEdit,
+    restricted: false,
+    mostUsed: false,
+    blockHasOwnFocusManagement: true,
     sidebarTab: 1,
     security: {
       addPermission: [],
