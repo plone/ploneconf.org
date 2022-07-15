@@ -16,7 +16,7 @@ const NewsListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
           return (
             <div className="news-body" key={index}>
               <div className="news-image">
-                <Image src={`${item['@id']}/@@images/image/thumb`} />
+                <Image src={`${item['@id']}/@@images/image/preview`} />
               </div>
               <div className="news-texts">
                 <div className="news-title">
