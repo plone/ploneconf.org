@@ -508,43 +508,45 @@ class EditComponent extends Component {
             </div>
             <LinkMore data={this.props.data} isEditMode={true} />
           </div>
-          {this.props.data.url ? (
-            <img
-              className="hero-image"
-              src={`${flattenToAppURL(this.props.data.url)}/@@images/image`}
-              alt=""
-            />
-          ) : (
-            <div className="image-add">
-              <Message className="image-message">
-                {this.state.uploading && (
-                  <Dimmer active>
-                    <Loader indeterminate>
-                      {this.props.intl.formatMessage(messages.uploading)}
-                    </Loader>
-                  </Dimmer>
-                )}
-                <center>
-                  <h4>{this.props.intl.formatMessage(messages.image)}</h4>
-                  {this.props.editable && (
-                    <>
-                      <p>{placeholder}</p>
-                      <p>
-                        <label className="ui button file">
-                          {this.props.intl.formatMessage(messages.browse)}
-                          <input
-                            type="file"
-                            onChange={this.onUploadImage}
-                            style={{ display: 'none' }}
-                          />
-                        </label>
-                      </p>
-                    </>
+          <div className="wrapper-aside">
+            {this.props.data.url ? (
+              <img
+                className="hero-image"
+                src={`${flattenToAppURL(this.props.data.url)}/@@images/image`}
+                alt=""
+              />
+            ) : (
+              <div className="image-add">
+                <Message className="image-message">
+                  {this.state.uploading && (
+                    <Dimmer active>
+                      <Loader indeterminate>
+                        {this.props.intl.formatMessage(messages.uploading)}
+                      </Loader>
+                    </Dimmer>
                   )}
-                </center>
-              </Message>
-            </div>
-          )}
+                  <center>
+                    <h4>{this.props.intl.formatMessage(messages.image)}</h4>
+                    {this.props.editable && (
+                      <>
+                        <p>{placeholder}</p>
+                        <p>
+                          <label className="ui button file">
+                            {this.props.intl.formatMessage(messages.browse)}
+                            <input
+                              type="file"
+                              onChange={this.onUploadImage}
+                              style={{ display: 'none' }}
+                            />
+                          </label>
+                        </p>
+                      </>
+                    )}
+                  </center>
+                </Message>
+              </div>
+            )}
+          </div>
         </div>
         <SidebarPortal selected={this.props.selected}>
           <Data {...this.props} />
