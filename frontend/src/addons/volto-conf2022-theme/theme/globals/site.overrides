@@ -2,6 +2,10 @@
         Global Overrides
 *******************************/
 
+:root{
+      --aside-column-width : 660px;
+}
+
 .navigation .ui.secondary.pointing.menu, .tools .ui.secondary.pointing.menu{
     width: max-content;
 }
