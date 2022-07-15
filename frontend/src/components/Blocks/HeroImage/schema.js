@@ -13,6 +13,10 @@ const messages = defineMessages({
     id: 'Link to',
     defaultMessage: 'Link to',
   },
+  ctaLink: {
+    id: 'Transform Link to CTA button',
+    defaultMessage: 'Transform Link to CTA button',
+  },
   ImageSide: {
     id: 'Image side',
     defaultMessage: 'Image side',
@@ -21,6 +25,18 @@ const messages = defineMessages({
     id: 'Aside title',
     defaultMessage: 'Aside title',
   },
+  ctaIcon: {
+    id: 'CTA Icon',
+    defaultMessage: 'CTA Icon',
+  },
+  ctaIconDescription: {
+    id: 'Enter the name of icone from sementic ui library',
+    defaultMessage: 'Enter the name of icone from sementic ui library',
+  },
+  alignIcon: {
+    id: 'Align Icon',
+    defaultMessage: 'Align Icon',
+  }
 });
 
 const schemaHero = ({ intl }) => {
@@ -31,7 +47,7 @@ const schemaHero = ({ intl }) => {
       {
         id: 'default',
         title: intl.formatMessage(messages.more),
-        fields: ['linkTitle', 'linkHref', 'imageSide', 'asideTitle'],
+        fields: ['linkTitle', 'linkHref', 'ctaLink', 'ctaIcon', 'alignIcon','imageSide', 'asideTitle'],
       },
     ],
     properties: {
@@ -44,6 +60,26 @@ const schemaHero = ({ intl }) => {
         mode: 'link',
         selectedItemAttrs: ['Title', 'Description'],
         allowExternals: true,
+      },
+      ctaLink:{
+        title: intl.formatMessage(messages.ctaLink),
+        type: 'boolean',
+        default: false,
+      },
+      ctaIcon:{
+        title: intl.formatMessage(messages.ctaIcon),
+        description: intl.formatMessage(messages.ctaIconDescription),
+      },
+      alignIcon: {
+        title: intl.formatMessage(messages.alignIcon),
+        default: 'left',
+        choices: [
+          ['left', 'Left'],
+          ['mid-left', 'Mid Left'],
+          ['center', 'Center'],
+          ['mid-right', 'Mid Right'],
+          ['right', 'Right'],
+        ],
       },
       imageSide: {
         title: intl.formatMessage(messages.ImageSide),
