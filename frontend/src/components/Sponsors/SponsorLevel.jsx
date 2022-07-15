@@ -4,7 +4,6 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'semantic-ui-react';
 import Sponsor from './Sponsor';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import bronzeSponsorSVG from '@package/icons/bronzeSponsor.svg';

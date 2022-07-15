@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import ploneConfLogo from './Logo_ploneconf_2022_white_bg_200px.png';
-import Icon from '@plone/volto/components/theme/Icon/Icon';
 import ploneSVG from './Plone-logo.svg';
 
 const messages = defineMessages({
@@ -31,13 +30,12 @@ const Footer = ({ intl }) => {
   const { settings } = config;
   const lang = useSelector((state) => state.intl.locale);
   const logged_in = useSelector((state) => state.userSession.token);
-  console.log(ploneSVG);
   return (
     <Segment role="contentinfo" padded inverted id="footer">
       <Container>
         <Segment basic inverted className="discreet text">
           <div className="plone-logo">
-            <img src={ploneSVG} />
+            <img src={ploneSVG} alt="Plone" />
           </div>
           <FormattedMessage
             id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
