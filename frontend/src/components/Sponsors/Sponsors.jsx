@@ -23,7 +23,7 @@ function Sponsors({ content }) {
   }, [dispatch]);
 
   return (
-    <Container className="sponsors">
+    <div className="sponsors">
       {!loading &&
         levels &&
         levels.map(function (sponsorLevel, i) {
@@ -36,7 +36,7 @@ function Sponsors({ content }) {
             />
           );
         })}
-    </Container>
+    </div>
   );
 }
 
