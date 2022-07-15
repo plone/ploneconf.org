@@ -1,4 +1,4 @@
-.block.listing.news{
+.block.listing{
 
   .news-list{
     display: grid;
@@ -6,27 +6,36 @@
       grid-template-columns: 1fr 660px;
     }
   }
-  .news-head-title{
-    place-self: center;
-    h2{
-      color: @lightColor;
-      font-size: 3rem;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
+
   .news-listing{
     display: grid;
     gap: 2rem;
-
+    
+    
     .news-body{
       display: flex;
       gap: 1rem;
+      
+      @media (max-width:@tabletBreakpoint){
+        flex-direction: column;
+      }
+
       .card();
 
       .news-title{
         font-size: 2rem;
         margin-bottom: 1rem;
+        line-height: 2rem;
+      }
+      .news-image{
+        img{
+          height: 200px;
+          width: 200px;
+          object-fit: cover;
+          @media (max-width:@tabletBreakpoint){
+            width: 100%;
+          }
+        }
       }
     }
   }

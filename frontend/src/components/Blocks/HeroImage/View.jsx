@@ -8,13 +8,16 @@ import PropTypes from 'prop-types';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { LinkMore } from '@plone/volto/components';
 import cx from 'classnames';
+import { CTA } from '@package/components';
+import { Icon } from 'semantic-ui-react';
 
 /**
  * View image block class.
  * @class View
  * @extends Component
  */
-const View = ({ data }) => {
+const View = (props) => {
+  const { data } = props;
   const BodyPart = () => (
     <div className="hero-body">
       <div className="hero-text">
@@ -22,12 +25,26 @@ const View = ({ data }) => {
         {data.subTitle && <div className="sub-title">{data.subTitle}</div>}
         {data.description && <p className="description">{data.description}</p>}
       </div>
-      <LinkMore data={data} />
+      {data.ctaLink ? (
+        <CTA
+          content={
+            <>
+              {data.linkTitle && data.linkTitle}{' '}
+              {data.ctaIcon && <Icon name={data.ctaIcon} />}
+            </>
+          }
+          href={data.linkHref && data.linkHref['@id']}
+          notContainer
+          align={data.alignIcon}
+        />
+      ) : (
+        <LinkMore data={data} />
+      )}
     </div>
   );
 
   const ImagePart = () => (
-    <div className="wrapper-aside">
+    <div className={cx('wrapper-aside', { text: data.asideTitle })}>
       {data.url ? (
         <img
           src={`${flattenToAppURL(data.url)}/@@images/image/large`}
@@ -39,7 +56,7 @@ const View = ({ data }) => {
         <div
           className={cx('hero-image', {
             'empty-image': !data.asideTitle,
-            'title-aside': data.asideTitle,
+            'aside-title': data.asideTitle,
           })}
         >
           {data.asideTitle && data.asideTitle}

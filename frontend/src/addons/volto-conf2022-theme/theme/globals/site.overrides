@@ -2,6 +2,10 @@
         Global Overrides
 *******************************/
 
+:root{
+      --aside-column-width : 660px;
+}
+
 .navigation .ui.secondary.pointing.menu, .tools .ui.secondary.pointing.menu{
     width: max-content;
 }
@@ -48,4 +52,15 @@
 
 #main .ui.secondary.pointing.menu .active.item{
     border-color: @primaryColor;
+}
+
+.aside-title{
+    color: @lightColor;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.wrapper-aside.text{
+    display: grid;
+    place-content: center;
 }

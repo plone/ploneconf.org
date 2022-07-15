@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import ploneConfLogo from './Logo_ploneconf_2022_white_bg_200px.png';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import ploneSVG from './Plone-logo.svg';
 
 const messages = defineMessages({
   copyright: {
@@ -29,10 +31,14 @@ const Footer = ({ intl }) => {
   const { settings } = config;
   const lang = useSelector((state) => state.intl.locale);
   const logged_in = useSelector((state) => state.userSession.token);
+  console.log(ploneSVG);
   return (
     <Segment role="contentinfo" padded inverted id="footer">
       <Container>
         <Segment basic inverted className="discreet text">
+          <div className="plone-logo">
+            <img src={ploneSVG} />
+          </div>
           <FormattedMessage
             id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
             defaultMessage="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -79,18 +85,7 @@ const Footer = ({ intl }) => {
         <Image src={ploneConfLogo} className="logo" />
         <List inverted className="actions text">
           {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
-          <div role="listitem" className="item">
-            {logged_in && (
-              <UniversalLink className="item" href="/logout">
-                <FormattedMessage id="Logout" defaultMessage="Logout" />
-              </UniversalLink>
-            )}
-            {!logged_in && (
-              <UniversalLink className="item" href="/login">
-                <FormattedMessage id="Login" defaultMessage="Login" />
-              </UniversalLink>
-            )}
-          </div>
+
           <div role="listitem" className="item">
             <UniversalLink
               className="item"
@@ -107,12 +102,24 @@ const Footer = ({ intl }) => {
             </UniversalLink>
           </div>
           <div role="listitem" className="item">
-            <a className="item" href="https://plone.org">
-              <FormattedMessage
-                id="Powered by Plone & Python"
-                defaultMessage="Powered by Plone & Python"
-              />
-            </a>
+            <UniversalLink
+              className="item"
+              href={settings.isMultilingual ? `/${lang}/sitemap` : '/sitemap'}
+            >
+              <FormattedMessage id="Site Map" defaultMessage="Site Map" />
+            </UniversalLink>
+          </div>
+          <div role="listitem" className="item">
+            {logged_in && (
+              <UniversalLink className="item" href="/logout">
+                <FormattedMessage id="Logout" defaultMessage="Logout" />
+              </UniversalLink>
+            )}
+            {!logged_in && (
+              <UniversalLink className="item" href="/login">
+                <FormattedMessage id="Login" defaultMessage="Login" />
+              </UniversalLink>
+            )}
           </div>
         </List>
       </Container>

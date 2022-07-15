@@ -1,9 +1,11 @@
-#main .countdown {
+#main .countdown .countdown-inner-wrapper{
     text-align: center;
-    display: flex;
-    
-    @media (max-width: @computerBreakpoint) {
-        flex-direction: column;
+    display: grid;
+
+    grid-template-columns: 1fr minmax(var(--aside-column-width), 1fr);
+
+    @media (max-width: @largeMonitorBreakpoint) {
+        grid-template-columns: 1fr;
     }
 
     aside {
@@ -20,10 +22,7 @@
             margin-bottom: 3rem;
         }
 
-        button i{
-            margin-left: 0.3rem;
-            transform: rotate(17deg);
-        }
+        
         
     }
 

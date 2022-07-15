@@ -1,18 +1,19 @@
-.block.hero{
+#main .block.hero{
   .block-inner-wrapper{
     display: grid;
-    @media (min-width: @computerBreakpoint){
+    gap: 2rem;
 
-      --image-width : 660px;
+    @media (min-width: @computerBreakpoint){
       &.right{
-        grid-template-columns: minmax(var(--image-width), 1fr) 1fr;
+        grid-template-columns: minmax(var(--aside-column-width), 1fr) 1fr;
       }
       &.left{
-        grid-template-columns: 1fr minmax(var(--image-width), 1fr);
+        grid-template-columns: 1fr minmax(var(--aside-column-width), 1fr);
       }
+      grid-template-columns: minmax(var(--aside-column-width), 1fr) 1fr;
     }
     
-    gap: 2rem;
+
 
     .hero-body{
 
@@ -30,10 +31,18 @@
         font-weight: bold;
         margin-bottom: 0.8rem;
       }
+      .ctaContainer button i.icon{
+        transform: rotate(-25deg);
+      }
+    }
+    .wrapper-aside{
+      @media (max-width: @computerBreakpoint){
+        grid-row: ~"1 / 2";
+      }
     }
     .hero-image{
-      max-width: 100%;
-      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
       object-fit: cover;
       height: auto;
     }

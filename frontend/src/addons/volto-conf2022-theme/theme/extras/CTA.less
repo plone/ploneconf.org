@@ -1,7 +1,7 @@
 /*-------------------
 CTA
 --------------------*/
-.ctaContainer {
+#main .ctaContainer {
   text-align: center;
   
   @media (min-width: @tabletBreakpoint) { 
@@ -28,6 +28,11 @@ CTA
     background-color: @secondaryColor;
     color: @black;
     border-radius: 0;
-    margin: 0
+    margin: 0;
+
+    i.icon{
+        margin-left: 0.3rem;
+        transform: rotate(17deg);
+    }
   }
 }

@@ -53,7 +53,7 @@ class Header extends Component {
               <Navigation pathname={this.props.pathname} />
               <CTA
                 content="Register now!"
-                href="https://tickets.ploneconf.org/"
+                href="https://2022.ploneconf.org/tickets"
                 className="cta-register"
                 notContainer
               />
