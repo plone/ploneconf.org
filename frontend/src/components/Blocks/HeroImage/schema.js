@@ -36,7 +36,7 @@ const messages = defineMessages({
   alignIcon: {
     id: 'Align Icon',
     defaultMessage: 'Align Icon',
-  }
+  },
 });
 
 const schemaHero = ({ intl }) => {
@@ -47,7 +47,15 @@ const schemaHero = ({ intl }) => {
       {
         id: 'default',
         title: intl.formatMessage(messages.more),
-        fields: ['linkTitle', 'linkHref', 'ctaLink', 'ctaIcon', 'alignIcon','imageSide', 'asideTitle'],
+        fields: [
+          'linkTitle',
+          'linkHref',
+          'ctaLink',
+          'ctaIcon',
+          'alignIcon',
+          'imageSide',
+          'asideTitle',
+        ],
       },
     ],
     properties: {
@@ -61,12 +69,12 @@ const schemaHero = ({ intl }) => {
         selectedItemAttrs: ['Title', 'Description'],
         allowExternals: true,
       },
-      ctaLink:{
+      ctaLink: {
         title: intl.formatMessage(messages.ctaLink),
         type: 'boolean',
         default: false,
       },
-      ctaIcon:{
+      ctaIcon: {
         title: intl.formatMessage(messages.ctaIcon),
         description: intl.formatMessage(messages.ctaIconDescription),
       },

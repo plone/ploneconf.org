@@ -74,7 +74,10 @@ const Body = (props) => {
                         <Timer.Minutes />
                       </div>
                       <div className="minutes-b">
-                        <FormattedMessage id="minutes" defaultMessage="minutes" />
+                        <FormattedMessage
+                          id="minutes"
+                          defaultMessage="minutes"
+                        />
                       </div>
                     </div>
                     <div className="seconds">
@@ -82,7 +85,10 @@ const Body = (props) => {
                         <Timer.Seconds />
                       </div>
                       <div className="seconds-b">
-                        <FormattedMessage id="seconds" defaultMessage="seconds" />
+                        <FormattedMessage
+                          id="seconds"
+                          defaultMessage="seconds"
+                        />
                       </div>
                     </div>
                   </>

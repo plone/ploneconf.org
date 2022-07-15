@@ -25,21 +25,26 @@ const View = (props) => {
         {data.subTitle && <div className="sub-title">{data.subTitle}</div>}
         {data.description && <p className="description">{data.description}</p>}
       </div>
-      {data.ctaLink ? (<CTA content={
-        <>
-          {data.linkTitle && data.linkTitle} {' '}
-          {data.ctaIcon && <Icon name={data.ctaIcon} />}
-        </>
-        }
-        href={data.linkHref && data.linkHref['@id']}
-        notContainer
-        align={data.alignIcon}
-        />) : (<LinkMore data={data} />)}
+      {data.ctaLink ? (
+        <CTA
+          content={
+            <>
+              {data.linkTitle && data.linkTitle}{' '}
+              {data.ctaIcon && <Icon name={data.ctaIcon} />}
+            </>
+          }
+          href={data.linkHref && data.linkHref['@id']}
+          notContainer
+          align={data.alignIcon}
+        />
+      ) : (
+        <LinkMore data={data} />
+      )}
     </div>
   );
 
   const ImagePart = () => (
-    <div className={cx("wrapper-aside",{'text': data.asideTitle})}>
+    <div className={cx('wrapper-aside', { text: data.asideTitle })}>
       {data.url ? (
         <img
           src={`${flattenToAppURL(data.url)}/@@images/image/large`}
