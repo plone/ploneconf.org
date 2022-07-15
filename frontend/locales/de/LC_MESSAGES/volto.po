@@ -31,6 +31,11 @@ msgstr ""
 msgid "Align"
 msgstr ""
 
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Align Icon
+msgid "Align Icon"
+msgstr ""
+
 #: components/Blocks/CTA/Schema
 #: components/Blocks/FixedBackground/Schema
 # defaultMessage: Alignment
@@ -53,6 +58,11 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
+#: components/Blocks/HeroImage/schema
+# defaultMessage: CTA Icon
+msgid "CTA Icon"
+msgstr ""
+
 #: components/Blocks/Venue/schema
 # defaultMessage: Content
 msgid "Content"
@@ -66,6 +76,11 @@ msgstr ""
 #: components/Blocks/HeroImage/Edit
 # defaultMessage: Description
 msgid "Description"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Enter the name of icone from sementic ui library
+msgid "Enter the name of icone from sementic ui library"
 msgstr ""
 
 #: components/Blocks/FixedBackground/Schema
@@ -163,6 +178,11 @@ msgstr ""
 #: components/Blocks/Venue/schema
 # defaultMessage: Title
 msgid "Title"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Transform Link to CTA button
+msgid "Transform Link to CTA button"
 msgstr ""
 
 #: components/Blocks/CTA/Schema
