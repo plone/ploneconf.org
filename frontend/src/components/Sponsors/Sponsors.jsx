@@ -3,7 +3,6 @@
  * @module components/Sponsors/Sponsors
  */
 import React, { useEffect } from 'react';
-import { Container } from 'semantic-ui-react';
 import { listSponsors } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import SponsorLevel from './SponsorLevel';

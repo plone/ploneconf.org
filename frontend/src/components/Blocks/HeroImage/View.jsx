@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { LinkMore } from '@plone/volto/components';
 import cx from 'classnames';
-import { CTA } from '@package/components';
+import { CTA } from '../../CTA/CTA';
 import { Icon } from 'semantic-ui-react';
 
 /**

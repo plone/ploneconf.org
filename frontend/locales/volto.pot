@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-07-14T12:34:11.788Z\n"
+"POT-Creation-Date: 2022-07-15T10:34:22.952Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,11 @@ msgstr ""
 #: components/Blocks/Venue/schema
 # defaultMessage: Align
 msgid "Align"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Align Icon
+msgid "Align Icon"
 msgstr ""
 
 #: components/Blocks/CTA/Schema
@@ -40,6 +45,11 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
+#: components/Blocks/HeroImage/schema
+# defaultMessage: CTA Icon
+msgid "CTA Icon"
+msgstr ""
+
 #: components/Blocks/Venue/schema
 # defaultMessage: Content
 msgid "Content"
@@ -53,6 +63,11 @@ msgstr ""
 #: components/Blocks/HeroImage/Edit
 # defaultMessage: Description
 msgid "Description"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Enter the name of icone from sementic ui library
+msgid "Enter the name of icone from sementic ui library"
 msgstr ""
 
 #: components/Blocks/FixedBackground/Schema
@@ -150,6 +165,11 @@ msgstr ""
 #: components/Blocks/Venue/schema
 # defaultMessage: Title
 msgid "Title"
+msgstr ""
+
+#: components/Blocks/HeroImage/schema
+# defaultMessage: Transform Link to CTA button
+msgid "Transform Link to CTA button"
 msgstr ""
 
 #: components/Blocks/CTA/Schema
