@@ -23,6 +23,7 @@ endif
 ifeq ($(DEPLOY_ENV), local)
 	CONTEXT=local
 	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PORT)
+	DEPLOY_STACK=plone.yml
 else ifeq ($(DEPLOY_ENV), prod)
 	CONTEXT=prod
 	CONTEXT_HOST=ssh://$(DEPLOY_USER)@$(DEPLOY_HOST):$(DEPLOY_PORT)
@@ -98,7 +99,7 @@ run-playbook: bin/ansible ## Run playbook
 .PHONY: deploy
 deploy: ## Deploy stacks: Plone
 	@echo "$(GREEN)==> Deploy Stack in $(DEPLOY_ENV) $(RESET)"
-	${DOCKER_CONTEXT} stack deploy -c stacks/plone.yml plone
+	${DOCKER_CONTEXT} stack deploy -c stacks/$(DEPLOY_STACK) plone
 
 .PHONY: status
 status: ## Check status of stack
