@@ -6,6 +6,11 @@ body:not(.siteroot) #main {
 
     > div {
       .card();
+
+      @media (max-width: 768px) {
+        padding: 1rem !important;
+        margin: 0 !important;
+      }
       padding-top: 1rem;
       padding-bottom: 1rem;
       background-color: @primaryColor;
