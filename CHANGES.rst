@@ -18,3 +18,6 @@
 
 - Upgrade pas.plugins.authomatic to version 1.0.0
   [ericof]
+
+- Use @plone-collective/volto-authomatic
+  [ericof]
