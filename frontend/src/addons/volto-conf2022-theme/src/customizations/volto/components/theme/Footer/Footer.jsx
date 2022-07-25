@@ -122,22 +122,20 @@ const Footer = ({ intl }) => {
           <div role="listitem" className="item social-network">
             <UniversalLink
               className="item"
-              href="https://www.youtube.com/c/PloneCMS">
-
-                <Icon name="youtube square" size="large"/>
-              </UniversalLink>
-              <UniversalLink
+              href="https://www.youtube.com/c/PloneCMS"
+            >
+              <Icon name="youtube square" size="large" />
+            </UniversalLink>
+            <UniversalLink className="item" href="https://twitter.com/plone">
+              <Icon name="twitter square" size="large" />
+            </UniversalLink>
+            <UniversalLink
               className="item"
-              href="https://twitter.com/plone">
-                <Icon name="twitter square" size="large"/>
-              </UniversalLink>
-              <UniversalLink
-              className="item"
-              href="https://www.facebook.com/Plone">
-                <Icon name="facebook" size="large"/>
-              </UniversalLink>
+              href="https://www.facebook.com/Plone"
+            >
+              <Icon name="facebook" size="large" />
+            </UniversalLink>
           </div>
-
         </List>
       </Container>
     </Segment>
