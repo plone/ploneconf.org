@@ -21,3 +21,6 @@
 
 - Use @plone-collective/volto-authomatic
   [ericof]
+
+- Use @plone-collective/volto-tito-block
+  [ericof]

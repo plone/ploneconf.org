@@ -3144,6 +3144,13 @@
   resolved "https://registry.yarnpkg.com/@plone-collective/volto-authomatic/-/volto-authomatic-1.2.0.tgz#032730d3f96dbcd2a23f9bcd8b7f8f0b9a8dadf0"
   integrity sha512-Q8O3t3ABmQ3OLSq542CGEwWbhQTPKgV/XGtN9r5pzgXkLDp9KbyTY//TD+JX1+q/csXvKG4JUWtcdU7cS21f+w==
 
+"@plone-collective/volto-tito-block@*":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@plone-collective/volto-tito-block/-/volto-tito-block-0.1.0.tgz#ef92cd8470e923d9cbaac6d016fcdcd0305938d5"
+  integrity sha512-MXuIlsX5ZWViB8UVcFVm6rBn1IMyEIYff1ynOY/rHghVuiZ/ZohNmj4GuFIsh2mDRcGD0iDW1Ehhpi2UaQLcdw==
+  dependencies:
+    "@plone/scripts" "*"
+
 "@plone/scripts@*", "@plone/scripts@^1.0.3":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@plone/scripts/-/scripts-1.4.1.tgz#1e9e7c88a7ae24a99dcccc2e017e11ee21d52abf"

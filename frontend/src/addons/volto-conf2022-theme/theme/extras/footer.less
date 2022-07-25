@@ -1,56 +1,56 @@
-#footer{
-  background-color: @primaryColor;
-  border-top: 10px solid @secondaryColor;
+#footer {
   position: relative !important;
-  margin : 0;
-  
-  div.ui.container{
+  border-top: 10px solid @secondaryColor;
+  margin: 0;
+  background-color: @primaryColor;
+
+  div.ui.container {
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
     padding-bottom: 3rem;
     gap: 1rem;
-    @media (max-width:@tabletBreakpoint){
+    @media (max-width: @tabletBreakpoint) {
       flex-direction: column;
       align-items: center;
       margin-top: 50px;
     }
 
-    a{
+    a {
       text-decoration: none;
     }
-    
-    .text{
-      background-color: @primaryColor;
+
+    .text {
       width: 300px;
       padding: 0;
       margin: 0;
-      @media (max-width:@tabletBreakpoint){
+      background-color: @primaryColor;
+      @media (max-width: @tabletBreakpoint) {
         text-align: center;
-        .plone-logo{
+
+        .plone-logo {
           display: grid;
           place-content: center;
         }
       }
     }
-    
-    .logo{
+
+    .logo {
       position: absolute;
       top: -54px;
-      left : 50%;
+      left: 50%;
       transform: translateX(-50%);
-      @media (max-width:@computerBreakpoint){
-          height: 100px;
-          top: -34px;
+      @media (max-width: @computerBreakpoint) {
+        top: -34px;
+        height: 100px;
       }
     }
 
-    .actions{
+    .actions {
       text-align: right;
-      @media (max-width:@tabletBreakpoint){
+      @media (max-width: @tabletBreakpoint) {
         text-align: center;
       }
     }
-
   }
 }
