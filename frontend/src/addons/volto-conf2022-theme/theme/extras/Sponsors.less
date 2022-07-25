@@ -10,6 +10,16 @@ Sponsors
     margin-left: 0 !important;
   }
 
+  @media (min-width: @computerBreakpoint) {
+    .wrapper-aside {
+      place-content: start;
+
+      .aside-title {
+        margin-left: 8rem;
+      }
+    }
+  }
+
   .sponsorLevel {
     position: relative;
     overflow: hidden;
