@@ -39,7 +39,6 @@
   "private": false,
   "workspaces": [],
   "addons": [
-    "volto-slate:minimalDefault,simpleLink",
     "@eeacms/volto-accordion-block",
     "@plone-collective/volto-authomatic",
     "@plone-collective/volto-tito-block",
@@ -151,7 +150,6 @@
   },
   "dependencies": {
     "@plone/volto": "16.0.0-alpha.11",
-    "volto-slate": "*",
     "@eeacms/volto-accordion-block": "*",
     "@plone-collective/volto-authomatic": "*",
     "@plone-collective/volto-tito-block": "*",
