@@ -3044,6 +3044,11 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
+"@plone-collective/volto-authomatic@*":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@plone-collective/volto-authomatic/-/volto-authomatic-1.2.0.tgz#032730d3f96dbcd2a23f9bcd8b7f8f0b9a8dadf0"
+  integrity sha512-Q8O3t3ABmQ3OLSq542CGEwWbhQTPKgV/XGtN9r5pzgXkLDp9KbyTY//TD+JX1+q/csXvKG4JUWtcdU7cS21f+w==
+
 "@plone/scripts@*", "@plone/scripts@^1.0.3":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@plone/scripts/-/scripts-1.4.1.tgz#1e9e7c88a7ae24a99dcccc2e017e11ee21d52abf"
@@ -21260,11 +21265,6 @@ vm2@^3.9.8:
   dependencies:
     acorn "^8.7.0"
     acorn-walk "^8.2.0"
-
-volto-authomatic@*:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/volto-authomatic/-/volto-authomatic-1.0.3.tgz#084eb9e59579eee91de5d97f035b3e0e746043b8"
-  integrity sha512-NP6lmddD3qmMsd6CSgMAPiS7zrLxQLq1UmIgny5FFvMtoMNl4Y+cJKEqlqaVi3V6qV7Hq28NbvAyGeXNVzRgzw==
 
 volto-form-block@*:
   version "2.3.0"
