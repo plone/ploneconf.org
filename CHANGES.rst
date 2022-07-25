@@ -12,3 +12,9 @@
 
 - update tito block to point to 2022
   [ericof]
+
+- Upgrade Plone to version 6.0.0b1
+  [ericof]
+
+- Upgrade pas.plugins.authomatic to version 1.0.0
+  [ericof]
