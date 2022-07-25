@@ -2,46 +2,46 @@
 Sponsors
 --------------------*/
 #main .sponsors {
-  margin-top: 30px;
   display: grid;
+  margin-top: 30px;
   gap: 2rem;
-  @media (max-width:@tabletBreakpoint){
-    margin-left: 0 !important;
+  @media (max-width: @tabletBreakpoint) {
     margin-right: 0 !important;
+    margin-left: 0 !important;
   }
+
   .sponsorLevel {
     position: relative;
-    @media (max-width:@tabletBreakpoint){
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-    
-    
-    .card();
     overflow: hidden;
-    
+    @media (max-width: @tabletBreakpoint) {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    .card();
+
     > .sponsorList {
       display: flex;
       flex-wrap: wrap;
       align-content: center;
       justify-content: start;
-      @media (max-width:@tabletBreakpoint){
+      @media (max-width: @tabletBreakpoint) {
         justify-content: center;
       }
-      
     }
 
-    .sponsor_icon{
+    .sponsor_icon {
       position: absolute;
       top: -48px;
       right: -60px;
     }
 
-    h3{
-      text-transform: uppercase;
+    h3 {
       font-size: 2rem;
-      .sponsor_title{
-        color : @primaryColor;
+      text-transform: uppercase;
+
+      .sponsor_title {
+        color: @primaryColor;
       }
     }
   }

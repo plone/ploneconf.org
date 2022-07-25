@@ -2,65 +2,67 @@
         Global Overrides
 *******************************/
 
-:root{
-      --aside-column-width : 660px;
+:root {
+  --aside-column-width: 660px;
 }
 
-.navigation .ui.secondary.pointing.menu, .tools .ui.secondary.pointing.menu{
-    width: max-content;
+.navigation .ui.secondary.pointing.menu,
+.tools .ui.secondary.pointing.menu {
+  width: max-content;
 }
 
-#navigation{
-    margin-left: auto;
+#navigation {
+  margin-left: auto;
 }
 
+.ui.basic.segment.header-wrapper {
+  position: fixed !important;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: @pageBackground;
 
-.ui.basic.segment.header-wrapper{
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    position: fixed !important;
-    background-color: @pageBackground;
-    z-index : 10;
-    right: 0;
-    left: 0;
+  @media (min-width: @tabletBreakpoint) {
+    right: unset;
+    left: 50%;
+    padding-right: 50%;
+    padding-left: 50%;
+    transform: translateX(-50%);
+    transform: translateX(-50%);
 
-    @media (min-width:@tabletBreakpoint){
-        padding-left: 50%;
-        padding-right: 50%;
-        transform: translateX(-50%);
-        left: 50%;
-        transform: translateX(-50%);
-        right: unset;
-        
-        .has-toolbar &{
-            left: calc(50% + @toolbarWidth);
-        transform: translateX(calc(-50% - calc(@toolbarWidth / 2)));
-        
+    .has-toolbar & {
+      left: calc(50% + @toolbarWidth);
+      transform: translateX(calc(-50% - calc(@toolbarWidth / 2)));
     }
-    }
-    + *{
-        margin-top: 5rem;
-    }
-}
-.siteroot #main .content-area{
+  }
+
+  + * {
     margin-top: 5rem;
+  }
 }
 
-.siteroot .breadcrumbs{
-    display: none;
+.siteroot #main .content-area {
+  margin-top: 5rem;
 }
 
-#main .ui.secondary.pointing.menu .active.item{
-    border-color: @primaryColor;
+.siteroot .breadcrumbs {
+  display: none;
 }
 
-.aside-title{
-    color: @lightColor;
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
+#main .ui.secondary.pointing.menu .active.item {
+  border-color: @primaryColor;
 }
-.wrapper-aside.text{
-    display: grid;
-    place-content: center;
+
+.aside-title {
+  color: @lightColor;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.wrapper-aside.text {
+  display: grid;
+  place-content: center;
 }

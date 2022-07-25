@@ -1,28 +1,30 @@
-#main .teaserGrid{
-  .ui.grid{
-    margin: 0;
+#main .teaserGrid {
+  .ui.grid {
     display: grid;
+    margin: 0;
     gap: 1rem;
 
-    .grid-block-teaser{
+    .grid-block-teaser {
       width: 100%;
       .card() !important;
     }
   }
 }
 
-@media (min-width: @computerBreakpoint){
+@media (min-width: @computerBreakpoint) {
+  .ui[class*='one column'].grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-  .ui[class*="one column"].grid{
-    grid-template-columns: repeat(1,1fr);
+  .ui[class*='two column'].grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .ui[class*="two column"].grid{
-    grid-template-columns: repeat(2,1fr);
+
+  .ui[class*='three column'].grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .ui[class*="three column"].grid{
-    grid-template-columns: repeat(3,1fr);
-  }
-  .ui[class*="four column"].grid{
-    grid-template-columns: repeat(4,1fr);
+
+  .ui[class*='four column'].grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

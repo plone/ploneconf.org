@@ -1,51 +1,53 @@
-body:not(.siteroot) #main{
-  .breadcrumbs{
-
+body:not(.siteroot) #main {
+  .breadcrumbs {
+    padding: 0;
+    border: 0;
     background-color: transparent;
-    border : 0;
-    padding : 0;
-    > div{
+
+    > div {
       .card();
-      background-color: @primaryColor;
       padding-top: 1rem;
       padding-bottom: 1rem;
+      background-color: @primaryColor;
 
-      .breadcrumb{
-        .section{
+      .breadcrumb {
+        .section {
           color: @lightColor;
         }
-        .divider{
+
+        .divider {
           color: @lightColor;
         }
       }
     }
   }
 
-  .content-area{
-      margin-top: -1rem;
-      margin-bottom: 0;
-      padding-bottom: 0;
-      main{
-        height: 100%;
-        > div{
-          height: 100%;
-          > div{
-            height: 100%;
-            .card();
-            padding-top: 1rem;
+  .content-area {
+    padding-bottom: 0;
+    margin-top: -1rem;
+    margin-bottom: 0;
 
-            .documentFirstHeading{
-  
-              font-size: 4rem;
-  
-              border : 0;
-              &::before{
-                content: none;
-              }
+    main {
+      height: 100%;
+
+      > div {
+        height: 100%;
+
+        > div {
+          height: 100%;
+          padding-top: 1rem;
+          .card();
+
+          .documentFirstHeading {
+            border: 0;
+            font-size: 4rem;
+
+            &::before {
+              content: none;
             }
           }
         }
       }
-      
+    }
   }
 }

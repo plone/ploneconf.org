@@ -1,50 +1,52 @@
-#main .block.hero{
-  .block-inner-wrapper{
+#main .block.hero {
+  .block-inner-wrapper {
     display: grid;
     gap: 2rem;
 
-    @media (min-width: @computerBreakpoint){
-      &.right{
+    @media (min-width: @computerBreakpoint) {
+      &.right {
         grid-template-columns: minmax(var(--aside-column-width), 1fr) 1fr;
       }
-      &.left{
+
+      &.left {
         grid-template-columns: 1fr minmax(var(--aside-column-width), 1fr);
       }
       grid-template-columns: minmax(var(--aside-column-width), 1fr) 1fr;
     }
-    
 
-
-    .hero-body{
-
+    .hero-body {
       .card();
 
-      @media (max-width: @tabletBreakpoint){
+      @media (max-width: @tabletBreakpoint) {
         max-height: 650px;
       }
 
-      .title{
-        text-transform: uppercase;
+      .title {
         margin-bottom: 2rem;
+        text-transform: uppercase;
       }
-      .sub-title{
-        font-weight: bold;
+
+      .sub-title {
         margin-bottom: 0.8rem;
+        font-weight: bold;
       }
-      .ctaContainer button i.icon{
+
+      .ctaContainer button i.icon {
         transform: rotate(-25deg);
       }
     }
-    .wrapper-aside{
-      @media (max-width: @computerBreakpoint){
-        grid-row: ~"1 / 2";
+
+    .wrapper-aside {
+      @media (max-width: @computerBreakpoint) {
+        grid-row: ~'1 / 2';
       }
     }
-    .hero-image{
+
+    .hero-image {
       min-width: 100%;
+      height: auto;
       min-height: 100%;
       object-fit: cover;
-      height: auto;
     }
   }
-} 
+}

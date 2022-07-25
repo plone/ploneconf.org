@@ -1,25 +1,25 @@
-.fixed-background{
+.fixed-background {
   position: fixed;
-  top: 0;
   z-index: -1;
+  top: 0;
   height: 100vh;
-  background-color: #0083BE;
+  background-color: #0083be;
 
-  @media (max-width: @computerBreakpoint){
-    width :inherit
+  @media (max-width: @computerBreakpoint) {
+    width: inherit;
   }
-  @media (max-width: @tabletBreakpoint){
-    width : unset;
-    left: 0;
+  @media (max-width: @tabletBreakpoint) {
     right: 0;
+    left: 0;
+    width: unset;
   }
-  .ui.image{
-    transform: translateY(-10px);
 
-    height : 1080px;
-    @media (max-width: @computerBreakpoint){
-      width :100%;
-      height : unset;
+  .ui.image {
+    height: 1080px;
+    transform: translateY(-10px);
+    @media (max-width: @computerBreakpoint) {
+      width: 100%;
+      height: unset;
     }
   }
 }
