@@ -159,7 +159,6 @@
     "@kitconcept/volto-blocks-grid": "*",
     "@kitconcept/volto-separator-block": "*",
     "@kitconcept/volto-slider-block": "*",
-    "react-ga4": "1.4.1",
     "@eeacms/volto-matomo": "2.0.8",
     "react-compound-timer": "1.2.0"
   },
