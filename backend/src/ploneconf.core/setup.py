@@ -49,7 +49,7 @@ setup(
         "Plone",
         "prettyconf",
         "collective.volto.formsupport",
-        "pas.plugins.authomatic>=1.0b2",
+        "pas.plugins.authomatic>=1.0.0",
     ],
     extras_require={
         "test": [

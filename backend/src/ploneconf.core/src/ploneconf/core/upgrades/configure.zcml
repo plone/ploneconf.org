@@ -14,4 +14,19 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneconf.core:default"
+      source="20220712001"
+      destination="20220725001"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade Plone"
+        handler=".upgrade_plone"
+        />
+    <genericsetup:upgradeStep
+        title="Upgrade pas.plugins.authomatic"
+        handler=".upgrade_pas_plugins_authomatic"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
