@@ -14,22 +14,19 @@ const NewsListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
       <div className="news-listing">
         {items.map((item, index) => {
           return (
-            <div className="news-body" key={index}>
+            <ConditionalLink item={item} condition={!isEditMode} className="news-body" key={index}>
               <div className="news-image">
                 <Image src={`${item['@id']}/@@images/image/preview`} />
               </div>
               <div className="news-texts">
                 <div className="news-title">
-                  {' '}
-                  <ConditionalLink item={item} condition={!isEditMode}>
                     {item.title}
-                  </ConditionalLink>
                 </div>
                 <div className="news-text">
                   {item.description && item.description}
                 </div>
               </div>
-            </div>
+            </ConditionalLink>
           );
         })}
       </div>
