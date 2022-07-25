@@ -39,7 +39,6 @@
   "private": false,
   "workspaces": [],
   "addons": [
-    "volto-slate:minimalDefault,simpleLink",
     "@eeacms/volto-accordion-block",
     "@plone-collective/volto-authomatic",
     "volto-form-block",
@@ -150,7 +149,6 @@
   },
   "dependencies": {
     "@plone/volto": "16.0.0-alpha.17",
-    "volto-slate": "*",
     "@eeacms/volto-accordion-block": "*",
     "@plone-collective/volto-authomatic": "*",
     "volto-form-block": "*",
