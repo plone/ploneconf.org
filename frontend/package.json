@@ -41,6 +41,7 @@
   "addons": [
     "@eeacms/volto-accordion-block",
     "@plone-collective/volto-authomatic",
+    "@plone-collective/volto-tito-block",
     "volto-form-block",
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-blocks-grid",
@@ -148,9 +149,10 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
-    "@plone/volto": "16.0.0-alpha.17",
+    "@plone/volto": "16.0.0-alpha.15",
     "@eeacms/volto-accordion-block": "*",
     "@plone-collective/volto-authomatic": "*",
+    "@plone-collective/volto-tito-block": "*",
     "volto-form-block": "*",
     "@kitconcept/volto-blocks-grid": "*",
     "@kitconcept/volto-separator-block": "*",
