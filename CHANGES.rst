@@ -24,3 +24,6 @@
 
 - Use @plone-collective/volto-tito-block
   [ericof]
+
+- Upgrade @plone/volto to version 16.0.0-alpha.17
+  [ericof]
