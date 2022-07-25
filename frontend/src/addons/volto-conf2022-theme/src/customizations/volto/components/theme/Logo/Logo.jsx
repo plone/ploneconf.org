@@ -51,7 +51,7 @@ const Logo = () => {
     >
       <div
         className={
-          scrollPosition > 1
+          scrollPosition > 168
             ? 'mask-logo-sticky mask-logo'
             : 'mask-logo-initial mask-logo'
         }
