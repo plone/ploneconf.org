@@ -51,6 +51,22 @@
       @media (max-width: @tabletBreakpoint) {
         text-align: center;
       }
+
+      .social-network {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+
+        &:after {
+          content: none;
+        }
+
+        a i {
+          width: 21px;
+          height: 24px;
+          margin: 0;
+        }
+      }
     }
   }
 }
