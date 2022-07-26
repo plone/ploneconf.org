@@ -39,7 +39,6 @@
   "private": false,
   "workspaces": [],
   "addons": [
-    "volto-slate:minimalDefault,simpleLink",
     "@eeacms/volto-accordion-block",
     "@plone-collective/volto-authomatic",
     "@plone-collective/volto-tito-block",
@@ -58,6 +57,7 @@
       "^.+\\.js(x)?$": "babel-jest",
       "^.+\\.css$": "jest-css-modules",
       "^.+\\.scss$": "jest-css-modules",
+      "^.+\\.less$": "jest-css-modules",
       "^.+\\.(png)$": "jest-file",
       "^.+\\.(jpg)$": "jest-file",
       "^.+\\.(svg)$": "./node_modules/@plone/volto/jest-svgsystem-transform.js"
@@ -68,6 +68,7 @@
     "moduleNameMapper": {
       "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
+      "@plone/volto-slate": "<rootDir>/node_modules/@plone/volto/packages/volto-slate/src",
       "@kitconcept/volto-blocks-grid/(.*)$": "<rootDir>/node_modules/@kitconcept/volto-blocks-grid/src/$1",
       "load-volto-addons": "<rootDir>/node_modules/@plone/volto/jest-addons-loader.js",
       "@package/(.*)$": "<rootDir>/src/$1",
@@ -150,8 +151,7 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
-    "@plone/volto": "16.0.0-alpha.11",
-    "volto-slate": "*",
+    "@plone/volto": "16.0.0-alpha.17",
     "@eeacms/volto-accordion-block": "*",
     "@plone-collective/volto-authomatic": "*",
     "@plone-collective/volto-tito-block": "*",
@@ -159,7 +159,6 @@
     "@kitconcept/volto-blocks-grid": "*",
     "@kitconcept/volto-separator-block": "*",
     "@kitconcept/volto-slider-block": "*",
-    "react-ga4": "1.4.1",
     "@eeacms/volto-matomo": "2.0.8",
     "react-compound-timer": "1.2.0"
   },
