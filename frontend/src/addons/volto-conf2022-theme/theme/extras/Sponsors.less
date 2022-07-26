@@ -125,3 +125,15 @@ Sponsors
     }
   }
 }
+
+body:not(.siteroot) #main {
+  .sponsors {
+    overflow: hidden;
+    margin-right: calc(0rem - var(--card-padding));
+    margin-left: calc(0rem - var(--card-padding));
+
+    .sponsorLevel {
+      box-shadow: 0px 1px 6px 2px hsla(0, 0%, 0%, 0.1);
+    }
+  }
+}
