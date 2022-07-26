@@ -31,3 +31,10 @@ jobs:
           stack_file: "devops/stacks/2022.ploneconf.org.yml"
           stack_name: "plone"
           deploy_timeout: 480
+
+  report-skipped:
+    if: ${{ github.event.workflow_run.conclusion != 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report the reason for skipping a deploy
+        run: echo "$GITHUB_CONTEXT"
