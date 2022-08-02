@@ -76,7 +76,7 @@ jobs:
         run: npm i @plone/volto-testing
 
       - name: Cypress acceptance tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         env:
           BABEL_ENV: production
           CYPRESS_RETRIES: 2
