@@ -83,7 +83,7 @@ jobs:
         with:
           parallel: false
           browser: chrome
-          spec: cypress/integration/*.js
+          spec: cypress/integration/**/*.cy.js
           working-directory: frontend
           install: false
           start: |

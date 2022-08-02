@@ -7,6 +7,6 @@ module.exports = defineConfig({
   videoUploadOnPasses: false,
   e2e: {
     baseUrl: 'http://localhost:3000',
-    specPattern: 'cypress/integration/**/*.{js,jsx}',
+    specPattern: 'cypress/integration/**/*.cy.{js,jsx}',
   },
 });
