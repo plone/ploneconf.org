@@ -27,3 +27,6 @@
 
 - Upgrade @plone/volto to version 16.0.0-alpha.17
   [ericof]
+
+- Upgrade @plone/volto to version 16.0.0-alpha.20
+  [ericof]
