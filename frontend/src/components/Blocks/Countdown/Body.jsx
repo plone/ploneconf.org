@@ -18,8 +18,10 @@ const Body = (props) => {
       <div className="countdown-inner-wrapper">
         <aside>
           <h3>
-            {data.addText && <div className="additional-text">{data.addText}</div>}
-           
+            {data.addText && (
+              <div className="additional-text">{data.addText}</div>
+            )}
+
             <div className="default-text">
               <FormattedMessage
                 id="The community is waiting for you"

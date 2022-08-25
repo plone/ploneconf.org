@@ -24,7 +24,7 @@ export const Schema = (props) => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['date','addText'],
+        fields: ['date', 'addText'],
       },
     ],
 
@@ -33,9 +33,9 @@ export const Schema = (props) => {
         title: intl.formatMessage(messages.date),
         widget: 'datetime',
       },
-      addText : {
+      addText: {
         title: intl.formatMessage(messages.addText),
-      }
+      },
     },
     required: ['date'],
   };
