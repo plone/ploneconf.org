@@ -131,6 +131,11 @@ msgid "Link to"
 msgstr ""
 
 #: components/Blocks/Listing/NewsListingBody
+# defaultMessage: More News
+msgid "More News"
+msgstr ""
+
+#: components/Blocks/Listing/NewsListingBody
 # defaultMessage: News
 msgid "News"
 msgstr ""

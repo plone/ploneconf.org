@@ -1,7 +1,17 @@
 .block.listing {
+  padding-top: 2rem;;
+  .wrapper-aside.text{
+    h2{
+      margin: 0;
+      a{
+        color: #ffffff;
+      }
+    }
+  }
+
   .news-list {
-    display: grid;
     @media (min-width: @computerBreakpoint) {
+      display: grid;
       grid-template-columns: 1fr 660px;
     }
   }
@@ -37,6 +47,18 @@
           }
         }
       }
+    }
+  }
+  .news-more{
+    text-align: right;
+    width: 100%;
+    grid-column: -2 / -1;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    @media (max-width: @computerBreakpoint) {
+      color : #ffffff;
+      display: block;
+      padding-right: 0.5rem;
     }
   }
 }
