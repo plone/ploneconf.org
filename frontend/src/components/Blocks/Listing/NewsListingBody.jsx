@@ -4,8 +4,7 @@ import { Image, Icon } from 'semantic-ui-react';
 import { ConditionalLink } from '@plone/volto/components';
 
 const NewsListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
-
-  const newsLink = "/news";
+  const newsLink = '/news';
 
   return (
     <div className="news-list">
