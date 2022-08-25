@@ -21,7 +21,7 @@
   >
     <indexed_attr value="labels" />
   </index>
-    <index meta_type="KeywordIndex"
+  <index meta_type="KeywordIndex"
          name="twitter"
   >
     <indexed_attr value="twitter" />

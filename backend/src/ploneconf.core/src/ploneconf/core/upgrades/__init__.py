@@ -18,6 +18,4 @@ def upgrade_pas_plugins_authomatic(portal_setup):
 
 def upgrade_catalog(context):
     portal_setup = api.portal.get_tool("portal_setup")
-    portal_setup.runImportStepFromProfile(
-        "ploneconf.core:default", "catalog"
-    )
+    portal_setup.runImportStepFromProfile("ploneconf.core:default", "catalog")
