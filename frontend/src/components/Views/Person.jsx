@@ -9,7 +9,6 @@ import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/defau
 import { ScheduleInfo } from '@package/components';
 import { SessionInfo } from '@package/components';
 
-
 const Person = ({ content }) => {
   const getColor = (label) => {
     switch (label) {
@@ -28,7 +27,6 @@ const Person = ({ content }) => {
     <Container className="person-view">
       <div className="person-header">
         <div className="person-image-wrapper">
- 
           {content.image ? (
             <img
               src={flattenToAppURL(content.image.scales.preview.download)}
@@ -49,22 +47,19 @@ const Person = ({ content }) => {
           </div>
           <div className="person-social">
             {content.github && (
-                <a href={`https://github.com/${content.github}`}>
-                  <Icon name={githubSVG} size="18px" />
-                  {content.github}
-                </a>
+              <a href={`https://github.com/${content.github}`}>
+                <Icon name={githubSVG} size="18px" />
+                {content.github}
+              </a>
             )}
 
             {content.twitter && (
-                <a
-                  href={`https://twitter.com/${content.twitter.replace(
-                    '@',
-                    '',
-                  )}`}
-                >
-                  <Icon name={twitterSVG} size="18px" />
-                  {content.twitter.replace('@', '')}
-                </a>
+              <a
+                href={`https://twitter.com/${content.twitter.replace('@', '')}`}
+              >
+                <Icon name={twitterSVG} size="18px" />
+                {content.twitter.replace('@', '')}
+              </a>
             )}
           </div>
           <p className="person-description">{content.description}</p>

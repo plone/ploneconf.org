@@ -2,16 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ConditionalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
 
-import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import { Icon } from '@plone/volto/components';
 import githubSVG from '@package/icons/github.svg';
 import twitterSVG from '@package/icons/twitter.svg';
 
-import { PreviewImage } from '@plone/volto/components'
-
+import { PreviewImage } from '@plone/volto/components';
 
 const PersonsSimpleListingBody = ({
   items,
@@ -32,10 +29,6 @@ const PersonsSimpleListingBody = ({
     link = <a href={href}>{linkTitle || href}</a>;
   }
 
-  const { settings } = config;
-
-
-
   // return <img src={src} alt={alt ?? item.title} {...rest} />;
 
   return (
@@ -51,24 +44,24 @@ const PersonsSimpleListingBody = ({
                 <h3>{item.title ? item.title : item.id}</h3>
                 <div className="person-social">
                   {item.github && (
-                      <a
-                        href={`https://github.com/${item.github}`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Icon name={githubSVG} size="18px" />
-                      </a>
+                    <a
+                      href={`https://github.com/${item.github}`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Icon name={githubSVG} size="18px" />
+                    </a>
                   )}
 
                   {item.twitter && (
-                      <a
-                        href={`https://twitter.com/${item.twitter.replace(
-                          '@',
-                          '',
-                        )}`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Icon name={twitterSVG} size="18px" />
-                      </a>
+                    <a
+                      href={`https://twitter.com/${item.twitter.replace(
+                        '@',
+                        '',
+                      )}`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Icon name={twitterSVG} size="18px" />
+                    </a>
                   )}
                 </div>
               </div>
