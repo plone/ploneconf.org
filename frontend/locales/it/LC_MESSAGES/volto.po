@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: components/Blocks/Countdown/Schema
+# defaultMessage: Add aside text
+msgid "Add aside text"
+msgstr ""
+
 #: components/Blocks/Venue/schema
 # defaultMessage: Align
 msgid "Align"
@@ -142,6 +147,11 @@ msgstr ""
 #: components/Sponsors/SponsorLevel
 # defaultMessage: Sponsor
 msgid "Sponsor"
+msgstr ""
+
+#: components/Sponsors/Sponsors
+# defaultMessage: Sponsors
+msgid "Sponsors"
 msgstr ""
 
 #: components/Blocks/HeroImage/Edit

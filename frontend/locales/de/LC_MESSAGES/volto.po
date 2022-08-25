@@ -26,6 +26,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+#: components/Blocks/Countdown/Schema
+# defaultMessage: Add aside text
+msgid "Add aside text"
+msgstr ""
+
 #: components/Blocks/Venue/schema
 # defaultMessage: Align
 msgid "Align"
@@ -157,6 +162,11 @@ msgstr ""
 #: components/Sponsors/SponsorLevel
 # defaultMessage: Sponsor
 msgid "Sponsor"
+msgstr ""
+
+#: components/Sponsors/Sponsors
+# defaultMessage: Sponsors
+msgid "Sponsors"
 msgstr ""
 
 #: components/Blocks/HeroImage/Edit
