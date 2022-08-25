@@ -1,0 +1,44 @@
+.person-view{
+
+  .person-image-wrapper{
+    --margin-image : 2rem;
+    float : left;
+    margin-right : var(--margin-image);
+    margin-bottom: var(--margin-image);
+    @media screen and (max-width: @tabletBreakpoint) {
+      float : none;
+      --margin-image : 0rem;
+      text-align: center;
+    }
+    img{
+        --image-width : 300px;
+        border-radius: 50%;
+        width: var(--image-width);
+        height: var(--image-width);
+        object-fit: cover;
+        margin: 0;
+        align-items: center;
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+        @media screen and (max-width: @largeMonitorBreakpoint) {
+          --image-width : 200px;
+        }
+      }
+  }
+  .person-label{
+    margin-bottom: 1rem;
+  }
+  .person-social{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    a{
+      display: flex;
+      align-items: center;
+    }
+    .icon{
+      margin-right: 0.5rem;
+    }
+  }
+
+}

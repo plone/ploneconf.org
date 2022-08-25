@@ -10,6 +10,9 @@ import { Icon } from '@plone/volto/components';
 import githubSVG from '@package/icons/github.svg';
 import twitterSVG from '@package/icons/twitter.svg';
 
+import { PreviewImage } from '@plone/volto/components'
+
+
 const PersonsSimpleListingBody = ({
   items,
   linkTitle,
@@ -31,6 +34,10 @@ const PersonsSimpleListingBody = ({
 
   const { settings } = config;
 
+
+
+  // return <img src={src} alt={alt ?? item.title} {...rest} />;
+
   return (
     <>
       <div className="persons-simple-listing items">
@@ -38,35 +45,21 @@ const PersonsSimpleListingBody = ({
           <div className="listing-item" key={item['@id']}>
             <ConditionalLink item={item} condition={!isEditMode}>
               <div className="listing-image-wrapper">
-                {!item[settings.listingPreviewImageField] && (
-                  <img src={DefaultImageSVG} alt="" />
-                )}
-                {item[settings.listingPreviewImageField] && (
-                  <img
-                    src={flattenToAppURL(
-                      item[settings.listingPreviewImageField].scales.preview
-                        .download,
-                    )}
-                    alt={item.title}
-                  />
-                )}
+                <PreviewImage item={item} size="mini" />
               </div>
               <div className="listing-body">
                 <h3>{item.title ? item.title : item.id}</h3>
-                <ul className="person-social">
+                <div className="person-social">
                   {item.github && (
-                    <li>
                       <a
                         href={`https://github.com/${item.github}`}
                         onClick={(e) => e.stopPropagation()}
                       >
                         <Icon name={githubSVG} size="18px" />
                       </a>
-                    </li>
                   )}
 
                   {item.twitter && (
-                    <li>
                       <a
                         href={`https://twitter.com/${item.twitter.replace(
                           '@',
@@ -76,9 +69,8 @@ const PersonsSimpleListingBody = ({
                       >
                         <Icon name={twitterSVG} size="18px" />
                       </a>
-                    </li>
                   )}
-                </ul>
+                </div>
               </div>
             </ConditionalLink>
           </div>

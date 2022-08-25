@@ -29,4 +29,15 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="ploneconf.core:default"
+      source="20220725001"
+      destination="20220825001"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade Catalog"
+        handler=".upgrade_catalog"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
