@@ -1,8 +1,8 @@
 2022-05-21
 ----------
 
-- Add back volto-authomatic
-  [jchandelle]
+- Restore volto-authomatic
+  [jchandelle, mpeeters]
 
 - improve design, ui and ux
   [jchandelle, mpeeters]
