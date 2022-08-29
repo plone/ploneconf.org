@@ -18,10 +18,16 @@ const Body = (props) => {
       <div className="countdown-inner-wrapper">
         <aside>
           <h3>
-            <FormattedMessage
-              id="The community is waiting for you"
-              defaultMessage="The community is waiting for you"
-            />
+            {data.addText && (
+              <div className="additional-text">{data.addText}</div>
+            )}
+
+            <div className="default-text">
+              <FormattedMessage
+                id="The community is waiting for you"
+                defaultMessage="The community is waiting for you"
+              />
+            </div>
           </h3>
           <CTA
             content={

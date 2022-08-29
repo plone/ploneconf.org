@@ -26,6 +26,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
+#: components/Blocks/Countdown/Schema
+# defaultMessage: Add aside text
+msgid "Add aside text"
+msgstr ""
+
 #: components/Blocks/Venue/schema
 # defaultMessage: Align
 msgid "Align"
@@ -134,6 +139,11 @@ msgid "Link to"
 msgstr ""
 
 #: components/Blocks/Listing/NewsListingBody
+# defaultMessage: More News
+msgid "More News"
+msgstr ""
+
+#: components/Blocks/Listing/NewsListingBody
 # defaultMessage: News
 msgid "News"
 msgstr ""
@@ -157,6 +167,11 @@ msgstr ""
 #: components/Sponsors/SponsorLevel
 # defaultMessage: Sponsor
 msgid "Sponsor"
+msgstr ""
+
+#: components/Sponsors/Sponsors
+# defaultMessage: Sponsors
+msgid "Sponsors"
 msgstr ""
 
 #: components/Blocks/HeroImage/Edit

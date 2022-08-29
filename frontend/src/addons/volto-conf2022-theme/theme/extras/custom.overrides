@@ -11,3 +11,5 @@
 @import 'mixins';
 @import 'logo';
 @import 'Venue';
+@import 'listingPerson';
+@import 'person';

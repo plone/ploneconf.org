@@ -40,7 +40,6 @@
   "workspaces": [],
   "addons": [
     "@eeacms/volto-accordion-block",
-    "@plone-collective/volto-authomatic",
     "@plone-collective/volto-tito-block",
     "volto-form-block",
     "@kitconcept/volto-separator-block",
@@ -153,7 +152,6 @@
   "dependencies": {
     "@plone/volto": "16.0.0-alpha.20",
     "@eeacms/volto-accordion-block": "*",
-    "@plone-collective/volto-authomatic": "*",
     "@plone-collective/volto-tito-block": "*",
     "volto-form-block": "*",
     "@kitconcept/volto-blocks-grid": "*",

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Container, List, Segment, Image } from 'semantic-ui-react';
+import { Container, List, Segment, Image, Icon } from 'semantic-ui-react';
 
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
@@ -118,6 +118,23 @@ const Footer = ({ intl }) => {
                 <FormattedMessage id="Login" defaultMessage="Login" />
               </UniversalLink>
             )}
+          </div>
+          <div role="listitem" className="item social-network">
+            <UniversalLink
+              className="item"
+              href="https://www.youtube.com/c/PloneCMS"
+            >
+              <Icon name="youtube square" size="large" />
+            </UniversalLink>
+            <UniversalLink className="item" href="https://twitter.com/plone">
+              <Icon name="twitter square" size="large" />
+            </UniversalLink>
+            <UniversalLink
+              className="item"
+              href="https://www.facebook.com/Plone"
+            >
+              <Icon name="facebook" size="large" />
+            </UniversalLink>
           </div>
         </List>
       </Container>

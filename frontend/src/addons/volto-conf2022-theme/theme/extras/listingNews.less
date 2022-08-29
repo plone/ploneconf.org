@@ -1,7 +1,19 @@
 .block.listing {
+  padding-top: 2rem;
+
+  .wrapper-aside.text {
+    h2 {
+      margin: 0;
+
+      a {
+        color: #ffffff;
+      }
+    }
+  }
+
   .news-list {
-    display: grid;
     @media (min-width: @computerBreakpoint) {
+      display: grid;
       grid-template-columns: 1fr 660px;
     }
   }
@@ -12,6 +24,7 @@
 
     .news-body {
       display: flex;
+      color: @darkColor;
       gap: 1rem;
 
       @media (max-width: @tabletBreakpoint) {
@@ -36,6 +49,19 @@
           }
         }
       }
+    }
+  }
+
+  .news-more {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    grid-column: -2 / -1;
+    text-align: right;
+    @media (max-width: @computerBreakpoint) {
+      display: block;
+      padding-right: 0.5rem;
+      color: #ffffff;
     }
   }
 }

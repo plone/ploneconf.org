@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-07-15T10:34:22.952Z\n"
+"POT-Creation-Date: 2022-08-25T13:16:05.021Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#: components/Blocks/Countdown/Schema
+# defaultMessage: Add aside text
+msgid "Add aside text"
+msgstr ""
 
 #: components/Blocks/Venue/schema
 # defaultMessage: Align
@@ -121,6 +126,11 @@ msgid "Link to"
 msgstr ""
 
 #: components/Blocks/Listing/NewsListingBody
+# defaultMessage: More News
+msgid "More News"
+msgstr ""
+
+#: components/Blocks/Listing/NewsListingBody
 # defaultMessage: News
 msgid "News"
 msgstr ""
@@ -144,6 +154,11 @@ msgstr ""
 #: components/Sponsors/SponsorLevel
 # defaultMessage: Sponsor
 msgid "Sponsor"
+msgstr ""
+
+#: components/Sponsors/Sponsors
+# defaultMessage: Sponsors
+msgid "Sponsors"
 msgstr ""
 
 #: components/Blocks/HeroImage/Edit

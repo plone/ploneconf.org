@@ -29,7 +29,7 @@ const Person = ({ content }) => {
         <div className="person-image-wrapper">
           {content.image ? (
             <img
-              src={flattenToAppURL(content.image.scales.teaser.download)}
+              src={flattenToAppURL(content.image.scales.preview.download)}
               alt={content.image_caption}
             />
           ) : (
@@ -38,37 +38,30 @@ const Person = ({ content }) => {
         </div>
         <div className="person-content">
           <h1>{content.title}</h1>
-          <ul>
+          <div className="person-label">
             {content?.labels?.map((label) => (
-              <li key={label} style={{ marginRight: '10px' }}>
+              <div key={label} style={{ marginRight: '10px' }}>
                 <Label color={getColor(label)}>{label}</Label>
-              </li>
+              </div>
             ))}
-          </ul>
-          <ul>
+          </div>
+          <div className="person-social">
             {content.github && (
-              <li>
-                <a href={`https://github.com/${content.github}`}>
-                  <Icon name={githubSVG} size="18px" />
-                  {content.github}
-                </a>
-              </li>
+              <a href={`https://github.com/${content.github}`}>
+                <Icon name={githubSVG} size="18px" />
+                {content.github}
+              </a>
             )}
 
             {content.twitter && (
-              <li>
-                <a
-                  href={`https://twitter.com/${content.twitter.replace(
-                    '@',
-                    '',
-                  )}`}
-                >
-                  <Icon name={twitterSVG} size="18px" />
-                  {content.twitter.replace('@', '')}
-                </a>
-              </li>
+              <a
+                href={`https://twitter.com/${content.twitter.replace('@', '')}`}
+              >
+                <Icon name={twitterSVG} size="18px" />
+                {content.twitter.replace('@', '')}
+              </a>
             )}
-          </ul>
+          </div>
           <p className="person-description">{content.description}</p>
           {content.text && (
             <div

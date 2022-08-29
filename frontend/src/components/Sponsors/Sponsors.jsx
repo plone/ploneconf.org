@@ -3,6 +3,7 @@
  * @module components/Sponsors/Sponsors
  */
 import React, { useEffect } from 'react';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import { listSponsors } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import SponsorLevel from './SponsorLevel';
@@ -23,6 +24,11 @@ function Sponsors({ content }) {
 
   return (
     <div className="sponsors">
+      <div className="wrapper-aside text">
+        <h2 className="aside-title">
+          <FormattedMessage id="Sponsors" defaultMessage="Sponsors" />
+        </h2>
+      </div>
       {!loading &&
         levels &&
         levels.map(function (sponsorLevel, i) {
@@ -39,4 +45,4 @@ function Sponsors({ content }) {
   );
 }
 
-export default Sponsors;
+export default injectIntl(Sponsors);

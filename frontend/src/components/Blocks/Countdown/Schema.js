@@ -9,6 +9,10 @@ const messages = defineMessages({
     id: 'Item',
     defaultMessage: 'Item',
   },
+  addText: {
+    id: 'Add aside text',
+    defaultMessage: 'Add aside text',
+  },
 });
 
 export const Schema = (props) => {
@@ -20,7 +24,7 @@ export const Schema = (props) => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['date'],
+        fields: ['date', 'addText'],
       },
     ],
 
@@ -28,6 +32,9 @@ export const Schema = (props) => {
       date: {
         title: intl.formatMessage(messages.date),
         widget: 'datetime',
+      },
+      addText: {
+        title: intl.formatMessage(messages.addText),
       },
     },
     required: ['date'],

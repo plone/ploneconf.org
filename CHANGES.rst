@@ -1,6 +1,9 @@
 2022-05-21
 ----------
 
+- improve design, ui and ux
+  [jchandelle, mpeeters]
+
 - implement design and related blocks
   [jchandelle, tlambert, duchenean]
 

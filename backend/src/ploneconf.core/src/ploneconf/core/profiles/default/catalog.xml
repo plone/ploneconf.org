@@ -21,11 +21,23 @@
   >
     <indexed_attr value="labels" />
   </index>
+  <index meta_type="KeywordIndex"
+         name="twitter"
+  >
+    <indexed_attr value="twitter" />
+  </index>
+  <index meta_type="KeywordIndex"
+         name="github"
+  >
+    <indexed_attr value="github" />
+  </index>
 
   <column value="level" />
   <column value="session_level" />
   <column value="track" />
   <column value="image_field" />
   <column value="labels" />
+  <column value="twitter" />
+  <column value="github" />
 
 </object>
