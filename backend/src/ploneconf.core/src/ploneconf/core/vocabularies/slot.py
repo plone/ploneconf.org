@@ -37,5 +37,6 @@ def slot_audiences(context):
             SimpleTerm(value="integrator", title="Integrator"),
             SimpleTerm(value="designer", title="Designer"),
             SimpleTerm(value="developer", title="Developer"),
+            SimpleTerm(value="sysadmin", title="SysAdmin/Devops"),
         ]
     )
