@@ -85,7 +85,7 @@ export default function applyConfig(config) {
       id: 'talks',
       title: 'Talks',
       template: TalksListingBody,
-      fullobjects: true
+      fullobjects: true,
     },
     {
       id: 'news',

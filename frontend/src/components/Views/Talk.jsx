@@ -8,9 +8,11 @@ import cx from 'classnames';
 
 const Talk = ({ content }) => {
   return (
-    <Container className={cx('talk-view', {
-      'too-many-speakers': content.presenters?.length > 2,
-    })}>
+    <Container
+      className={cx('talk-view', {
+        'too-many-speakers': content.presenters?.length > 2,
+      })}
+    >
       <div className="talk-header">
         <div className="talk-content">
           <h1>{content.title}</h1>
