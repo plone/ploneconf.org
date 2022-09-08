@@ -13,3 +13,6 @@
 @import 'Venue';
 @import 'listingPerson';
 @import 'person';
+@import 'listing';
+@import 'listingTalk';
+@import 'talk';

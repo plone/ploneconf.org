@@ -11,6 +11,7 @@ import githubSVG from '@package/icons/github.svg';
 import twitterSVG from '@package/icons/twitter.svg';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {Popup} from 'semantic-ui-react';
 
 const PresentersInfo = (props) => {
   const content = props.content;
@@ -20,17 +21,24 @@ const PresentersInfo = (props) => {
       {presenters?.map((item) => (
         <div className="listing-item" key={item['@id']}>
           <Link to={flattenToAppURL(item['@id'])}>
-            <div className="listing-image-wrapper">
-              {!item?.image?.download && <img src={DefaultImageSVG} alt="" />}
-              {item?.image?.download && (
-                <img
-                  src={flattenToAppURL(item.image.download)}
-                  alt={item.title}
-                />
-              )}
-            </div>
+            <Popup
+              trigger={
+                <div className="listing-image-wrapper">
+                  {!item?.image?.download && <img src={DefaultImageSVG} alt="" />}
+                  {item?.image?.download && (
+                    <img
+                      src={flattenToAppURL(item.image.download)}
+                      alt={item.title}
+                    />
+                  )}
+                </div>
+              }
+              position="top center"
+              >
+              <Popup.Content>{item.title ? item.title : item.id}</Popup.Content>
+            </Popup>
+            
             <div className="listing-body">
-              <h3>{item.title ? item.title : item.id}</h3>
               <ul className="person-social">
                 {item.github && (
                   <li>
