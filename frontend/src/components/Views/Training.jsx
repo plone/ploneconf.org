@@ -41,21 +41,23 @@ const Training = ({ content }) => {
           }}
         />
       )}
-      <h3>Recorded talk</h3>
       {content.video_url && (
-        <div className="video-inner">
-          <Embed
-            id={
-              content.video_url.match(/.be\//)
-                ? content.video_url.match(/^.*\.be\/(.*)/)[1]
-                : content.video_url.match(/^.*\?v=(.*)$/)[1]
-            }
-            source="youtube"
-            icon="play"
-            defaultActive
-            autoplay={false}
-          />
-        </div>
+        <>
+          <h3>Recorded training</h3>
+          <div className="video-inner">
+            <Embed
+              id={
+                content.video_url.match(/.be\//)
+                  ? content.video_url.match(/^.*\.be\/(.*)/)[1]
+                  : content.video_url.match(/^.*\?v=(.*)$/)[1]
+              }
+              source="youtube"
+              icon="play"
+              defaultActive
+              autoplay={false}
+            />
+          </div>
+        </>
       )}
     </Container>
   );
