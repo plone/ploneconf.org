@@ -1,6 +1,9 @@
 2022-05-21
 ----------
 
+- Fix responsive for person view and Change schedule view
+  [jchandelle]
+
 - Restore volto-authomatic
   [jchandelle, mpeeters]
 

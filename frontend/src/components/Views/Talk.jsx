@@ -4,10 +4,15 @@ import { PresentersInfo } from '@package/components';
 import { ScheduleInfo } from '@package/components';
 import { SessionInfo } from '@package/components';
 import { Embed } from 'semantic-ui-react';
+import cx from 'classnames';
 
 const Talk = ({ content }) => {
   return (
-    <Container className="talk-view">
+    <Container
+      className={cx('talk-view', {
+        'too-many-speakers': content.presenters?.length > 2,
+      })}
+    >
       <div className="talk-header">
         <div className="talk-content">
           <h1>{content.title}</h1>
@@ -41,21 +46,23 @@ const Talk = ({ content }) => {
           }}
         />
       )}
-      <h3>Recorded talk</h3>
       {content.video_url && (
-        <div className="video-inner">
-          <Embed
-            id={
-              content.video_url.match(/.be\//)
-                ? content.video_url.match(/^.*\.be\/(.*)/)[1]
-                : content.video_url.match(/^.*\?v=(.*)$/)[1]
-            }
-            source="youtube"
-            icon="play"
-            defaultActive
-            autoplay={false}
-          />
-        </div>
+        <>
+          <h3>Recorded talk</h3>
+          <div className="video-inner">
+            <Embed
+              id={
+                content.video_url.match(/.be\//)
+                  ? content.video_url.match(/^.*\.be\/(.*)/)[1]
+                  : content.video_url.match(/^.*\?v=(.*)$/)[1]
+              }
+              source="youtube"
+              icon="play"
+              defaultActive
+              autoplay={false}
+            />
+          </div>
+        </>
       )}
     </Container>
   );

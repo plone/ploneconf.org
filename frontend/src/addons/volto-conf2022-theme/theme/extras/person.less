@@ -1,11 +1,17 @@
 .person-view {
+  .person-header {
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: @tabletBreakpoint) {
+      flex-direction: column;
+    }
+  }
+
   .person-image-wrapper {
     --margin-image: 2rem;
     margin-right: var(--margin-image);
     margin-bottom: var(--margin-image);
-    float: left;
     @media screen and (max-width: @tabletBreakpoint) {
-      float: none;
       text-align: center;
       --margin-image: 0rem;
     }
