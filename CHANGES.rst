@@ -1,6 +1,9 @@
 2022-05-21
 ----------
 
+- Fix talk view css
+  [jchandelle]
+
 - Fix responsive for person view and Change schedule view
   [jchandelle]
 
