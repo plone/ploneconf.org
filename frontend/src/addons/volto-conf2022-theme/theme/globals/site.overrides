@@ -66,3 +66,7 @@
   display: grid;
   place-content: center;
 }
+
+#main .block {
+  margin-bottom: 1.5em;
+}

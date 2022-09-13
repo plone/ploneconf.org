@@ -15,24 +15,29 @@
     }
 
     .hero-body {
+      max-height: none;
+
+      p {
+        max-height: none;
+      }
       .card();
 
-      @media (max-width: @tabletBreakpoint) {
-        max-height: 650px;
-      }
-
       .title {
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
         text-transform: uppercase;
       }
 
       .sub-title {
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
         font-weight: bold;
       }
 
       .ctaContainer button i.icon {
         transform: rotate(-25deg);
+      }
+
+      .link-more {
+        margin-top: 1rem;
       }
     }
 
