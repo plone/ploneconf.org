@@ -22,17 +22,18 @@ const View = ({ data }) => {
   return (
     <div className="block hero venue">
       <div className={'block-inner-wrapper ' + data.align}>
-        {data?.align === 'left' && (
-          <Header
-            as={'h2'}
-            className="aside-title"
-            color={data.asideColor ? data.asideColor : 'black'}
-            textAlign={'center'}
-            size={'huge'}
-          >
-            {data.asideTitle}
-          </Header>
-        )}
+        <div className="wrapper-aside text">
+          {data?.align === 'left' && (
+            <div
+          
+              className="aside-title"
+              color={data.asideColor ? data.asideColor : 'black'}
+              textAlign={'center'}
+            >
+              {data.asideTitle}
+            </div>
+          )}
+        </div>
         <Grid>
           <Grid.Row>
             <Grid.Column
