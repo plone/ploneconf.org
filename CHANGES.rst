@@ -1,6 +1,12 @@
 2022-05-21
 ----------
 
+- Add spaces between block
+  [jchandelle]
+
+- Fix Venue and Hero Image theming
+  [jchandelle]
+
 - Fix talk view css
   [jchandelle]
 
