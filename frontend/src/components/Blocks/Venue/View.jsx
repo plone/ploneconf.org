@@ -25,7 +25,6 @@ const View = ({ data }) => {
         <div className="wrapper-aside text">
           {data?.align === 'left' && (
             <div
-          
               className="aside-title"
               color={data.asideColor ? data.asideColor : 'black'}
               textAlign={'center'}
