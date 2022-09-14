@@ -1,3 +1,9 @@
+Unreleased
+----------
+
+- Fix relationList empty error if editing an object with "presenters" field.
+  [sneridagh]
+
 2022-05-21
 ----------
 

@@ -29,6 +29,7 @@ class IConferenceSession(model.Schema):
             vocabulary="ploneconf.core.vocabularies.persons",
         ),
         required=False,
+        default=[],
     )
 
     session_level = schema.Set(
