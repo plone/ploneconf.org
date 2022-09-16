@@ -7,6 +7,9 @@ Unreleased
 2022-05-21
 ----------
 
+- Add Schedule Block
+  [jchandelle]
+
 - Add spaces between block
   [jchandelle]
 

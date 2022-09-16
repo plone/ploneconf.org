@@ -25,6 +25,7 @@ import PersonsSimpleListingBody from './Blocks/Listing/PersonsSimpleListingBody'
 import TalksListingBody from './Blocks/Listing/TalksListingBody';
 import NewsListingBody from './Blocks/Listing/NewsListingBody';
 import FixedBackground from './FixedBackground/FixedBackground';
+import Schedule from './Schedule/Schedule';
 
 export {
   CTA,
@@ -43,4 +44,5 @@ export {
   TalksListingBody,
   NewsListingBody,
   FixedBackground,
+  Schedule,
 };
