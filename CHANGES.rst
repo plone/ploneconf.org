@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Fix start and end dates to include timezone in ical view
+  [mpeeters]
+
 - Adapt session serializer to handle timezone correctly
   [mpeeters]
 

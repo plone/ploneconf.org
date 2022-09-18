@@ -9,6 +9,7 @@ from zope.interface import implementer
 from zope.publisher.browser import BrowserView
 
 import icalendar
+import pytz
 
 
 PRODID = "-//Plone.org//NONSGML plone.app.event//EN"
@@ -33,7 +34,7 @@ def construct_icalendar(context):
     tzmap = {}
     events = [context]
     for event in events:
-        tz = "Europe/Berlin"
+        tz = api.portal.get_registry_record("plone.portal_timezone")
         tz_start = tz_end = tz
         tzmap = add_to_zones_map(tzmap, tz_start, context.start)
         tzmap = add_to_zones_map(tzmap, tz_end, context.end)
@@ -69,6 +70,8 @@ class ICalendarSlotComponent:
         self.context = context
         self.event = self.context
         self.ical = icalendar.Event()
+        self.tz = pytz.timezone(api.portal.get_registry_record("plone.portal_timezone"))
+        self.utc_tz = pytz.timezone("utc")
 
     @property
     def dtstamp(self):
@@ -104,11 +107,11 @@ class ICalendarSlotComponent:
 
     @property
     def dtstart(self):
-        return {"value": self.event.start}
+        return {"value": self.utc_tz.localize(self.event.start).astimezone(self.tz)}
 
     @property
     def dtend(self):
-        return {"value": self.event.end}
+        return {"value": self.utc_tz.localize(self.event.end).astimezone(self.tz)}
 
     @property
     def recurrence(self):
