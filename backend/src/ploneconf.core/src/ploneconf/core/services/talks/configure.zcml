@@ -6,8 +6,8 @@
   <plone:service
       method="GET"
       factory=".talks.Get"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      permission="zope2.Public"
+      for="*"
+      permission="zope2.View"
       name="@talks"
       />
 

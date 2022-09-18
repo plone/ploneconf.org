@@ -6,13 +6,10 @@ from typing import Dict
 from typing import List
 from zope.component import getMultiAdapter
 
-import pytz
-
 
 class Get(Service):
     def _serialize_brain(self, brain) -> Dict[str, Any]:
         obj = brain.getObject()
-
         result = getMultiAdapter((obj, self.request), ISerializeToJsonSummary)()
         if bool(obj.presenters):
             result["presenters"] = [
@@ -22,12 +19,6 @@ class Get(Service):
                 }
                 for presenter in obj.presenters
             ]
-        try:
-            timezone = pytz.timezone("utc")
-            result["start"] = timezone.localize(obj.start).isoformat()
-            result["end"] = timezone.localize(obj.end).isoformat()
-        except Exception:
-            pass
         return result
 
     def get_talks(self) -> List[Dict[str, Any]]:

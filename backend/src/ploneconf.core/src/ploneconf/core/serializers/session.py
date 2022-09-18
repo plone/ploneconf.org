@@ -1,5 +1,8 @@
+from plone import api
+from plone.restapi.interfaces import ISerializeToJson
 from plone.restapi.interfaces import ISerializeToJsonSummary
 from plone.restapi.serializer.converters import json_compatible
+from plone.restapi.serializer.dxcontent import SerializeToJson
 from ploneconf.core.content.keynote import IKeynote
 from ploneconf.core.content.talk import ITalk
 from ploneconf.core.content.training import ITraining
@@ -9,6 +12,8 @@ from zope.component import getUtility
 from zope.interface import implementer
 from zope.interface import Interface
 from zope.schema.interfaces import IVocabularyFactory
+
+import pytz
 
 
 ATTRIBUTE_VOCABULARY = {
@@ -22,6 +27,43 @@ def get_vocabulary(attr: str, context):
     name = ATTRIBUTE_VOCABULARY.get(attr)
     factory = getUtility(IVocabularyFactory, name)
     return factory(context)
+
+
+def include_timezone(date):
+    """Ensure that the date include the timezone specified in Plone config"""
+    if not date:
+        return date
+    tz = pytz.timezone(api.portal.get_registry_record("plone.portal_timezone"))
+    utc_tz = pytz.timezone("utc")
+    return utc_tz.localize(date).astimezone(tz).isoformat()
+
+
+class JSONSerializer(SerializeToJson):
+    """ISerializeToJson adapter for Session contents."""
+
+    def __call__(self, *args, **kwargs):
+        result = super(JSONSerializer, self).__call__(*args, **kwargs)
+        result["start"] = include_timezone(self.context.start)
+        result["end"] = include_timezone(self.context.end)
+        return result
+
+
+@implementer(ISerializeToJson)
+@adapter(IKeynote, Interface)
+class KeynoteJSONSerializer(JSONSerializer):
+    """ISerializeToJson adapter for the Keynote."""
+
+
+@implementer(ISerializeToJson)
+@adapter(ITalk, Interface)
+class TalkJSONSerializer(JSONSerializer):
+    """ISerializeToJson adapter for the Talk."""
+
+
+@implementer(ISerializeToJson)
+@adapter(ITraining, Interface)
+class TrainingJSONSerializer(JSONSerializer):
+    """ISerializeToJson adapter for the Training."""
 
 
 class JSONSummarySerializer:
@@ -62,8 +104,8 @@ class JSONSummarySerializer:
                 "level": level,
                 "audience": audience,
                 "track": track,
-                "start": context.start,
-                "end": context.end,
+                "start": include_timezone(context.start),
+                "end": include_timezone(context.end),
             }
         )
         return summary

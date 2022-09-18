@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Adapt session serializer to handle timezone correctly
+  [mpeeters]
+
 - Fix Schedule Block default value and trad
   [jchandelle]
 
