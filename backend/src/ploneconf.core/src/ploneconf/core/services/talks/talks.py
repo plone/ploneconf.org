@@ -1,11 +1,6 @@
-from collections import defaultdict
-from datetime import datetime
-from datetime import timezone
 from plone import api
-from plone.app.event.base import default_timezone
 from plone.restapi.interfaces import ISerializeToJsonSummary
 from plone.restapi.services import Service
-from ploneconf.core.vocabularies.sponsorship import LEVELS
 from typing import Any
 from typing import Dict
 from typing import List
@@ -31,7 +26,7 @@ class Get(Service):
             timezone = pytz.timezone("utc")
             result["start"] = timezone.localize(obj.start).isoformat()
             result["end"] = timezone.localize(obj.end).isoformat()
-        except:
+        except Exception:
             pass
         return result
 
