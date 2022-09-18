@@ -3,47 +3,47 @@ import { defineMessages } from 'react-intl';
 const messages = defineMessages({
   title: {
     id: 'Title',
-    defineMessages: 'Title',
+    defaultMessage: 'Title',
   },
   typeOfEvent: {
     id: 'Type of event',
-    defineMessages: 'Type of event',
+    defaultMessage: 'Type of event',
   },
   startDate: {
     id: 'Start Date',
-    defineMessages: 'Start Date',
+    defaultMessage: 'Start Date',
   },
   endDate: {
     id: 'End Date',
-    defineMessages: 'End Date',
+    defaultMessage: 'End Date',
   },
   schedule: {
     id: 'Schedule',
-    defineMessages: 'Schedule',
+    defaultMessage: 'Schedule',
   },
   miscEvent: {
     id: 'Misc Event',
-    defineMessages: 'Misc Event',
+    defaultMessage: 'Misc Event',
   },
   registration: {
     id: 'Registration',
-    defineMessages: 'Registration',
+    defaultMessage: 'Registration',
   },
   coffeBreak: {
     id: 'Coffe Break',
-    defineMessages: 'Coffe Break',
+    defaultMessage: 'Coffe Break',
   },
   lunch: {
     id: 'Lunch',
-    defineMessages: 'Lunch',
+    defaultMessage: 'Lunch',
   },
   party: {
     id: 'Party',
-    defineMessages: 'Party',
+    defaultMessage: 'Party',
   },
   talk: {
     id: 'Talk',
-    defineMessages: 'Talk',
+    defaultMessage: 'Talk',
   },
 });
 
@@ -88,7 +88,7 @@ const miscEventSchema = (props) => {
 
 export const Schema = (props) => {
   const { intl } = props;
-
+  const miscEventSchemaIntl = miscEventSchema({ ...props, intl });
   return {
     title: intl.formatMessage(messages.schedule),
     fieldsets: [
@@ -103,7 +103,7 @@ export const Schema = (props) => {
       miscEvent: {
         title: intl.formatMessage(messages.miscEvent),
         widget: 'object_list',
-        schema: miscEventSchema,
+        schema: miscEventSchemaIntl,
       },
     },
     required: [],

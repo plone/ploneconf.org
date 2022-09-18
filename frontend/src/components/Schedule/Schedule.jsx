@@ -23,7 +23,7 @@ const broupByTrack = (e) => {
 };
 
 const Schedule = (props) => {
-  const { miscEvent } = props;
+  const { miscEvent = [] } = props;
   const dispatch = useDispatch();
   const [talks, setTalks] = React.useState({});
 

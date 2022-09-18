@@ -7,6 +7,9 @@ Unreleased
 2022-05-21
 ----------
 
+- Fix Schedule Block default value and trad
+  [jchandelle]
+
 - Add Schedule Block
   [jchandelle]
 

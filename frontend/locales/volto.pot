@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-09-16T14:09:03.379Z\n"
+"POT-Creation-Date: 2022-09-18T10:29:43.207Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgid "CTA Icon"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Coffe Break
 msgid "Coffe Break"
 msgstr ""
 
@@ -76,7 +76,7 @@ msgid "Description"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: End Date
 msgid "End Date"
 msgstr ""
 
@@ -136,12 +136,12 @@ msgid "Link to"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Lunch
 msgid "Lunch"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Misc Event
 msgid "Misc Event"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgid "News"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Party
 msgid "Party"
 msgstr ""
 
@@ -171,12 +171,12 @@ msgid "Register now!"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Registration
 msgid "Registration"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Schedule
 msgid "Schedule"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgid "Sponsors"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Start Date
 msgid "Start Date"
 msgstr ""
 
@@ -212,7 +212,7 @@ msgid "Subtitle"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Talk
 msgid "Talk"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgid "Transform Link to CTA button"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: undefined
+# defaultMessage: Type of event
 msgid "Type of event"
 msgstr ""
 
