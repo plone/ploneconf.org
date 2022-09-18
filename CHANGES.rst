@@ -1,17 +1,14 @@
 Unreleased
 ----------
 
-- Fix relationList empty error if editing an object with "presenters" field.
-  [sneridagh]
-
-2022-05-21
-----------
-
 - Fix Schedule Block default value and trad
   [jchandelle]
 
 - Add Schedule Block
   [jchandelle]
+
+- Fix relationList empty error if editing an object with "presenters" field.
+  [sneridagh]
 
 - Add spaces between block
   [jchandelle]
@@ -33,6 +30,9 @@ Unreleased
 
 - implement design and related blocks
   [jchandelle, tlambert, duchenean]
+
+2022-05-21
+----------
 
 - add notes and userful docker commands
   [tkimnguyen]
