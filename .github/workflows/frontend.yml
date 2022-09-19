@@ -19,6 +19,9 @@ jobs:
       - name: Checkout codebase
         uses: actions/checkout@v2
 
+      - name: Check node
+        run: node -v
+
       - name: Use Node.js ${{ env.node-version }}
         uses: actions/setup-node@v1
         with:
