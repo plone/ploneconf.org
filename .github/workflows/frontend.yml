@@ -3,7 +3,7 @@ name: Frontend CI
 on:
   push:
     paths:
-      - "*"
+      - "frontend/**"
 
 env:
   node-version: 16.x

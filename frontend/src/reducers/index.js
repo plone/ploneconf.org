@@ -6,6 +6,7 @@
 import sponsors from './sponsors/sponsors';
 import talks from './talks/talks';
 import defaultReducers from '@plone/volto/reducers';
+import defaultReducers2 from '@plone/volto/reducers';
 
 /**
  * Root reducer.
