@@ -23,6 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Check node
+        run: node -v
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
