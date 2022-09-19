@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Fix Schedule block
+  [jchandelle]
+
 - Fix start and end dates to include timezone in ical view
   [mpeeters]
 

@@ -46,8 +46,6 @@ const Schedule = (props) => {
         ...miscEvent.map((event, index) => {
           return {
             ...event,
-            start: event.start.slice(0, -1),
-            end: event.end.slice(0, -1),
             '@type': 'MiscEvent',
           };
         }),
