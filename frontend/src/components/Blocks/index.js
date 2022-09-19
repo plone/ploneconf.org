@@ -19,10 +19,14 @@ import HeroImageView from './HeroImage/View';
 import VenueEdit from './Venue/Edit';
 import VenueView from './Venue/View';
 
+import ScheduleEdit from './Schedule/Edit';
+import ScheduleView from './Schedule/View';
+
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import listBulletSVG from '@plone/volto/icons/list-bullet.svg';
 import images from '@plone/volto/icons/images.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
+import calendarSVG from '@plone/volto/icons/calendar.svg';
 
 export const customBlocks = {
   cta: {
@@ -123,6 +127,22 @@ export const customBlocks = {
     group: 'common',
     view: VenueView,
     edit: VenueEdit,
+    restricted: false,
+    mostUsed: false,
+    blockHasOwnFocusManagement: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  schedule: {
+    id: 'schedule',
+    title: 'Schedule',
+    icon: calendarSVG,
+    group: 'common',
+    view: ScheduleView,
+    edit: ScheduleEdit,
     restricted: false,
     mostUsed: false,
     blockHasOwnFocusManagement: true,

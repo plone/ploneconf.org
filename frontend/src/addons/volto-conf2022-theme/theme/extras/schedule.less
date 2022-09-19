@@ -1,0 +1,177 @@
+#main .schedule {
+  --gap: 1rem;
+  margin-bottom: 2rem;
+
+  .tabular.menu {
+    border-bottom-width: 1px;
+    border-bottom-color: @primaryColor;
+
+    .item {
+      flex-direction: column;
+      border-width: 0;
+      border-radius: 10px 10px 0 0;
+      font-size: 1.5rem;
+      @media screen and (max-width: @tabletBreakpoint) {
+        font-size: 1rem;
+      }
+    }
+
+    .active {
+      background-color: @secondaryColor;
+    }
+  }
+
+  .tab-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    gap: 2rem;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 24px;
+      height: 100%;
+      border-left: 1px solid @primaryColor;
+      content: '';
+      opacity: 0.4;
+      @media screen and (max-width: @tabletBreakpoint) {
+        left: 14px;
+      }
+    }
+  }
+
+  .timeslot {
+    display: flex;
+    gap: 2rem;
+    @media screen and (max-width: @tabletBreakpoint) {
+      gap: 1.3rem;
+    }
+  }
+
+  .misc-event {
+    flex: 1 1 100%;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: @secondaryColor;
+    box-shadow: 0px 2px 0px 0px white, 0px 6px 0px 0px @secondaryColor,
+      0px 8px 0px 0px white, 0px 10px 0px 0px @primaryColor,
+      0px -2px 0px 0px white, 0px -6px 0px 0px @secondaryColor,
+      0px -8px 0px 0px white, 0px -10px 0px 0px @primaryColor;
+
+    .title {
+      font-size: 20px;
+    }
+  }
+
+  .rooms {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+
+  .track {
+    flex-basis: calc(33% - calc(var(--gap) / 2));
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    padding: 1rem;
+    border-right: 1px solid #e3e3e3;
+    @media screen and (max-width: @largeMonitorBreakpoint) {
+      flex-basis: calc(50% - calc(var(--gap) / 2));
+    }
+    @media screen and (max-width: @tabletBreakpoint) {
+      flex-basis: 100%;
+      border-right: none;
+      border-bottom: 1px solid #e3e3e3;
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    &:last-of-type {
+      border-right: none;
+      border-bottom: none;
+    }
+  }
+
+  .aside-indication {
+    transform: translateY(20px);
+
+    .icon-type {
+      display: grid;
+      height: 50px;
+      aspect-ratio: 1/1;
+      background-color: @secondaryColor;
+      border-radius: 50%;
+      box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 6px @secondaryColor,
+        0px 0px 0px 8px white, 0px 0px 0px 10px @primaryColor,
+        0px 0px 0px 14px white;
+      place-content: center;
+
+      i {
+        font-size: 1.5rem;
+        transform: translate(8%, 3%);
+      }
+
+      @media screen and (max-width: @tabletBreakpoint) {
+        height: 30px;
+
+        i {
+          font-size: 1rem;
+          transform: translate(13%, -17%);
+        }
+      }
+    }
+
+    .time-indication {
+      flex-shrink: 0;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      margin-top: 1rem;
+      background: white;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
+
+  .timing {
+    height: 2rem;
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .talk-card {
+    .keynote {
+      background-color: @primaryColor;
+      color: white;
+    }
+
+    .track {
+      font-size: 0.75rem;
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+
+    .talk-card-title {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid @secondaryColor;
+      margin-bottom: 1rem;
+      font-size: 20px;
+    }
+
+    .info span {
+      font-weight: bold;
+    }
+
+    .presenters i {
+      margin-right: 0.5rem;
+    }
+  }
+}

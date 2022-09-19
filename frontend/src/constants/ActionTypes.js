@@ -6,3 +6,4 @@
  */
 
 export const LIST_SPONSORS = 'LIST_SPONSORS';
+export const LIST_TALKS = 'LIST_TALKS';

@@ -58,6 +58,11 @@ msgstr ""
 msgid "CTA Icon"
 msgstr ""
 
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Coffe Break
+msgid "Coffe Break"
+msgstr ""
+
 #: components/Blocks/Venue/schema
 # defaultMessage: Content
 msgid "Content"
@@ -71,6 +76,11 @@ msgstr ""
 #: components/Blocks/HeroImage/Edit
 # defaultMessage: Description
 msgid "Description"
+msgstr ""
+
+#: components/Blocks/Schedule/Schema
+# defaultMessage: End Date
+msgid "End Date"
 msgstr ""
 
 #: components/Blocks/HeroImage/schema
@@ -128,6 +138,16 @@ msgstr ""
 msgid "Link to"
 msgstr ""
 
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Lunch
+msgid "Lunch"
+msgstr ""
+
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Misc Event
+msgid "Misc Event"
+msgstr ""
+
 #: components/Blocks/Listing/NewsListingBody
 # defaultMessage: More News
 msgid "More News"
@@ -138,6 +158,11 @@ msgstr ""
 msgid "News"
 msgstr ""
 
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Party
+msgid "Party"
+msgstr ""
+
 #: components/Blocks/Teaser/TeaserPersonBody
 # defaultMessage: Please choose an existing content as source for this element
 msgid "Please choose an existing content as source for this element"
@@ -146,6 +171,16 @@ msgstr ""
 #: components/Blocks/Countdown/Body
 # defaultMessage: Register now!
 msgid "Register now!"
+msgstr ""
+
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Registration
+msgid "Registration"
+msgstr ""
+
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Schedule
+msgid "Schedule"
 msgstr ""
 
 #: components/Blocks/CTA/Schema
@@ -164,6 +199,11 @@ msgstr ""
 msgid "Sponsors"
 msgstr ""
 
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Start Date
+msgid "Start Date"
+msgstr ""
+
 #: components/Blocks/HeroImage/Edit
 # defaultMessage: Sub Title
 msgid "Sub Title"
@@ -174,12 +214,18 @@ msgstr ""
 msgid "Subtitle"
 msgstr ""
 
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Talk
+msgid "Talk"
+msgstr ""
+
 #: components/Blocks/Countdown/Body
 # defaultMessage: The community is waiting for you
 msgid "The community is waiting for you"
 msgstr ""
 
 #: components/Blocks/HeroImage/Edit
+#: components/Blocks/Schedule/Schema
 #: components/Blocks/Venue/schema
 # defaultMessage: Title
 msgid "Title"
@@ -188,6 +234,11 @@ msgstr ""
 #: components/Blocks/HeroImage/schema
 # defaultMessage: Transform Link to CTA button
 msgid "Transform Link to CTA button"
+msgstr ""
+
+#: components/Blocks/Schedule/Schema
+# defaultMessage: Type of event
+msgid "Type of event"
 msgstr ""
 
 #: components/Blocks/CTA/Schema

@@ -9,6 +9,7 @@ import { Icon } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import PropTypes from 'prop-types';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 const ScheduleInfo = (props) => {
   const start = props.start;
@@ -23,7 +24,7 @@ const ScheduleInfo = (props) => {
             <When start={start} end={end} whole_day={false} open_end={false} />
           </Label>{' '}
           {props.url && (
-            <a href={`${props.url}/@@ical_view`}>
+            <a href={`/++api++${flattenToAppURL(props.url)}/@@ical_view`}>
               <Icon name={calendarSVG} size={'20px'} />
             </a>
           )}
