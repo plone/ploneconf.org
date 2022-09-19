@@ -146,3 +146,18 @@ run-acceptance-tests: ## Run Acceptance tests
 	npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
 	$(MAKE) -C "./frontend/" test-acceptance-headless
 	$(MAKE) stop-acceptance-servers
+
+.PHONY: start-test-acceptance-frontend
+start-test-acceptance-frontend: ## Start the Core Acceptance Frontend Fixture in dev mode
+	@echo "Start Frontend pointing to Cypress fixture in dev mode"
+	cd frontend && RAZZLE_API_PATH=http://localhost:55001/plone yarn start
+
+.PHONY: start-acceptance-server
+start-acceptance-server: ## Start Acceptance Servers
+	@echo "Start acceptance backend"
+	@docker run --rm -p 55001:55001 --name ploneconf-backend-acceptance plone/ploneconf-backend:acceptance
+
+.PHONY: test-acceptance
+test-acceptance:  ## Start Core Cypress Acceptance Tests in dev mode
+	@echo "Starting Cypress"
+	$(MAKE) -C "./frontend/" test-acceptance
