@@ -73,7 +73,7 @@ jobs:
           docker load --input /tmp/frontend/frontend-image.tar
 
       - name: Install Cypress
-        run: npm i @plone/volto-testing
+        run: npm i @plone/volto-testing @testing-library/dom@8.17.1
 
       - name: Cypress acceptance tests
         uses: cypress-io/github-action@v4
