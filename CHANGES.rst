@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Update Volto, pin several packages, update browserlist.
+  [sneridagh]
+
 - Fix Schedule block
   [jchandelle]
 
