@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const loadNucliaSearch = (callback, widgetId) => {
   const scriptSrc = `https://cdn.nuclia.cloud/nuclia-widget.umd.js`;
@@ -28,19 +28,21 @@ const Body = (props) => {
     return () => {
       const script = document.getElementById(scriptId);
       if (script) script.remove();
-    }
+    };
   }, []);
 
   return (
-    <div id={"nuclia-search-wrapper"}>
-      {loaded && <nuclia-search
-        knowledgebox={data.knowledgebox}
-        zone={data.zone}
-        widgetid="dashboard"
-        type="form"  
-      ></nuclia-search>}
+    <div id={'nuclia-search-wrapper'}>
+      {loaded && (
+        <nuclia-search
+          knowledgebox={data.knowledgebox}
+          zone={data.zone}
+          widgetid="dashboard"
+          type="form"
+        ></nuclia-search>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;
