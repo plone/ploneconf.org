@@ -1,6 +1,15 @@
 Unreleased
 ----------
 
+- Add Nuclia block
+  [jchandelle]
+
+- Change sponsor logo size
+  [jchandelle]
+
+- Improve design of Schedule block
+  [jchandelle]
+
 - Fix Schedule block
   [jchandelle]
 

@@ -22,11 +22,15 @@ import VenueView from './Venue/View';
 import ScheduleEdit from './Schedule/Edit';
 import ScheduleView from './Schedule/View';
 
+import NucliaEdit from './Nuclia/Edit';
+import NucliaView from './Nuclia/View';
+
 import sliderSVG from '@plone/volto/icons/slider.svg';
 import listBulletSVG from '@plone/volto/icons/list-bullet.svg';
 import images from '@plone/volto/icons/images.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
+import zoomSVG from '@plone/volto/icons/zoom.svg';
 
 export const customBlocks = {
   cta: {
@@ -143,6 +147,22 @@ export const customBlocks = {
     group: 'common',
     view: ScheduleView,
     edit: ScheduleEdit,
+    restricted: false,
+    mostUsed: false,
+    blockHasOwnFocusManagement: true,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+  },
+  nuclia: {
+    id: 'nuclia',
+    title: 'Nuclia',
+    icon: zoomSVG,
+    group: 'common',
+    view: NucliaView,
+    edit: NucliaEdit,
     restricted: false,
     mostUsed: false,
     blockHasOwnFocusManagement: true,
