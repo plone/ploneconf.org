@@ -29,9 +29,9 @@ const messages = defineMessages({
     id: 'Registration',
     defaultMessage: 'Registration',
   },
-  coffeBreak: {
-    id: 'Coffe Break',
-    defaultMessage: 'Coffe Break',
+  coffeeBreak: {
+    id: 'Coffee Break',
+    defaultMessage: 'Coffee Break',
   },
   lunch: {
     id: 'Lunch',
@@ -67,7 +67,7 @@ const miscEventSchema = (props) => {
         title: intl.formatMessage(messages.typeOfEvent),
         choices: [
           ['registration', intl.formatMessage(messages.registration)],
-          ['coffe', intl.formatMessage(messages.coffeBreak)],
+          ['coffe', intl.formatMessage(messages.coffeeBreak)],
           ['lunch', intl.formatMessage(messages.lunch)],
           ['party', intl.formatMessage(messages.party)],
           ['talk', intl.formatMessage(messages.talk)],

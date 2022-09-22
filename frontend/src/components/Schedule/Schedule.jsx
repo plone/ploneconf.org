@@ -147,7 +147,7 @@ const Schedule = (props) => {
           )}
           {talk.audience && (
             <div className="info audience">
-              <span>Audiance :</span>{' '}
+              <span>Audience :</span>{' '}
               {talk.audience.map((audienceItem, index) => {
                 return <Label key={index}>{audienceItem.title}</Label>;
               })}
