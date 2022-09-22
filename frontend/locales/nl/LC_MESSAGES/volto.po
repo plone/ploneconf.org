@@ -125,6 +125,11 @@ msgstr ""
 msgid "Join us for"
 msgstr ""
 
+#: components/Blocks/Nuclia/Schema
+# defaultMessage: Knowledge Box
+msgid "Knowledge Box"
+msgstr ""
+
 #: components/Blocks/CTA/Schema
 # defaultMessage: Label
 msgid "Label"
@@ -170,6 +175,11 @@ msgstr ""
 #: components/Blocks/Listing/NewsListingBody
 # defaultMessage: News
 msgid "News"
+msgstr ""
+
+#: components/Blocks/Nuclia/Schema
+# defaultMessage: Nuclia Search
+msgid "Nuclia Search"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
@@ -274,6 +284,11 @@ msgstr ""
 #: components/Blocks/HeroImage/Edit
 # defaultMessage: Uploading image
 msgid "Uploading image"
+msgstr ""
+
+#: components/Blocks/Nuclia/Schema
+# defaultMessage: Zone
+msgid "Zone"
 msgstr ""
 
 #: components/Blocks/Countdown/Body
