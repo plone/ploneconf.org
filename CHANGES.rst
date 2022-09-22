@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Add Nuclia block
+  [jchandelle]
+
 - Change sponsor logo size
   [jchandelle]
 
