@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Change sponsor logo size
+  [jchandelle]
+
 - Improve design of Schedule block
   [jchandelle]
 
