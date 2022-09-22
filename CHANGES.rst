@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Improve design of Schedule block
+  [jchandelle]
+
 - Fix Schedule block
   [jchandelle]
 
