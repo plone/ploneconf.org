@@ -69,8 +69,8 @@ msgid "CTA Icon"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: Coffe Break
-msgid "Coffe Break"
+# defaultMessage: Coffee Break
+msgid "Coffee Break"
 msgstr ""
 
 #: components/Blocks/Venue/schema

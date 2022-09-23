@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-09-22T15:54:14.974Z\n"
+"POT-Creation-Date: 2022-09-22T20:57:04.827Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,8 @@ msgid "CTA Icon"
 msgstr ""
 
 #: components/Blocks/Schedule/Schema
-# defaultMessage: Coffe Break
-msgid "Coffe Break"
+# defaultMessage: Coffee Break
+msgid "Coffee Break"
 msgstr ""
 
 #: components/Blocks/Venue/schema
