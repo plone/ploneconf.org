@@ -50,6 +50,7 @@ setup(
         "prettyconf",
         "collective.volto.formsupport",
         "pas.plugins.authomatic>=1.0.0",
+        "kitconcept.seo",
     ],
     extras_require={
         "test": [
