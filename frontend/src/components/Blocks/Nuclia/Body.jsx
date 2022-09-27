@@ -32,15 +32,20 @@ const Body = (props) => {
   }, []);
 
   return (
-    <div id={'nuclia-search-wrapper'}>
-      {loaded && (
-        <nuclia-search
-          knowledgebox={data.knowledgebox}
-          zone={data.zone}
-          widgetid="dashboard"
-          type="form"
-        ></nuclia-search>
-      )}
+    <div className="nuclia-block">
+      <div className="wrapper-aside text">
+        <h2 className="aside-title">{data.title}</h2>
+      </div>
+      <div id={'nuclia-search-wrapper'}>
+        {loaded && (
+          <nuclia-search
+            knowledgebox={data.knowledgebox}
+            zone={data.zone}
+            widgetid="dashboard"
+            type="form"
+          ></nuclia-search>
+        )}
+      </div>
     </div>
   );
 };
