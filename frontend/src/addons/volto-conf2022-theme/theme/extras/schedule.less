@@ -2,6 +2,11 @@
   --gap: 1rem;
   margin-bottom: 2rem;
 
+  @media screen and (max-width: @tabletBreakpoint) {
+    margin-right: calc(0rem - calc(var(--card-padding, 0rem) - 10px));
+    margin-left: calc(0rem - calc(var(--card-padding, 0rem) - 10px));
+  }
+
   .tabular.menu {
     border-bottom-width: 1px;
     border-bottom-color: @primaryColor;
@@ -46,7 +51,7 @@
     display: flex;
     gap: 2rem;
     @media screen and (max-width: @tabletBreakpoint) {
-      gap: 1.3rem;
+      gap: 1.8rem;
     }
   }
 
@@ -166,12 +171,24 @@
       font-size: 20px;
     }
 
-    .info span {
-      font-weight: bold;
+    .info {
+      margin-bottom: 0.3rem;
+
+      span {
+        font-weight: bold;
+      }
+
+      div.label {
+        margin-bottom: 0.2rem;
+      }
     }
 
-    .presenters i {
-      margin-right: 0.5rem;
+    .presenters {
+      margin-bottom: 0.3rem;
+
+      i {
+        margin-right: 0.5rem;
+      }
     }
   }
 }

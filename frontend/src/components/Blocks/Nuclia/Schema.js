@@ -1,6 +1,10 @@
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
+  titleInput: {
+    id: 'Title',
+    defaultMessage: 'Title',
+  },
   title: {
     id: 'Nuclia Search',
     defaultMessage: 'Nuclia Search',
@@ -24,11 +28,14 @@ export const Schema = (props) => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['knowledgebox', 'zone'],
+        fields: ['title', 'knowledgebox', 'zone'],
       },
     ],
 
     properties: {
+      title: {
+        title: intl.formatMessage(messages.titleInput),
+      },
       knowledgebox: {
         title: intl.formatMessage(messages.knowledgebox),
       },

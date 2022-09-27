@@ -1,9 +1,12 @@
 Unreleased
 ----------
 
+- Add styling and title to nuclia Block
+  [jchandelle]
+
 - Update Volto, pin several packages, update browserlist.
   [sneridagh]
-  
+
 - Add Nuclia block
   [jchandelle]
 
