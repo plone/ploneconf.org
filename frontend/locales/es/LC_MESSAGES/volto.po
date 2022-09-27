@@ -240,6 +240,7 @@ msgid "The community is waiting for you"
 msgstr ""
 
 #: components/Blocks/HeroImage/Edit
+#: components/Blocks/Nuclia/Schema
 #: components/Blocks/Schedule/Schema
 #: components/Blocks/Venue/schema
 # defaultMessage: Title
