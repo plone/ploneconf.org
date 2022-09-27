@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Tab, Label, Icon, Menu } from 'semantic-ui-react';
 import { listTalks } from '../../actions';
 import { UniversalLink } from '@plone/volto/components';
@@ -23,10 +23,9 @@ const broupByTrack = (e) => {
 };
 
 const Schedule = (props) => {
-  const { miscEvent = [] } = props;
+  const { miscEvent = [], isEditMode } = props;
   const dispatch = useDispatch();
-  const [talks, setTalks] = React.useState({});
-
+  const rawTalks = useSelector((state) => state.talks?.data) || [];
   const iconDict = {
     registration: 'clipboard list',
     coffe: 'coffee',
@@ -38,25 +37,36 @@ const Schedule = (props) => {
   };
 
   React.useEffect(() => {
-    dispatch(listTalks()).then((results) => {
-      const allEvent = [
-        ...results.map((event, index) => {
-          return { ...event, eventType: event['@type'] };
-        }),
-        ...miscEvent.map((event, index) => {
-          return {
-            ...event,
-            '@type': 'MiscEvent',
-          };
-        }),
-      ];
-      let resutTemp = _.chain(allEvent).groupBy(groupByDay).value();
-      Object.keys(resutTemp).forEach((key, index) => {
-        resutTemp[key] = _.groupBy(resutTemp[key], groupByHour);
-      });
-      setTalks(resutTemp);
+    dispatch(listTalks());
+  }, [dispatch]);
+
+  const talks = React.useMemo(() => {
+    const allEvent = [
+      ...rawTalks.map((event, index) => {
+        return { ...event, eventType: event['@type'] };
+      }),
+      ...miscEvent.map((event, index) => {
+        return {
+          ...event,
+          '@type': 'MiscEvent',
+          track: [{}],
+        };
+      }),
+    ].filter((event, index) => {
+      return (
+        event.start !== null &&
+        event.start !== undefined &&
+        event.track &&
+        event.track.length > 0
+      );
     });
-  }, [dispatch, miscEvent]);
+
+    let resutTemp = _.chain(allEvent).groupBy(groupByDay).value();
+    Object.keys(resutTemp).forEach((key, index) => {
+      resutTemp[key] = _.groupBy(resutTemp[key], groupByHour);
+    });
+    return resutTemp;
+  }, [rawTalks, miscEvent]);
 
   const talkCardGenerator = (data) => {
     return data.map((talk, index) => {
@@ -137,7 +147,7 @@ const Schedule = (props) => {
           )}
           {talk.audience && (
             <div className="info audience">
-              <span>Audiance :</span>{' '}
+              <span>Audience :</span>{' '}
               {talk.audience.map((audienceItem, index) => {
                 return <Label key={index}>{audienceItem.title}</Label>;
               })}
@@ -151,14 +161,14 @@ const Schedule = (props) => {
   const panes = Object.keys(talks).map((keyDay, index) => {
     return {
       menuItem: (
-        <Menu.Item key={keyDay}>
+        <Menu.Item key={`${keyDay}_menu`}>
           <div>{`Day ${index + 1}`}</div>
           <div>{`${keyDay} oct`}</div>
         </Menu.Item>
       ),
       render: () => {
         return (
-          <div className="tab-content">
+          <Tab.Pane className="tab-content">
             {Object.keys(talks[keyDay]).map((keyHour, index) => {
               const data = _.groupBy(talks[keyDay][keyHour], broupByTrack);
               const time = new Date(`${talks[keyDay][keyHour][0].start}`);
@@ -235,7 +245,7 @@ const Schedule = (props) => {
                 </div>
               );
             })}
-          </div>
+          </Tab.Pane>
         );
       },
     };
@@ -243,6 +253,7 @@ const Schedule = (props) => {
 
   return (
     <div className="schedule">
+      {isEditMode && 'Schedule Edit Mode'}
       <Tab panes={panes} className="tab" />
     </div>
   );

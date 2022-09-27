@@ -22,7 +22,7 @@
   }
 
   .tab-content {
-    position: relative;
+    position: relative !important;
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
@@ -31,13 +31,13 @@
     &:before {
       position: absolute;
       top: 0;
-      left: 24px;
+      left: 41px;
       height: 100%;
       border-left: 1px solid @primaryColor;
       content: '';
       opacity: 0.4;
       @media screen and (max-width: @tabletBreakpoint) {
-        left: 14px;
+        left: 30px;
       }
     }
   }
@@ -131,9 +131,9 @@
 
     .time-indication {
       flex-shrink: 0;
-      padding-top: 0.3rem;
-      padding-bottom: 0.3rem;
-      margin-top: 1rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      margin-top: 1.3rem;
       background: white;
       font-size: 0.75rem;
       text-align: center;

@@ -3,6 +3,15 @@ Unreleased
 
 - Update Volto, pin several packages, update browserlist.
   [sneridagh]
+  
+- Add Nuclia block
+  [jchandelle]
+
+- Change sponsor logo size
+  [jchandelle]
+
+- Improve design of Schedule block
+  [jchandelle]
 
 - Fix Schedule block
   [jchandelle]
