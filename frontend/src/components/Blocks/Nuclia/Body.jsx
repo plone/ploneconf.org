@@ -1,7 +1,7 @@
 import React from 'react';
 
 const loadNucliaSearch = (callback, widgetId) => {
-  const scriptSrc = `https://cdn.nuclia.cloud/nuclia-widget.umd.js`;
+  const scriptSrc = `https://cdn.nuclia.cloud/nuclia-video-widget.umd.js`;
   const existingScript = document.getElementById(widgetId);
   if (existingScript && callback) {
     callback(true);
@@ -37,13 +37,21 @@ const Body = (props) => {
         <h2 className="aside-title">{data.title}</h2>
       </div>
       <div id={'nuclia-search-wrapper'}>
+        <p>
+          Search inside videos from <strong>PloneConf 2020 and 2021</strong> and
+          jump directly to the relevant part of that talk
+        </p>
         {loaded && (
-          <nuclia-search
-            knowledgebox={data.knowledgebox}
-            zone={data.zone}
-            widgetid="dashboard"
-            type="form"
-          ></nuclia-search>
+          <>
+            <nuclia-search-bar
+              knowledgebox={data.knowledgebox}
+              zone={data.zone}
+              widgetid="dashboard"
+              placeholder="Search for PloneConf videos"
+              lang="en"
+            ></nuclia-search-bar>
+            <nuclia-search-results></nuclia-search-results>
+          </>
         )}
       </div>
     </div>
