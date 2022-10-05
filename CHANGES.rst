@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Fix Venue block description
+  [mpeeters]
+
 - Update to Plone 6 b3 and Volto 16a41
   [sneridagh]
 
