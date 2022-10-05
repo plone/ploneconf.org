@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- Update to Plone 6 b3 and Volto 16a41
+  [sneridagh]
+
 - Add styling and title to nuclia Block
   [jchandelle]
 
