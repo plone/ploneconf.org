@@ -158,7 +158,7 @@
     "@kitconcept/volto-slider-block": "2.0.0",
     "@plone-collective/volto-authomatic": "*",
     "@plone-collective/volto-tito-block": "*",
-    "@plone/volto": "16.0.0-alpha.37",
+    "@plone/volto": "16.0.0-alpha.41",
     "react-compound-timer": "1.2.0",
     "volto-form-block": "*"
   },
