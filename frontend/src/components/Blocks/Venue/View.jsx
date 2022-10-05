@@ -51,7 +51,7 @@ const View = ({ data }) => {
                   <h3 className="title">{data.title}</h3>
                   <div className="sub-title">{data.subtitle}</div>
                   {data.content?.data && (
-                    <p
+                    <div
                       className={cx('richtext', 'widget', 'description')}
                       dangerouslySetInnerHTML={{
                         __html: data.content.data,
