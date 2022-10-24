@@ -51,12 +51,6 @@ class Header extends Component {
                 <Logo />
               </div>
               <Navigation pathname={this.props.pathname} />
-              <CTA
-                content="Register now!"
-                href="https://2022.ploneconf.org/tickets"
-                className="cta-register"
-                notContainer
-              />
             </div>
           </div>
         </Container>
