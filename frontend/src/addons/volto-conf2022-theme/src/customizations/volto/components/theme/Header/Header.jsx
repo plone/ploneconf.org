@@ -7,7 +7,6 @@ import React, { Component } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { CTA } from '@package/components';
 
 import { Logo, Navigation } from '@plone/volto/components';
 
@@ -51,12 +50,6 @@ class Header extends Component {
                 <Logo />
               </div>
               <Navigation pathname={this.props.pathname} />
-              <CTA
-                content="Register now!"
-                href="https://2022.ploneconf.org/tickets"
-                className="cta-register"
-                notContainer
-              />
             </div>
           </div>
         </Container>

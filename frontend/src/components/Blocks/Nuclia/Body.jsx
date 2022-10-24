@@ -38,8 +38,9 @@ const Body = (props) => {
       </div>
       <div id={'nuclia-search-wrapper'}>
         <p>
-          Search inside videos from <strong>PloneConf 2020 and 2021</strong> and
-          jump directly to the relevant part of that talk
+          Search inside the videos from
+          <strong>Plone Conferences 2022, 2021 and 2020</strong> and jump
+          directly to the relevant part of that talk
         </p>
         {loaded && (
           <>
