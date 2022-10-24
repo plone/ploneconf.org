@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- restore hard space in Nuclia block text
+  [tkimnguyen]
+
 - Change Nuclia block text to include 2022 videos, hide Register Now call to action
   [tkimnguyen]
 
