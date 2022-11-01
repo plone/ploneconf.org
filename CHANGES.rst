@@ -1,6 +1,9 @@
 Unreleased
 ----------
 
+- fiddle with hard space in Nuclia block text
+  [tkimnguyen]
+
 - restore hard space in Nuclia block text
   [tkimnguyen]
 
