@@ -1,0 +1,6 @@
+[report]
+include =
+    src/kim/*
+omit =
+    */test*
+    */upgrades/*

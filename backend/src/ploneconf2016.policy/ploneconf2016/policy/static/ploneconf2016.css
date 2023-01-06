@@ -1,0 +1,38 @@
+/* Styled for the PFG Training Survey  */
+.pfg-form.formid-training-survey .field,
+.pfg-form.formid-training-survey .PFGFieldsetWidget {
+    width: 100% !important;
+}
+
+#pfg-fieldsetname-2-day .formQuestion.label,
+#pfg-fieldsetname-1-day .formQuestion.label,
+#pfg-fieldsetname-1-2-day .formQuestion.label {
+    display: none;
+}
+
+.col-xs-8.col-sm-3.person-bio {
+    padding-left: 0px !important;
+    min-width: 150px;
+    width: 160px;
+}
+
+.talks-tile .title {
+    font-size: 20px;
+    color: #004464;
+}
+.talks-tile p {
+    margin-top: 10px;
+  }
+.level-tag {
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+.level-tag.Expert {
+    background-color: rgba(255, 150, 150, 0.4);
+}
+.level-tag.Beginner {
+    background-color: rgba(150, 255, 150, 0.4);
+}
+.level-tag.Intermediate {
+    background-color: rgba(150, 150, 255, 0.4);
+}

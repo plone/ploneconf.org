@@ -1,0 +1,14 @@
+  <configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml">
+
+  <!-- Sponsors -->
+  <browser:viewlet
+      name="ploneconf2016.policy.sponsors"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      class=".sponsors.SponsorsViewlet"
+      permission="zope2.View"
+  />
+
+</configure>

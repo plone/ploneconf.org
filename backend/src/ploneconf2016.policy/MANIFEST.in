@@ -1,0 +1,4 @@
+graft ploneconf2016
+graft docs
+include *.rst
+global-exclude *.pyc

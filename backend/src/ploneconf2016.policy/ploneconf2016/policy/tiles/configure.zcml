@@ -1,0 +1,59 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="">
+
+  <include package="plone.app.tiles" />
+
+  <plone:tile
+    name="ploneconf2016.slidertile"
+    title="Slider"
+    class=".slider.SliderTile"
+    schema=".slider.ISliderTileSchema"
+    for="*"
+    add_permission="cmf.ModifyPortalContent"
+    permission="zope.Public"
+    template="templates/slider.pt"
+    />
+
+  <plone:tile
+    name="ploneconf2016.presentationtile"
+    title="Presentation"
+    class=".presentation.PresentationTile"
+    schema=".presentation.IPresentationTile"
+    for="*"
+    add_permission="cmf.ModifyPortalContent"
+    permission="zope.Public"
+    template="templates/presentation.pt"
+    />
+
+  <plone:tile
+    name="ploneconf2017.keynoters"
+    title="Keynoters"
+    class=".keynoters.KeynotersTile"
+    schema=".keynoters.IKeynotersTile"
+    for="*"
+    add_permission="cmf.ModifyPortalContent"
+    permission="zope.Public"
+    template="templates/keynoters.pt"
+    /> 
+    
+  <!-- content listing tile template -->
+  <browser:page
+      name="tile_talk_view"
+      for="*"
+      layer="plone.app.standardtiles.contentlisting.IContentListingTileLayer"
+      permission="zope2.View"
+      template="templates/tile_talk_view.pt"
+      />
+
+  <browser:page
+      name="utils"
+      for="*"
+      permission="zope2.View"
+      class=".presentation.Utils"
+      />
+
+</configure>

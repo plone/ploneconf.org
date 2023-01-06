@@ -1,0 +1,21 @@
+<!-- Sponsors -->
+<section id="conference-sponsors" class="row" tal:define="sponsors view/sponsors">
+  <h2>Sponsors</h2>
+  <metal:levels tal:repeat="level_id sponsors">
+    <section class="platinum col-xs-12" tal:attributes="class string:${level_id} col-xs-12"
+             tal:define="title python:sponsors[level_id]['title'];
+                         items python:sponsors[level_id]['items'];
+                         logo_size python:sponsors[level_id]['size'];">
+      <h3 tal:content="title">Platinum</h3>
+      <main>
+        <metal:sponsors tal:repeat="sponsor items">
+          <a href="" tal:attributes="href sponsor/remoteUrl;title sponsor/title" target="_blank" class="sponsor">
+            <img tal:define="scales sponsor/@@images; scale python:scales.scale('image', width=logo_size, height=logo_size)"
+                 tal:condition="scale"
+                 tal:replace="structure python:scale.tag()" />
+          </a>
+        </metal:sponsors>
+      </main>
+    </section>
+  </metal:levels>
+</section>

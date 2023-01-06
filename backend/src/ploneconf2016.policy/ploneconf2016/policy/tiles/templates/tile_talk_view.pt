@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+  <body tal:define="utils context/@@utils">
+    <div class="talks-tile" tal:define="results context">
+        <tal:listing condition="results">
+            <tal:block repeat="item results">
+                <div tal:define="speakers python:utils.pres_speakers(item)">
+                    <!-- description on hover -->
+                    <tal:time define="start item/start"
+                              content="python:start.strftime('%H:%M %Z')" /><br />
+                    <a tal:attributes="href string:${item/getURL}/view">
+                        <span class="title">${item/Title}</span>
+                    </a><br />
+                    <tal:speaker-link repeat="speaker speakers">
+                        <tal:speaker condition="speaker">
+                        <a href="${speaker/absolute_url}">${speaker/Title}</a
+                        ><tal:comma condition="not: repeat/speaker/end">,</tal:comma>
+                        </tal:speaker>
+                    </tal:speaker-link>
+                    <p tal:condition="python:item.level or item.audience">
+                        <span class="level-tag ${item/level}">${item/level}</span> |
+                        <tal:aud repeat="aud item/audience">
+                            <span class="audience-tag ${aud}">${aud}</span
+                            ><tal:comma condition="not: repeat/aud/end">,</tal:comma>
+                        </tal:aud>
+                    </p>
+                    <hr />
+                </div>
+            </tal:block>
+        </tal:listing>
+        <p class="discreet"
+        tal:condition="not:results"
+        i18n:translate="">
+        No items were found
+        </p>
+    </div>
+  </body>
+</html>

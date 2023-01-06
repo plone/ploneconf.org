@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object>
+
+  <order manager="plone.belowcontent" skinname="Plone Default">
+    <viewlet name="plone.belowcontenttitle.keywords" />
+    <viewlet name="plone.nextprevious" />
+    <viewlet name="ploneconf2016.policy.sponsors" />
+  </order>
+
+</object>

@@ -1,0 +1,55 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ploneconf2016.policy">
+
+  <genericsetup:upgradeDepends
+      source="1000"
+      destination="1001"
+      title="Add entries to css registry"
+      description=""
+      profile="ploneconf2016.policy:default"
+      import_steps="cssregistry"
+      />
+
+  <genericsetup:upgradeDepends
+      source="1001"
+      destination="1002"
+      title="Add Presentation view"
+      description=""
+      profile="ploneconf2016.policy:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      source="1002"
+      destination="1003"
+      title="Add Social media fields to Person type and view"
+      description=""
+      profile="ploneconf2016.policy:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeStep
+      source="1003"
+      destination="1004"
+      profile="ploneconf2016.policy:default"
+      title="Migrate content to copy 'summary' into description"
+      description=""
+      handler="ploneconf2016.policy.setuphandlers.replace_summaries"
+      />
+
+  <genericsetup:upgradeDepends
+      source="1004"
+      destination="1005"
+      title="Add custom presentation tile"
+      description=""
+      profile="ploneconf2016.policy:default"
+      import_steps="plone.app.registry"
+      />
+
+  <include package=".v20201116001" />
+
+  <include package=".v20201129001" />
+
+</configure>

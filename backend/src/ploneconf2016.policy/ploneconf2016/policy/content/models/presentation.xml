@@ -1,0 +1,84 @@
+<model xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       xmlns:security="http://namespaces.plone.org/supermodel/security"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+       xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="title" type="zope.schema.TextLine"
+           indexer:searchable="true">
+      <description/>
+      <title>Title</title>
+    </field>
+    <field name="description" type="zope.schema.Text"
+           indexer:searchable="true">
+      <description/>
+      <required>False</required>
+      <title>Summary</title>
+    </field>
+    <field name="body" type="plone.app.textfield.RichText"
+           indexer:searchable="true">
+      <description/>
+      <required>False</required>
+      <title>Body</title>
+    </field>
+    <field name="speaker" type="zope.schema.Set">
+      <description>Speaker</description>
+      <title>Speaker</title>
+      <value_type type="zope.schema.Choice">
+          <source>ploneconf2016.policy.content.vocabularies.persons</source>
+      </value_type>
+    </field>
+    <field name="duration" type="zope.schema.Choice">
+      <description>Duration of presentation</description>
+      <required>False</required>
+      <title>Duration</title>
+      <source>ploneconf2016.policy.content.vocabularies.PRESENTATION_DURATION_TYPES</source>
+    </field>
+    <field name="level" type="zope.schema.Choice">
+      <description>Target Level</description>
+      <required>False</required>
+      <title>Level</title>
+      <source>ploneconf2016.policy.content.vocabularies.LEVEL_TYPES</source>
+    </field>
+    <field name="audience" type="zope.schema.Set">
+      <description>Target Audience</description>
+      <required>False</required>
+      <title>Audience</title>
+      <value_type type="zope.schema.Choice">
+          <source>ploneconf2016.policy.content.vocabularies.AUDIENCE_TYPES</source>
+      </value_type>
+    </field>
+    <field name="slides_url" type="zope.schema.TextLine">
+      <description>URL of slides</description>
+      <title>Slides</title>
+      <required>False</required>
+    </field>
+    <field name="slides_embed" type="zope.schema.Text">
+      <description>Embed code for slides</description>
+      <title>Slides embed code</title>
+      <required>False</required>
+    </field>
+    <field name="video_url" type="zope.schema.TextLine">
+      <description>URL of video recording</description>
+      <title>Video</title>
+      <required>False</required>
+    </field>
+    <field name="video_embed" type="zope.schema.Text">
+      <description>Embed code for video recording</description>
+      <title>Video embed code</title>
+      <required>False</required>
+    </field>
+    <field name="schedule_url" type="zope.schema.TextLine">
+      <description>URL of this presentation on the schedule</description>
+      <title>Schedule</title>
+      <required>False</required>
+    </field>
+    <field name="track" type="zope.schema.Choice">
+      <description>Presentation track</description>
+      <required>True</required>
+      <title>Track</title>
+      <source>ploneconf2016.policy.content.vocabularies.PRESENTATION_TRACKS</source>
+    </field>
+  </schema>
+</model>

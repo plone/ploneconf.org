@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master">
+
+    <metal:block fill-slot="content-title" />
+    <metal:block fill-slot="content-description" />
+
+    <metal:block fill-slot="content-core">
+      <div class="row person-bio">
+        <div class="col-xs-12">
+          <h1 class="documentFirstHeading">${context/Title}</h1>
+          <img tal:define="scales context/@@images;
+                               scale python:scales.scale('headshot', width=150, height=150)"
+               tal:condition="scale"
+               tal:replace="structure python:scale.tag(css_class='image-left')" />
+          <div tal:content="structure context/bio/output|nothing"></div>
+        </div>
+        <div class="col-xs-12 col-sm-8 person-text">
+          <p class="documentDescription description" tal:condition="context/description|nothing">${context/description}</p>
+        </div>
+        <div class="col-xs-12">
+          <h4>
+            <b>
+              <tal:twitter tal:condition="view/twitter_url"><span>Twitter: </span>
+              <span>
+                <a href="#" tal:attributes="href view/twitter_url" tal:content="view/twitter"> @[handle] </a></span>
+              </tal:twitter>
+              <tal:twitter_github tal:condition="view/twitter_and_github_exist">
+                <span>&nbsp;</span><span> | <span>&nbsp;</span>
+              </tal:twitter_github>
+              <tal:github tal:condition="view/github_url"><span>Github: </span><span><a href="#" tal:attributes="href view/github_url" tal:content="view/github">[handle]: </a></span>
+            </tal:github>
+              <tal:email tal:condition="view/can_view_email">
+		<span>&nbsp;</span><span> | <span>&nbsp;</span>
+		<span>Email: </span><span><a href="#" tal:attributes="href python:'mailto:'+(context.email or '')" tal:content="here/email">[email]</a></span>
+            </tal:email>
+            </b>
+          </h4>
+          <tal:twitter_or_github tal:condition="view/twitter_or_github_exist"><div>&nbsp;</div></tal:twitter_or_github>
+        </div>
+      </div>
+
+
+    </metal:block>
+
+</html>

@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ploneconf2016.policy">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package="plone.restapi" />
+  <include package="plone.formwidget.querystring" />
+  <include package="plone.app.dexterity" />
+  <include package="collective.easyform" />
+  <include package="plone.app.mosaic" />
+
+  <include package=".tiles" />
+  <include package=".content" />
+  <include package=".browser" />
+  <include package=".viewlets" />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="ploneconf2016"
+      directory="static"
+      />
+
+  <genericsetup:registerProfile
+    name="default"
+    title="ploneconf2016.policy"
+    directory="profiles/default"
+    description="Installs the ploneconf2016.policy package"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+  <!-- -*- extra stuff goes here -*- -->
+  <include package=".upgrades" />
+
+</configure>

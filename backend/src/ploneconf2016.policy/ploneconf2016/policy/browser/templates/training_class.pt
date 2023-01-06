@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master">
+
+
+    <metal:block fill-slot="content-core">
+        <span tal:repeat="speaker view/speakers">
+                <img class="image-left"
+                tal:replace="structure speaker/headshot" />
+        </span>
+        <h4><b><span>Instructor: </span></b>
+            <span tal:repeat="speaker view/speakers">
+                <a href="#" tal:attributes="href speaker/url">${speaker/name}</a><span tal:condition="not:repeat/speaker/end">, </span>
+            </span>
+        </h4>
+        <h4 tal:condition="context/duration"><b>
+            <span>Length: </span></b>
+            <span>${python:view.vocab_title(context.duration, view.duration_vocab())}</span>
+        </h4>
+        <h4 tal:condition="context/level"><b>
+            <span>Target Level: </span></b>
+            <span>${python:view.vocab_title(context.level, view.level_vocab())}</span>
+        </h4>
+        <h4 tal:condition="context/audience"><b>
+            <span>Target Audience: </span></b>
+            <span tal:repeat="audience python:view.vocab_title(context.audience, view.audience_vocab())">
+                <span>${audience}</span><span tal:condition="not:repeat/audience/end">,</span>
+            </span>
+        </h4>
+        <div tal:condition="context/body" tal:content="structure context/body/output" ></div>
+	<div class="col-xs-12">
+    	  <h4>
+            <strong>When:</strong>
+    	      <span>From</span> <span tal:replace="structure view/w/IEventBasic.start/render" />
+    	      <span>to</span> <span tal:replace="structure view/w/IEventBasic.end/render" />
+              <tal:zone content="python:context.start.strftime('%Z')" />
+            &mdash;
+            <tal:span tal:define="here_url context/@@plone_context_state/object_url;
+                            portal_url context/@@plone_portal_state/portal_url;">
+                <a href="#" rel="nofollow"
+                tal:attributes="href string:$here_url/ics_view"
+                title="Download this event in iCal format"
+                i18n:attributes="title title_add_to_ical;">
+                <img src="" alt="" width="14" height="14" class="icalIcon"
+                    tal:attributes="src string:${portal_url}/++plone++plone.app.event/calendar.svg"/>
+                <span i18n:translate="label_add_to_ical">Download iCal</span></a>
+            </tal:span>
+    	  </h4>
+    	  <h4 tal:condition="context/location">
+    	    <strong>Location:</strong> <span tal:replace="structure view/w/IEventLocation.location/render" />
+    	  </h4>
+	</div>
+    </metal:block>
+
+</html>

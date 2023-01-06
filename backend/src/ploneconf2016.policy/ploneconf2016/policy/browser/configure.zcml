@@ -1,0 +1,60 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:z3c="http://namespaces.zope.org/z3c">
+
+  <!-- Training Class -->
+  <browser:page
+      name="view"
+      for="ploneconf2016.policy.content.training_class.ITrainingClass"
+      class="ploneconf2016.policy.content.training_class.TrainingClassView"
+      template="templates/training_class.pt"
+      permission="zope2.View"
+      />
+
+  <!-- Person -->
+  <browser:page
+      name="view"
+      for="ploneconf2016.policy.content.person.IPerson"
+      class="ploneconf2016.policy.content.person.PersonView"
+      template="templates/person.pt"
+      permission="zope2.View"
+      />
+
+  <!-- Keynoter -->
+  <browser:page
+      name="view"
+      for="ploneconf2016.policy.content.keynoter.IKeynoter"
+      class="ploneconf2016.policy.content.keynoter.KeynoterView"
+      template="templates/person.pt"
+      permission="zope2.View"
+      />
+
+  <!-- Presentation -->
+  <browser:page
+      name="view"
+      for="ploneconf2016.policy.content.presentation.IPresentation"
+      class="ploneconf2016.policy.content.presentation.PresentationView"
+      template="templates/presentation.pt"
+      permission="zope2.View"
+      />
+
+  <!-- CSV download of schedule/speakers -->
+  <browser:page
+    name="schedule_csv"
+    for="*"
+    permission="zope2.View"
+    class=".download.ScheduleCSV"
+    />
+
+  <!-- Sponsor -->
+  <browser:page
+      name="view"
+      for="ploneconf2016.policy.content.sponsor.ISponsor"
+      class="ploneconf2016.policy.content.sponsor.SponsorView"
+      template="templates/sponsor.pt"
+      permission="zope2.View"
+      />
+
+</configure>

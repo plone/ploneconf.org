@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<article class="keynotes col-md-12">
+  <header><h2>Keynotes</h2></header>
+  <p>This year we have six keynotes, one in the morning and one in the evening of each day:</p>
+  <div class="row">
+    <tal:repeat repeat="keynoter view/get_keynoters">
+      <div class="col-md-6">
+        <img tal:define="scales keynoter/@@images;
+                             scale python:scales.scale('headshot', width=150, height=150)"
+             tal:condition="scale"
+             tal:replace="structure python:scale.tag(css_class='talker-img')" />
+        <div class="square__small--grey"></div>
+        <div class="keynoter-info">
+          <h3 class="keynoter-title" tal:content="keynoter/title">
+            Eric Bréhault
+          </h3>
+          <p tal:content="structure keynoter/bio/output">Éric Bréhault wrote his very first web pages in 1993 and he is still enjoying it.
+    As an IT engineer, he has used a lot of different web technologies, but since 2006, he has been focusing on Plone. He got involved in the Plone core development and he is now a member of the Framework Team. He is also the founder and maintainer of the Plomino and Rapido addons.
+    Passionated about frontend, he is part of the Plone Headless CMS initiative, and develops an Angular SDK for the Plone REST API.
+    He works as a technical manager at Makina Corpus—a French open source consulting and development company providing services for web and mobile applications—specifically on environmental issues and in the fields of web mapping and data visualization.</p>
+        </div>
+      </div>
+    </tal:repeat>
+  </div>
+</article>
+</body>
+</html>

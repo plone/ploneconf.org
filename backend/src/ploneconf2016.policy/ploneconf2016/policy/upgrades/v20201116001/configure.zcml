@@ -1,0 +1,10 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+  xmlns:gs="http://namespaces.zope.org/genericsetup">
+
+  <gs:upgradeSteps source="1005" destination="20201116001" profile="ploneconf2016.policy:default">
+
+    <gs:upgradeStep title="20201116001" description="Upgrade to version 20201116001" handler=".upgrade" />
+
+  </gs:upgradeSteps>
+
+</configure>

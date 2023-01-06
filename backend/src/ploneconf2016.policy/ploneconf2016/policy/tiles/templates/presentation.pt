@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<article class="PresentationTile ${view/get_track_color} presentation-${python:content.duration and content.duration.lower()}" tal:define="content nocall:view/content_context|nothing"
+     tal:condition="nocall:content">
+  <h3 class="TileTitle"><a id="${content/id}" title="${content/Title}" href="${content/absolute_url}">${content/title}</a></h3>
+
+  <p class="TileAuthor" tal:define="speakers view/speaker" tal:condition="speakers|nothing">
+    by
+    <tal:speaker-link repeat="speaker speakers">
+     <tal:speaker cond="speaker">
+      <a href="${speaker/absolute_url}">${speaker/Title}</a>
+      <tal:comma condition="not: repeat/speaker/end">,</tal:comma>
+     </tal:speaker>
+    </tal:speaker-link>
+  </p>
+  <p class="TileDescription">${content/description|nothing}</p>
+  <div class="training-byline" tal:define="tracks view/tracks">
+    <tal:cond condition="python: len(tracks) > 0 and content.portal_type == 'presentation'">
+      Track: <tal:tracks repeat="track view/tracks"><strong>${track}</strong><tal:comma condition="not: repeat/track/end">,</tal:comma> </tal:tracks> |
+    </tal:cond>
+    <tal:cond condition="python: content.portal_type == 'training_class'">
+      Duration:
+    </tal:cond>
+    <strong tal:content="view/duration"></strong> |
+    Audience: <strong tal:repeat="audience content/audience|python:()" class="AudienceBadge audience-${python:audience.lower()}">${audience}</strong> |
+    Level: <strong tal:condition="content/level|nothing" class="LevelBadge level-${python:content.level.lower()}">${content/level}</strong>
+  </div>
+</article>
+</body>
+</html>

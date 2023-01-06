@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master">
+
+    <metal:block fill-slot="content-title" />
+    <metal:block fill-slot="content-description" />
+
+    <metal:block fill-slot="content-core">
+      <div class="row sponsor">
+        <div class="col-xs-12">
+          <h1 class="documentFirstHeading">${context/Title}</h1>
+        </div>
+        <div class="col-xs-12">
+          <p class="documentDescription description" tal:condition="context/description|nothing">${context/description}</p>
+        </div>
+        <div class="col-xs-12">
+          <a href="" tal:attributes="href context/remoteUrl;title context/title" target="_blank">
+            Visit <span tal:replace="context/title" />
+          </a>
+        </div>
+      </div>
+    </metal:block>
+
+</html>

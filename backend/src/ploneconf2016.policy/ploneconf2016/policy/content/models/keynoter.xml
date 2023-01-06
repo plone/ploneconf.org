@@ -1,0 +1,49 @@
+<model xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       xmlns:security="http://namespaces.plone.org/supermodel/security"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+       xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="title" type="zope.schema.TextLine"
+           indexer:searchable="true">
+      <description/>
+      <title>Name</title>
+    </field>
+    <field name="description" type="zope.schema.Text"
+           indexer:searchable="true">
+      <description/>
+      <required>False</required>
+      <title>Summary</title>
+    </field>
+    <field name="bio" type="plone.app.textfield.RichText"
+           indexer:searchable="true">
+      <description>About yourself and your expertise.</description>
+      <required>False</required>
+      <title>Bio</title>
+    </field>
+    <field name="headshot" type="plone.namedfile.field.NamedBlobImage">
+      <description/>
+      <required>False</required>
+      <title>Headshot</title>
+    </field>
+    <field name="twitter_handle" type="zope.schema.TextLine"
+           indexer:searchable="true">
+      <description/>
+      <required>False</required>
+      <title>Twitter handle (without @ symbol)</title>
+    </field>
+    <field name="github_handle" type="zope.schema.TextLine"
+           indexer:searchable="true">
+      <description/>
+      <required>False</required>
+      <title>Github handle</title>
+    </field>
+    <field name="email" type="zope.schema.TextLine"
+           indexer:searchable="true">
+      <description/>
+      <required>False</required>
+      <title>Email address</title>
+    </field>
+  </schema>
+</model>

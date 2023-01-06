@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+  <index name="speaker" meta_type="FieldIndex">
+    <indexed_attr value="speaker"/>
+  </index>
+  <index name="audience" meta_type="KeywordIndex">
+    <indexed_attr value="audience"/>
+  </index>
+  <index name="track" meta_type="FieldIndex">
+    <indexed_attr value="track"/>
+  </index>
+  <index name="level" meta_type="FieldIndex">
+    <indexed_attr value="level"/>
+  </index>
+
+  <column value="audience" />
+  <column value="speaker" />
+  <column value="track" />
+  <column value="level" />
+
+</object>
