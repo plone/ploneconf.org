@@ -24,7 +24,7 @@ services:
         # Services
         - traefik.http.services.ploneconf2021-frontend.loadbalancer.server.port=3000
         # Routers
-        - traefik.http.routers.ploneconf2021-frontend.rule=Host(`2021.ploneconf.org`,`beta.2021.ploneconf.org`)
+        - traefik.http.routers.ploneconf2021-frontend.rule=Host(`2021.ploneconf.org`)
         - traefik.http.routers.ploneconf2021-frontend.entrypoints=https
         - traefik.http.routers.ploneconf2021-frontend.tls=true
         - traefik.http.routers.ploneconf2021-frontend.tls.certresolver=le
@@ -35,8 +35,6 @@ services:
     image: plone/ploneconf-backend:2021
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-ploneconf2021}' user='${DB_USER:-ploneconf2021}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-ploneconf2021}'"
-    depends_on:
-      - db
     networks:
       - public
       - ploneconf2021
