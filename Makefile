@@ -27,18 +27,6 @@ all: build
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: install-frontend
-install-frontend:  ## Install React Frontend
-	$(MAKE) -C "./frontend/" install
-
-.PHONY: build-frontend
-build-frontend:  ## Build React Frontend
-	$(MAKE) -C "./frontend/" build
-
-.PHONY: start-frontend
-start-frontend:  ## Start React Frontend
-	$(MAKE) -C "./frontend/" start
-
 .PHONY: install-backend
 install-backend:  ## Create virtualenv and install Plone
 	$(MAKE) -C "./backend/" build-dev
@@ -54,27 +42,23 @@ start-backend: ## Start Plone Backend
 
 .PHONY: install
 install:  ## Install
-	@echo "Install Backend & Frontend"
+	@echo "Install Backend"
 	$(MAKE) install-backend
-	$(MAKE) install-frontend
 
 .PHONY: build
 build:  ## Build
 	@echo "Build"
 	$(MAKE) build-backend
-	$(MAKE) build-frontend
 
 .PHONY: start
 start:  ## Start
 	@echo "Starting application"
 	$(MAKE) start-backend
-	$(MAKE) start-frontend
 
 .PHONY: format
 format:  ## Format codebase
 	@echo "Format codebase"
 	$(MAKE) -C "./backend/" format
-	$(MAKE) -C "./frontend/" format
 
 
 .PHONY: lint
@@ -86,78 +70,17 @@ lint:  ## Lint codebase
 i18n:  ## Update locales
 	@echo "Update locales"
 	$(MAKE) -C "./backend/" i18n
-	$(MAKE) -C "./frontend/" i18n
 
 .PHONY: test-backend
 test-backend:  ## Test backend codebase
 	@echo "Test backend"
 	$(MAKE) -C "./backend/" test
 
-.PHONY: test-frontend
-test-frontend:  ## Test frontend codebase
-	@echo "Test frontend"
-	$(MAKE) -C "./frontend/" test
 
 .PHONY: test
-test:  test-backend test-frontend ## Test codebase
-
+test:  test-backend  ## Test codebase
 
 .PHONY: build-images
 build-images:  ## Build docker images
 	@echo "Build"
 	$(MAKE) -C "./backend/" build-image
-	$(MAKE) -C "./frontend/" build-image
-
-## Docker stack
-.PHONY: start-stack
-start-stack:  ## Start local stack
-	@echo "Start local Docker stack"
-	@docker-compose -f devops/stacks/docker-compose-local.yml up -d --build
-
-.PHONY: stop-stack
-stop-stack:  ## Stop local stack
-	@echo "Stop local Docker stack"
-	@docker-compose -f devops/stacks/docker-compose-local.yml down
-
-## Acceptance
-.PHONY: build-acceptance-servers
-build-acceptance-servers: ## Build Acceptance Servers
-	@echo "Build acceptance backend"
-	@docker build backend -t plone/ploneconf-backend:acceptance -f backend/Dockerfile.acceptance
-	@echo "Build acceptance frontend"
-	@docker build frontend -t plone/ploneconf-frontend:acceptance -f frontend/Dockerfile
-
-.PHONY: start-acceptance-servers
-start-acceptance-servers: build-acceptance-servers ## Start Acceptance Servers
-	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name ploneconf-backend-acceptance -d plone/ploneconf-backend:acceptance
-	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name ploneconf-frontend-acceptance --link ploneconf-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d plone/ploneconf-frontend:acceptance
-
-.PHONY: stop-acceptance-servers
-stop-acceptance-servers: ## Stop Acceptance Servers
-	@echo "Stop acceptance containers"
-	@docker stop ploneconf-frontend-acceptance
-	@docker stop ploneconf-backend-acceptance
-
-.PHONY: run-acceptance-tests
-run-acceptance-tests: ## Run Acceptance tests
-	$(MAKE) start-acceptance-servers
-	npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
-	$(MAKE) -C "./frontend/" test-acceptance-headless
-	$(MAKE) stop-acceptance-servers
-
-.PHONY: start-test-acceptance-frontend
-start-test-acceptance-frontend: ## Start the Core Acceptance Frontend Fixture in dev mode
-	@echo "Start Frontend pointing to Cypress fixture in dev mode"
-	cd frontend && RAZZLE_API_PATH=http://localhost:55001/plone yarn start
-
-.PHONY: start-acceptance-server
-start-acceptance-server: ## Start Acceptance Servers
-	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name ploneconf-backend-acceptance plone/ploneconf-backend:acceptance
-
-.PHONY: test-acceptance
-test-acceptance:  ## Start Core Cypress Acceptance Tests in dev mode
-	@echo "Starting Cypress"
-	$(MAKE) -C "./frontend/" test-acceptance

@@ -1,2 +1,2 @@
 -r unreleased.txt
--e "src/ploneconf.core[test]"
+-e "src/ploneconf2016.policy[test]"

@@ -6,8 +6,6 @@ services:
     image: plone/ploneconf-frontend:2022
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-    ports:
-      - "3000:3000"
     depends_on:
       - backend
     networks:

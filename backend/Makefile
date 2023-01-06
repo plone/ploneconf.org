@@ -15,18 +15,18 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6.0.0b3
+PLONE_VERSION=5.2.6
 
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 CODE_QUALITY_VERSION=1.0.1
 LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} check
 
-PACKAGE_NAME=ploneconf.core
-PACKAGE_PATH=src/ploneconf.core/src/
+PACKAGE_NAME=ploneconf2016.policy
+PACKAGE_PATH=src/ploneconf2016.policy/src/
 IMAGE_NAME=plone/ploneconf-backend
-IMAGE_TAG=latest
-CHECK_PATH=src/ploneconf.core/setup.py scripts/ $(PACKAGE_PATH)
+IMAGE_TAG=2020
+CHECK_PATH=src/ploneconf2016.policy/setup.py scripts/ $(PACKAGE_PATH)
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'

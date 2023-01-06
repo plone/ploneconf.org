@@ -1,0 +1,44 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zope="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plone">
+
+  <include package="plone.z3cform" />
+  <include package="plone.app.querystring" />
+
+  <adapter factory=".converter.QueryStringConverter" />
+
+  <zope:view
+    type="zope.publisher.interfaces.browser.IBrowserRequest"
+    for=".interfaces.IQueryStringWidget"
+    provides="zope.app.form.interfaces.IInputWidget"
+    factory=".widget.QueryStringWidget"
+    permission="zope.Public"
+    zcml:condition="installed zope.app.form"
+    />
+
+  <genericsetup:registerProfile
+    name="default"
+    title="Querystring formwidget"
+    description="Querystring formwidget for use with the contentlisting tile"
+    directory="profiles/default"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <browser:resource
+    name="plone.formwidget.querystring.querywidget.js"
+    permission="zope2.View"
+    file="querywidget.js"
+    />
+
+  <browser:resource
+    name="plone.formwidget.querystring.querywidget.css"
+    permission="zope2.View"
+    file="querywidget.css"
+    />
+
+</configure>

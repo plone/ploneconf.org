@@ -1,8 +1,0 @@
----
-ssh_port: 22
-hostname: '2022-local'
-fqdn: '{{ hostname }}.ploneconf.org'
-swap_file_size_mb: '512'
-additional_ports:
-    - 80
-    - 443

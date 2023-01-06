@@ -1,4 +1,0 @@
-graft src/ploneconf
-graft docs
-include *.rst
-global-exclude *.pyc
