@@ -8,4 +8,5 @@ LABEL maintainer="Plone Foundation <conf@plone.org>" \
 
 # Add local code
 COPY . ./
+
 RUN ./bin/pip install --use-deprecated legacy-resolver -e "src/ploneconf.core"
