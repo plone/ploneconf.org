@@ -17,7 +17,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Deploy to 2022.ploneconf.org
         uses: kitconcept/docker-stack-deploy@v1.0.0
