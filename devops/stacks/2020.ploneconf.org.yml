@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+
+  backend:
+    image: plone/ploneconf-backend:2020
+    environment:
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-ploneconf2020}' user='${DB_USER:-ploneconf2020}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-ploneconf2020}'"
+    networks:
+      - public
+      - ploneconf2020
+    deploy:
+      replicas: 2
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=public
+        - traefik.constraint-label=public
+        # Service
+        - traefik.http.services.ploneconf2020-backend.loadbalancer.server.port=8080
+        # Middleware
+        - "traefik.http.middlewares.ploneconf2020-vhm.replacepathregex.regex=^/($$|/.*)"
+        - "traefik.http.middlewares.ploneconf2020-vhm.replacepathregex.replacement=/VirtualHostBase/https/2020.ploneconf.org/Plone/VirtualHostRoot/$$1"
+        # Router
+        - traefik.http.routers.ploneconf2020-backend.rule=Host(`2020.ploneconf.org`)
+        - traefik.http.routers.ploneconf2020-backend.entrypoints=https
+        - traefik.http.routers.ploneconf2020-backend.tls=true
+        - traefik.http.routers.ploneconf2020-backend.service=ploneconf2020-backend
+        - traefik.http.routers.ploneconf2020-backend.middlewares=gzip,ploneconf2020-vhm
+
+networks:
+  public:
+    external: true
+    driver: overlay
+  ploneconf2020:
+    driver: overlay
