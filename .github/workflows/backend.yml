@@ -6,7 +6,6 @@ on:
       - "backend/**"
       - ".github/workflows/backend.yml"
 
-
 jobs:
 
   release:
