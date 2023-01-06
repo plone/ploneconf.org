@@ -32,7 +32,7 @@ services:
         - traefik.http.routers.ploneconf2021-frontend.middlewares=gzip
 
   backend:
-    image: plone/ploneconf-backend:2021
+    image: plone/ploneconf-api:2021
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-ploneconf2021}' user='${DB_USER:-ploneconf2021}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-ploneconf2021}'"
     networks:
