@@ -1,4 +1,4 @@
-FROM simplesconsultoria/plone:5.2.5
+FROM plone/plone-backend:5.2.6
 
 LABEL maintainer="Plone Foundation <conf@plone.org>" \
       org.label-schema.name="plone" \
@@ -8,8 +8,4 @@ LABEL maintainer="Plone Foundation <conf@plone.org>" \
 
 # Add local code
 COPY . ./
-RUN ./bin/pip install -r requirements.txt \
-    && mkdir /app/var_instance
-
-# Copy ZEO Config
-COPY skel/etc/zeo.conf /app/etc/zope.conf
+RUN ./bin/pip install --use-deprecated legacy-resolver -e "src/ploneconf.core"

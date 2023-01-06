@@ -2,7 +2,7 @@ version: "3"
 services:
 
   frontend:
-    image: plone/ploneconf-frontend:latest
+    image: plone/ploneconf-frontend:2021
     ports:
     - "3000:3000"
     depends_on:
@@ -12,7 +12,7 @@ services:
       - RAZZLE_INTERNAL_API_PATH=http://api:8080/Plone
 
   api:
-    image: plone/ploneconf-api:latest
+    image: plone/ploneconf-api:2021
     volumes:
     - ./data:/data
     ports:

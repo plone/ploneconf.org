@@ -7,7 +7,7 @@ SHELL:=bash
 .DELETE_ON_ERROR:
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
-IMAGE_NAME=plone/ploneconf-frontend:latest
+IMAGE_NAME=plone/ploneconf-frontend:2021
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'

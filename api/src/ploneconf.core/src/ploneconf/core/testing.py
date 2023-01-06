@@ -22,7 +22,7 @@ class PLONECONFCORELayer(PloneSandboxLayer):
         import plone.restapi
 
         self.loadZCML(package=plone.restapi)
-        self.loadZCML(package=kitconcept.volto)
+        self.loadZCML(package=plone.volto)
         self.loadZCML(package=collective.volto.formsupport)
         self.loadZCML(package=ploneconf.core)
 

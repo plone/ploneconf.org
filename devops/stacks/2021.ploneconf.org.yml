@@ -1,0 +1,73 @@
+version: '3.3'
+
+services:
+
+  frontend:
+    image: plone/ploneconf-frontend:2021
+    environment:
+      RAZZLE_PUBLIC_URL: https://2021.ploneconf.org
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+    depends_on:
+      - backend
+    networks:
+      - public
+      - ploneconf2021
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.labels.type == app
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=public
+        - traefik.constraint-label=public
+        # Services
+        - traefik.http.services.ploneconf2021-frontend.loadbalancer.server.port=3000
+        # Routers
+        - traefik.http.routers.ploneconf2021-frontend.rule=Host(`2021.ploneconf.org`,`beta.2021.ploneconf.org`)
+        - traefik.http.routers.ploneconf2021-frontend.entrypoints=https
+        - traefik.http.routers.ploneconf2021-frontend.tls=true
+        - traefik.http.routers.ploneconf2021-frontend.tls.certresolver=le
+        - traefik.http.routers.ploneconf2021-frontend.service=ploneconf2021-frontend
+        - traefik.http.routers.ploneconf2021-frontend.middlewares=gzip
+
+  backend:
+    image: plone/ploneconf-backend:2021
+    environment:
+      RELSTORAGE_DSN: "dbname='${DB_NAME:-ploneconf2021}' user='${DB_USER:-ploneconf2021}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-ploneconf2021}'"
+    depends_on:
+      - db
+    networks:
+      - public
+      - ploneconf2021
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.labels.type == app
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=public
+        - traefik.constraint-label=public
+        # Services
+        - traefik.http.services.ploneconf2021-backend.loadbalancer.server.port=8080
+        # Middlewares
+        ### Authentication
+        - traefik.http.middlewares.ploneconf2021-backend-auth.basicauth.users=ploneconf2021:$$apr1$$SAOhBRqM$$HqoYLlr//h7PfUWidoFg//
+        ### 2021.ploneconf.org
+        - "traefik.http.middlewares.ploneconf2021-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.ploneconf2021-vhm.replacepathregex.replacement=/VirtualHostBase/https/2021.ploneconf.org/Plone/++api++/VirtualHostRoot/$$1"
+        # Routers
+        ## 2021.ploneconf.org
+        - traefik.http.routers.ploneconf2021-backend.rule=Host(`2021.ploneconf.org`) && (PathPrefix(`/++api++`))
+        - traefik.http.routers.ploneconf2021-backend.entrypoints=https
+        - traefik.http.routers.ploneconf2021-backend.tls=true
+        - traefik.http.routers.ploneconf2021-backend.service=ploneconf2021-backend
+        - traefik.http.routers.ploneconf2021-backend.middlewares=gzip,ploneconf2021-vhm
+
+networks:
+  public:
+    external: true
+    driver: overlay
+  ploneconf2021:
+    driver: overlay

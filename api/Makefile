@@ -17,7 +17,7 @@ YELLOW=`tput setaf 3`
 
 PACKAGE_NAME=ploneconf.core
 PACKAGE_PATH=src/ploneconf.core/src/ploneconf/core
-IMAGE_NAME=plone/ploneconf-api:latest
+IMAGE_NAME=plone/ploneconf-api:2021
 CHECK_PATH=src/ploneconf.core/setup.py scripts/ $(PACKAGE_PATH)
 
 

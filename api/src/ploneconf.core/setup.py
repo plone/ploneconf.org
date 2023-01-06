@@ -52,7 +52,6 @@ setup(
         "collective.folderishtypes",
         "collective.volto.formsupport",
         "pas.plugins.authomatic>=1.0b2",
-        "kitconcept.volto>=2.5.2",
         "plone.api",
         "plone.rest>=2.0.0a1",
         "plone.restapi>=8.11.0",

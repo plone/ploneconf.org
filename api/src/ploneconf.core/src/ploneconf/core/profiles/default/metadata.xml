@@ -2,7 +2,7 @@
 <metadata>
   <version>20211012001</version>
   <dependencies>
-    <dependency>profile-kitconcept.volto:default</dependency>
+    <dependency>profile-plone.volto:default</dependency>
     <dependency>profile-collective.volto.formsupport:default</dependency>
     <dependency>profile-pas.plugins.authomatic:default</dependency>
   </dependencies>
