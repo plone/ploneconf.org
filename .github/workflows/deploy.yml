@@ -1,6 +1,7 @@
 name: Deploy 2022.ploneconf.org
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: [Acceptance Tests]
     types:
@@ -13,14 +14,14 @@ jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    environment: ploneconf.org
+    environment: 2022.ploneconf.org
     steps:
 
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Deploy to 2022.ploneconf.org
-        uses: kitconcept/docker-stack-deploy@v1.0.0
+        uses: kitconcept/docker-stack-deploy@v1.2.0
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -28,8 +29,9 @@ jobs:
           remote_port: ${{ secrets.DEPLOY_PORT }}
           remote_user: ${{ secrets.DEPLOY_USER }}
           remote_private_key: ${{ secrets.DEPLOY_SSH }}
+          env_file: ${{ secrets.ENV_FILE }}
           stack_file: "devops/stacks/2022.ploneconf.org.yml"
-          stack_name: "plone"
+          stack_name: "ploneconf2022"
           deploy_timeout: 480
 
   report-skipped:
