@@ -51,6 +51,7 @@ setup(
         "collective.volto.formsupport",
         "pas.plugins.authomatic>=1.0.0",
         "kitconcept.seo",
+        "collective.exportimport",
     ],
     extras_require={
         "test": [
