@@ -18,7 +18,7 @@ FROM base
 
 LABEL maintainer="Plone Foundation <conf@plone.org>" \
       org.label-schema.name="ploneconf-frontend" \
-      org.label-schema.description="Plone Conference 2022 frontend." \
+      org.label-schema.description="Plone Conference 2023 frontend." \
       org.label-schema.vendor="Plone Foundation" \
       org.label-schema.docker.cmd="docker run -d -p 3000:3000 plone/ploneconf-frontend:latest"
 
