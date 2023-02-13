@@ -1,0 +1,41 @@
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+@emSize   : 16px;
+
+/* The size of page text  */
+@importGoogleFonts: true;
+@fontSize : 16px;
+@fontName: Roboto;
+@secondaryFont: 'Circular', Arial, Helvetica, sans-serif;;
+
+/*-------------------
+        Page
+--------------------*/
+@pageBackground      : @white;
+
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@ploneBlue           : #0083be;
+
+@primaryColor        : @ploneBlue;
+@secondaryColor      : hsl(49, 100%, 62%);
+
+// For some reason this was breaking in 16 ????
+// @lightPrimaryColor   : @lightBlue;
+// @lightSecondaryColor : @lightBlack;
+
+@lightColor: hsl(0, 0%, 100%);
+@mediumColor: hsl(0, 0%, 44%);
+@darkColor: hsl(0, 0%, 8%);
+
+@pageBackground : hsl(0, 0%, 96%);
+
+/*-------------------
+       Links
+--------------------*/
+@linkColor           : @ploneBlue;

@@ -1,0 +1,72 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+:root {
+  --aside-column-width: 660px;
+}
+
+.navigation .ui.secondary.pointing.menu,
+.tools .ui.secondary.pointing.menu {
+  width: max-content;
+}
+
+#navigation {
+  margin-left: auto;
+}
+
+.ui.basic.segment.header-wrapper {
+  position: fixed !important;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: @pageBackground;
+
+  @media (min-width: @tabletBreakpoint) {
+    right: unset;
+    left: 50%;
+    padding-right: 50%;
+    padding-left: 50%;
+    transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    .has-toolbar & {
+      left: calc(50% + @toolbarWidth);
+      transform: translateX(calc(-50% - calc(@toolbarWidth / 2)));
+    }
+  }
+
+  + * {
+    margin-top: 5rem;
+  }
+}
+
+.siteroot #main .content-area {
+  margin-top: 5rem;
+}
+
+.siteroot .breadcrumbs {
+  display: none;
+}
+
+#main .ui.secondary.pointing.menu .active.item {
+  border-color: @primaryColor;
+}
+
+.aside-title {
+  color: @lightColor;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.wrapper-aside.text {
+  display: grid;
+  place-content: center;
+}
+
+#main .block {
+  margin-bottom: 1.5em;
+}
