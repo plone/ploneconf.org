@@ -15,18 +15,37 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6.0.1
+PLONE_VERSION=6.0.0
 
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-CODE_QUALITY_VERSION=1.0.1
-LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} check
+CODE_QUALITY_VERSION=2.0.2
+ifndef LOG_LEVEL
+	LOG_LEVEL=INFO
+endif
+CURRENT_USER=$$(whoami)
+USER_INFO=$$(id -u ${CURRENT_USER}):$$(getent group ${CURRENT_USER}|cut -d: -f3)
+LINT=docker run --rm -e LOG_LEVEL="${LOG_LEVEL}" -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} check
+FORMAT=docker run --rm --user="${USER_INFO}" -e LOG_LEVEL="${LOG_LEVEL}" -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} format
 
-PACKAGE_NAME=ploneconf.core
-PACKAGE_PATH=src/ploneconf.core/src/
-IMAGE_NAME=plone/ploneconf-backend
+IMAGE_NAME=ghcr.io/plone/ploneorg-backend
 IMAGE_TAG=latest
-CHECK_PATH=src/ploneconf.core/setup.py scripts/ $(PACKAGE_PATH)
+
+# Python checks
+PYTHON?=python3
+
+# installed?
+ifeq (, $(shell which $(PYTHON) ))
+  $(error "PYTHON=$(PYTHON) not found in $(PATH)")
+endif
+
+# version ok?
+PYTHON_VERSION_MIN=3.11
+PYTHON_VERSION_OK=$(shell $(PYTHON) -c 'import sys; print((int(sys.version_info[0]), int(sys.version_info[1])) > tuple(map(int, "$(PYTHON_VERSION_MIN)".split("."))))')
+ifeq ($(PYTHON_VERSION_OK),0)
+  $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
+endif
+
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -67,21 +86,16 @@ clean-test: ## remove test and coverage artifacts
 
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
-	python3 -m venv .
-	bin/pip install -U "pip" "wheel" "git+https://github.com/cookiecutter/cookiecutter.git#egg=cookiecutter"
+	$(PYTHON) -m venv .
+	bin/pip install -U "pip" "wheel" "cookiecutter" "mxdev"
 
-instance/etc/zope.ini:	bin/pip
-	@echo "$(GREEN)==> Install Plone and create instance$(RESET)"
-	bin/pip install Plone -c https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt
-	bin/cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-	mkdir -p var/{filestorage,blobstorage,cache,log}
-
-bin/black:	bin/pip
-	@echo "$(GREEN)==> Install Code Quality tools$(RESET)"
-	bin/pip install -r https://raw.githubusercontent.com/plone/code-quality/v$(CODE_QUALITY_VERSION)/requirements.txt
+.PHONY: config
+config: bin/pip  ## Create instance configuration
+	@echo "$(GREEN)==> Create instance configuration$(RESET)"
+	bin/cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
 
 # i18n
-bin/i18ndude:	bin/pip
+bin/i18ndude: bin/pip
 	@echo "$(GREEN)==> Install translation tools$(RESET)"
 	bin/pip install i18ndude
 
@@ -90,54 +104,50 @@ i18n: bin/i18ndude ## Update locales
 	@echo "$(GREEN)==> Updating locales$(RESET)"
 	bin/update_locale
 
-.PHONY: build
-build: instance/etc/zope.ini ## Create virtualenv and run buildout
-	@echo "$(GREEN)==> Setup Build$(RESET)"
-	bin/pip install -r requirements.txt
+# TODO `make build`
+# build:
 
-.PHONY: build
-build-dev: instance/etc/zope.ini ## Create virtualenv and run buildout
+.PHONY: build-dev
+build-dev: config ## pip install Plone packages
 	@echo "$(GREEN)==> Setup Build$(RESET)"
-	bin/pip install -r requirements/dev.txt
+	bin/mxdev -c mx.ini
+	bin/pip install -r requirements-mxdev.txt
 
 .PHONY: format
-format:  bin/black ## Format the codebase according to our standards
+format: ## Format the codebase according to our standards
 	@echo "$(GREEN)==> Format codebase$(RESET)"
-	bin/isort ${CHECK_PATH}
-	bin/black ${CHECK_PATH}
-	find "${PACKAGE_PATH}" -name '*.xml' |xargs bin/zpretty -x -i
-	find "${PACKAGE_PATH}" -name '*.zcml' |xargs bin/zpretty -z -i
+	$(FORMAT)
 
 .PHONY: lint
 lint: lint-isort lint-black lint-flake8 lint-zpretty ## check code style
 
 .PHONY: lint-black
 lint-black: ## validate black formating
-	$(LINT) black "$(CHECK_PATH)"
+	$(LINT) black
 
 .PHONY: lint-flake8
 lint-flake8: ## validate black formating
-	$(LINT) flake8 "$(CHECK_PATH)"
+	$(LINT) flake8
 
 .PHONY: lint-isort
 lint-isort: ## validate using isort
-	$(LINT) isort "$(CHECK_PATH)"
+	$(LINT) isort
 
 .PHONY: lint-pyroma
 lint-pyroma: ## validate using pyroma
-	$(LINT) pyroma src/ploneconf.core/
+	$(LINT) pyroma
 
 .PHONY: lint-zpretty
 lint-zpretty: ## validate ZCML/XML using zpretty
-	$(LINT) zpretty "$(PACKAGE_PATH)"
+	$(LINT) zpretty
 
 .PHONY: test
 test: ## run tests
-	./bin/zope-testrunner --auto-color --auto-progress --test-path src/ploneconf.core/src/
+	bin/pytest
 
 .PHONY: test_quiet
 test_quiet: ## run tests removing deprecation warnings
-	PYTHONWARNINGS=ignore ./bin/zope-testrunner --auto-color --auto-progress --test-path src/ploneconf.core/src/
+	bin/pytest --disable-warnings
 
 .PHONY: create-site
 create-site: instance/etc/zope.ini ## Create a new site from scratch
@@ -146,6 +156,10 @@ create-site: instance/etc/zope.ini ## Create a new site from scratch
 .PHONY: start
 start: ## Start a Plone instance on localhost:8080
 	PYTHONWARNINGS=ignore ./bin/runwsgi instance/etc/zope.ini
+
+.PHONY: debug
+debug: instance/etc/zope.ini ## Run debug console
+	PYTHONWARNINGS=ignore ./bin/zconsole debug instance/etc/zope.conf
 
 .PHONY: build-image
 build-image:  ## Build Docker Image

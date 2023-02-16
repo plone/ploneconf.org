@@ -1,0 +1,157 @@
+name: Deploy backend testing
+run-name: Deploy to backend testing by @${{ github.actor }}
+on:
+  workflow_dispatch:
+  push:
+    branches:
+     - testing-deploy
+
+#  push:
+#    paths:
+#      - "backend/**"
+#      - ".github/workflows/backend_testing.yml"
+
+jobs:
+
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'black'
+
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'flake8'
+
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'isort'
+
+  zpretty:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Run check
+        uses: plone/code-analysis-action@v2
+        with:
+          base_dir: 'backend'
+          check: 'zpretty'
+
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python:
+          - 3.11
+        plone:
+          - "6.0.1"
+
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Plone ${{ matrix.plone }} with Python ${{ matrix.python }}
+        uses: plone/setup-plone@v2.0.0
+        with:
+          python-version: ${{ matrix.python }}
+          plone-version: ${{ matrix.plone }}
+
+      - name: Install package
+        run: |
+          pip install mxdev
+          mxdev -c mx.ini
+          pip install -r requirements-mxdev.txt
+
+      - name: Run tests
+        run: |
+          pytest
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [black, flake8, isort, zpretty, tests]
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            ghcr.io/plone/ploneconf-backend-2023
+          tags: |
+            type=sha
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to GHCR
+        uses: docker/login-action@v2.1.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          platforms: linux/amd64
+          context: backend
+          file: backend/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+      - release
+    runs-on: ubuntu-latest
+    environment: ploneconf2023testing
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy to plone.org
+        uses: kitconcept/docker-stack-deploy@v2.0.0
+        with:
+          registry: "ghcr.io"
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_private_key: ${{ secrets.DEPLOY_SSH }}
+          stack_file: "devops/stacks/testing.ploneconf.org.yml"
+          stack_name: "ploneconftesting"
+          env_file: ${{ secrets.ENV_FILE }}
+          deploy_timeout: 480
