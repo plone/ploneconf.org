@@ -2,6 +2,10 @@ name: Deploy backend testing
 run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
 on:
   workflow_dispatch:
+  push:
+    branches:
+     - testing-deploy
+
 #  push:
 #    paths:
 #      - "backend/**"
