@@ -1,5 +1,5 @@
 name: Deploy frontend testing
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+run-name: Deploy to frontend testing by @${{ github.actor }}
 
 on:
   workflow_dispatch:
