@@ -1,11 +1,11 @@
 name: Backend CI
 
 on:
-  push:
-    paths:
-      - "backend/**"
-      - ".github/workflows/backend_testing.yml"
   workflow_dispatch:
+#  push:
+#    paths:
+#      - "backend/**"
+#      - ".github/workflows/backend_testing.yml"
 
 jobs:
 
@@ -104,7 +104,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/plone/ploneconf-backend
+            ghcr.io/plone/ploneconf-backend-2023
           tags: |
             type=sha
 
