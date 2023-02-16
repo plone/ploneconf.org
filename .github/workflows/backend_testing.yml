@@ -1,4 +1,4 @@
-name: Backend CI
+name: name: Deploy backend testing.ploneconf.org
 
 on:
   workflow_dispatch:

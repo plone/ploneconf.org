@@ -1,4 +1,5 @@
-name: Frontend CI
+name: name: Deploy frontend testing.ploneconf.org
+
 
 on:
   workflow_dispatch:
