@@ -1,4 +1,6 @@
-# 2022.ploneconf.org
+# Please use https://github.com/plone/2023.ploneconf.org repo for the 2023 website setup. 
+
+(It is a continuation of this branch. We want to change too much in the deployment and the workflows on each branch get confusing. )
 
 ## Quick start
 
