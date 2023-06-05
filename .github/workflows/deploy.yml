@@ -23,8 +23,8 @@ jobs:
       - name: Deploy to 2022.ploneconf.org
         uses: kitconcept/docker-stack-deploy@v1.2.0
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN }}
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_port: ${{ secrets.DEPLOY_PORT }}
           remote_user: ${{ secrets.DEPLOY_USER }}
